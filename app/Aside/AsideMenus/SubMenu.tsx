@@ -6,7 +6,6 @@ import { RootState } from '@/app/Redux/store';
 
 function SubMenu() {
    const activeSubMenu = useSelector((state: RootState) => state.asideReducer.subMenuActive);
-   console.log(activeSubMenu)
    return (
       <nav className={styles.sidebar__subMenu}>
          <ul className={styles.sidebar__subMenu__list}>
