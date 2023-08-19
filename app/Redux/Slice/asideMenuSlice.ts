@@ -1,4 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import { goodsObjType, subMenuGoods } from '@/app/GoodsData/SubMenuGoods';
 
 
 type initialStateType = {
@@ -6,6 +7,7 @@ type initialStateType = {
    translateWindow: null | string
    isTransition: boolean
    mainMenuList: Array<mainMenuListType> 
+   subMenuActive: Array<goodsObjType>
 }
 type mainMenuListType = {
    title: string
@@ -13,7 +15,6 @@ type mainMenuListType = {
    isActive: boolean
    id: number
 }
-
 
 const initialState: initialStateType = {
    isSidebarOpen: false,
@@ -56,7 +57,8 @@ const initialState: initialStateType = {
          isActive: false,
          id: 5
       },
-   ]
+   ],
+   subMenuActive: subMenuGoods[0]
 }
 
 const sidebarSlice = createSlice({
@@ -74,8 +76,11 @@ const sidebarSlice = createSlice({
       },
       isTransitionAside: (state, action: PayloadAction<boolean>) => {
          state.isTransition = action.payload
+      },
+      setActiveSubMenu: (state, action: PayloadAction<number>) => {
+         state.subMenuActive = subMenuGoods[action.payload]
       }
    }
 })
-export const {toggleSidebar, transformWindow, setActiveMenuItem, isTransitionAside} = sidebarSlice.actions;
+export const {toggleSidebar, transformWindow, setActiveMenuItem, isTransitionAside, setActiveSubMenu} = sidebarSlice.actions;
 export default sidebarSlice.reducer;

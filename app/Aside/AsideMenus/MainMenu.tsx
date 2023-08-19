@@ -6,7 +6,7 @@ import styles from '../SideMenu.module.scss';
 import arrow from '../../../public/icons/ArrowNext.svg';
 import { RootState } from '@/app/Redux/store';
 import { useDispatch, useSelector } from 'react-redux';
-import { setActiveMenuItem } from '@/app/Redux/Slice/asideMenuSlice';
+import { setActiveMenuItem, setActiveSubMenu } from '@/app/Redux/Slice/asideMenuSlice';
 
 
 function MainMenu() {
@@ -18,6 +18,7 @@ function MainMenu() {
          else return {...el, isActive: false}
       })
       dispatch(setActiveMenuItem(newMenu))
+      dispatch(setActiveSubMenu(index))
    }
    return (
       <nav className={styles.sidebar__mainMenu}>
