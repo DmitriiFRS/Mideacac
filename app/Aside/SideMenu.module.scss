@@ -1,0 +1,103 @@
+.aside {
+   &__openBtn {
+      position: fixed;
+      left: 0;
+      top: calc(50vh - 49px);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      background: transparent;
+      padding: 10px;
+      & span {
+         width: 25px;
+         height: 3px;
+         background: #000;
+      }
+      & span:not(:last-child) {
+         margin: 0 0 10px 0;
+      }
+   }
+}
+.sidebar {
+   position: fixed;
+   inset: 0;
+   height: 100%;
+   width: 100%;
+   z-index: 2;
+   transition: 0.9s ease-in-out;
+   &__body {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      width: 60vw;
+      background: #fff;
+      z-index: 3;
+      transition: 0.9s ease-in-out;
+   }
+   &__close {
+      width: 54px;
+      height: 54px;
+      border: 2px solid #fff;
+      position: absolute;
+      right: -70px;
+      top: 0;
+      margin: 20px 0 0 0;
+      border-radius: 5px;
+      background: transparent;
+      transition: 0.3s;
+      opacity: 0.5;
+      &:hover {
+         background: #666666;
+         border: 2px solid #a3a3a3;
+      }
+   }
+   &__menus {
+      display: flex;
+      height: 100%;
+   }
+   &__mainMenu {
+      flex: 0 1 50%;
+      padding: 130px 0 0 0;
+      display: flex;
+      justify-content: center;
+      &__list {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         width: 100%;
+      }
+      &__item {
+         display: flex;
+         height: 55px;
+         width: 80%;
+         transition: 0.2s;
+         border-radius: 5px;
+         padding: 0 5px 0 10px;
+         &:not(:last-child) {
+            margin: 0 0 15px 0;
+         }
+         &:hover {
+            background: #dfdfdf;
+         }
+      }
+      &__itemActive {
+         background: #eeeeee;
+      }
+      &__btn {
+         flex: 1 1 auto;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         background: transparent;
+         font-size: 22px;
+         color: #666666;
+      }
+   }
+   &__subMenu {
+      padding: 130px 0 0 0;
+      flex: 0 1 50%;
+      height: 100%;
+      background: #d8d8d8;
+   }
+}
