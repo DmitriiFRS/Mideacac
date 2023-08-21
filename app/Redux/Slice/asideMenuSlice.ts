@@ -14,7 +14,6 @@ type mainMenuListType = {
    href: null | string
    isActive: boolean
    id: number
-   isOpened: boolean
 }
 
 const initialState: initialStateType = {
@@ -26,43 +25,37 @@ const initialState: initialStateType = {
          title: 'Оборудование',
          href: null,
          isActive: true,
-         id: 0,
-         isOpened: false
+         id: 0
       },
       {
          title: 'Логистика',
          href: null,
          isActive: false,
-         id: 1,
-         isOpened: false
+         id: 1
       },
       {
          title: 'Монтаж и ПНР',
          href: null,
          isActive: false,
-         id: 2,
-         isOpened: false
+         id: 2
       },
       {
          title: 'Проектирование и что-то еще',
          href: null,
          isActive: false,
-         id: 3,
-         isOpened: false
+         id: 3
       },
       {
          title: 'И еще что-то',
          href: null,
          isActive: false,
-         id: 4,
-         isOpened: false
+         id: 4
       },
       {
          title: 'Возможно еще что-то?',
          href: null,
          isActive: false,
-         id: 5,
-         isOpened: false
+         id: 5
       },
    ],
    subMenuActive: subMenuGoods[0]
@@ -87,10 +80,7 @@ const sidebarSlice = createSlice({
       setActiveSubMenu: (state, action: PayloadAction<number>) => {
          state.subMenuActive = subMenuGoods[action.payload]
       },
-      setTransitionMenu: (state, action) => {
-         
-      }
    }
 })
-export const {toggleSidebar, transformWindow, setActiveMenuItem, isTransitionAside, setActiveSubMenu, setTransitionMenu} = sidebarSlice.actions;
+export const {toggleSidebar, transformWindow, setActiveMenuItem, isTransitionAside, setActiveSubMenu} = sidebarSlice.actions;
 export default sidebarSlice.reducer;
