@@ -6,13 +6,13 @@ import { RootState } from '../Redux/store';
 import { isTransitionAside, toggleSidebar, transformWindow } from '../Redux/Slice/asideMenuSlice';
 
 function AsideButton() {
-   const dispatch = useDispatch()
+   const dispatch = useDispatch();
    function openSideMenu() {
       dispatch(toggleSidebar(true)) 
       setTimeout(() => {
          dispatch(transformWindow('translateX(0%)'));
-         dispatch(isTransitionAside(true))
-      }, 1)
+         dispatch(isTransitionAside(true));
+      })
       
    }
    return (

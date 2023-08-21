@@ -79,7 +79,7 @@ const sidebarSlice = createSlice({
       },
       setActiveSubMenu: (state, action: PayloadAction<number>) => {
          state.subMenuActive = subMenuGoods[action.payload]
-      }
+      },
    }
 })
 export const {toggleSidebar, transformWindow, setActiveMenuItem, isTransitionAside, setActiveSubMenu} = sidebarSlice.actions;

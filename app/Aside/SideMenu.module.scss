@@ -74,6 +74,8 @@
          transition: 0.2s;
          border-radius: 5px;
          padding: 0 5px 0 10px;
+         animation-name: openSideMenu;
+         animation-delay: 0.5s;
          &:not(:last-child) {
             margin: 0 0 15px 0;
          }
@@ -111,5 +113,20 @@
       &__item:not(:last-child) {
          margin: 0 0 25px 0;
       }
+   }
+}
+// anim
+@keyframes openSideMenu {
+   0% {
+      transform: translateX(-120%);
+      opacity: 0;
+   }
+   30% {
+      transform: translateX(-120%);
+      opacity: 0;
+   }
+   100% {
+      transform: translateX(0%);
+      opacity: 1;
    }
 }
