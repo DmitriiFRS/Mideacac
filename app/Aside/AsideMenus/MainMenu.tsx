@@ -11,6 +11,7 @@ import { setActiveMenuItem, setActiveSubMenu } from '@/app/Redux/Slice/asideMenu
 
 function MainMenu() {
    const mainMenuList = useSelector((state: RootState) => state.asideReducer.mainMenuList);
+   const isOpenAsideMenu = useSelector((state: RootState) => state.asideReducer.isTransition)
    const dispatch = useDispatch()
    function changeMenuItem (index: number) {
       const newMenu = mainMenuList.map((el, idx) => {
@@ -26,7 +27,8 @@ function MainMenu() {
             {mainMenuList.map((el, index) => {
                if (el.href === null) {
                   return(
-                     <li className={`${styles.sidebar__mainMenu__item} ${el.isActive ? styles.sidebar__mainMenu__itemActive : ''}`} key={index}>
+                     <li className={`${styles.sidebar__mainMenu__item} ${el.isActive ? styles.sidebar__mainMenu__itemActive : ''}`} key={index}
+                     style={{animationDuration: ((index + 2) / 7)+'s'}}>
                         <button onClick={() => {changeMenuItem(index)}} className={styles.sidebar__mainMenu__btn}>
                            {el.title}
                            <Image src={arrow} alt='next' />
