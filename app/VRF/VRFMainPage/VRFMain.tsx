@@ -19,7 +19,7 @@ return (
          let orders = [];
          index % 2 === 0 ? orders.push('1','2') : orders.push('2','1')
          return (
-            <ImageTitleRC margin={index === 0 ? 'calc(100vh + 10px) 0 0 0' : '25px 0 0 0'} image={el.image} description={el.description}
+            <ImageTitleRC key={index} margin={index === 0 ? 'calc(100vh + 10px) 0 0 0' : '25px 0 0 0'} image={el.image} description={el.description}
              orders={{order1: orders[0], order2: orders[1]}} />
          )
       })}
