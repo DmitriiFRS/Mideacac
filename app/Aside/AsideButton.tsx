@@ -1,8 +1,6 @@
 "use client"
-
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './SideMenu.module.scss';
-import { RootState } from '../Redux/store';
 import { isTransitionAside, toggleSidebar, transformWindow } from '../Redux/Slice/asideMenuSlice';
 
 function AsideButton() {

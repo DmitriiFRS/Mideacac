@@ -1,6 +1,5 @@
 import styles from './Vrf.module.scss';
 import Image from 'next/image';
-import vrf from '../../public/img/vrf-v8-main.jpeg';
 import pulse from '../../public/icons/pulse-img.png';
 import Link from 'next/link';
 

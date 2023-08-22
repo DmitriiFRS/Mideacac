@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import styles from './Achievments.module.scss';
 const list = [{
    number: '$51.16 B',

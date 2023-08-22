@@ -1,11 +1,9 @@
-import Image from 'next/image'
 import styles from './page.module.scss'
 import Intro from './Intro/Intro'
 import Achievments from './Achievments/Achievments'
 import SideMenu from './Aside/SideMenu'
 import Vrf from './VRFv8/Vrf'
 import vrf from '../public/img/vrf-v8-main.jpeg';
-import pulse from '../public/icons/pulse-img.png';
 import changeName from '../public/img/testimg.jpg'
 
 const params = [{
