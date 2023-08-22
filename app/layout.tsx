@@ -21,7 +21,6 @@ export default function RootLayout({
     <html>
       <body className={inter.className}>
         <div className="wrapper">
-          
           <ReduxProvider>
             <Header />
             <SideMenu/>

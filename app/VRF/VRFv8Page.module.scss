@@ -8,3 +8,39 @@
       object-fit: cover;
    }
 }
+.VRFMain {
+   padding: 10px 70px;
+}
+.imageTitle {
+   display: grid;
+   gap: 100px;
+   grid-template-columns: 1fr 1fr;
+}
+.image__container {
+   position: relative;
+   width: 900px;
+   height: 600px;
+}
+.title {
+   display: flex;
+   align-items: center;
+   &__list {
+      font-size: 30px;
+      font-weight: 500;
+   }
+   &__item {
+      &::before {
+         content: "";
+         display: inline-block;
+         background-repeat: no-repeat;
+         background-image: url(../../public/icons/check.svg);
+         height: 30px;
+         width: 30px;
+         transform: translateY(4px);
+         margin: 0 20px 0 0;
+      }
+      &:not(:last-child) {
+         margin: 0 0 20px 0;
+      }
+   }
+}
