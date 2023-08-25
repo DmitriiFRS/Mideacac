@@ -18,9 +18,17 @@
       }
    }
    &__imgContainer2 {
-      transition: 0.8s;
+      position: absolute !important;
+      top: 80px;
+      left: 34%;
+         width: 30%;
+         height: 400px;
       &__active {
-         transform: translateY(200px);
+         position: fixed !important;
+         width: 30%;
+         height: 400px;
+         top: 0;
+         left: 34%;
       }
    }
    &__imges {
@@ -31,8 +39,9 @@
       margin: 50px 0 0 0;
       padding: 0 25px;
       display: grid;
+      justify-content: space-between;
       grid-template-rows: 1fr;
-      grid-template-columns: 30% 40% 30%;
+      grid-template-columns: 30% 30%;
    }
    &__sideTitle {
       display: flex;
@@ -58,4 +67,5 @@
    text-align: center;
    border: 1px solid #000;
    height: 150px;
+   visibility: hidden;
 }
