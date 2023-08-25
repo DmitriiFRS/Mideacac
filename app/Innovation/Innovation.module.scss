@@ -80,43 +80,70 @@
    height: 150px;
    visibility: hidden;
 }
-
-.leftLine {
-   position: fixed;
-   left: 5%;
-   top: 200px;
-   width: 50%;
-   animation-name: showLineLeft;
-   animation-duration: 0.7s;
-   @media(max-width: 1500px) {
-      left: 3%;
-   }
-   @media(max-width: 1300px) {
-      left: 1%;
-   }
+.arrowMain {
+   width: 80px;
+   height: 80px;
+   color: rgb(156, 156, 156);
+   left: 30%;
+   display: flex;
+   flex-direction: column;
 }
-.rightLine {
+.arrowsBody {
    position: fixed;
-   right: 5%;
-   top: 200px;
-   width: 50%;
-   animation-name: showLineRight;
+   left: 0;
+   top: 50%;
+   width: 100%;
+   display: flex;
+   justify-content: space-around;
+   animation-name: shakeArrows;
    animation-duration: 0.9s;
+   animation-iteration-count: infinite;
+}
+.arrowMain2 {
+   width: 80px;
+   height: 80px;
+   color: rgb(156, 156, 156);
+   left: 65%;
+   display: flex;
+   flex-direction: column;
+}
+.arrow1 {
+   top: 58%;
+   animation-name: changeColor;
+   animation-duration: 0.9s;
+   animation-iteration-count: infinite;
+   animation-delay: 0s;
+}
+.arrow2 {
+   top: 50%;
+   animation-name: changeColor;
+   animation-duration: 0.9s;
+   animation-iteration-count: infinite;
+   animation-delay: 0.3s;
+}
+.arrow3 {
+   top: 42%;
+   animation-name: changeColor;
+   animation-duration: 0.9s;
+   animation-iteration-count: infinite;
+   animation-delay: 0.6s;
 }
 
-@keyframes showLineLeft {
+@keyframes shakeArrows {
    0% {
-      opacity: 0;
+      top: 45%;
    }
    100% {
-      opacity: 1;
+      top: 50%;
    }
 }
-@keyframes showLineRight {
+
+@keyframes changeColor {
    0% {
-      opacity: 0;
+      
+      color: rgb(192, 192, 192);
    }
    100% {
-      opacity: 1;
+      color: rgb(133, 28, 219);
    }
 }

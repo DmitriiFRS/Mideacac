@@ -5,7 +5,7 @@ import lab from '../../public/img/Innovation/lab.png';
 import Image from 'next/image';
 import { RootState } from '../Redux/store';
 import { useSelector } from 'react-redux';
-import Lines from './Lines';
+import Arrows from './Arrows';
 
 const list = [{
    number: '$51.16 B',
@@ -27,7 +27,6 @@ const list = [{
 
 function Innovation() {
    const kukaVisible = useSelector((state: RootState) => state.mainPageReducer.kukaNotVisible);
-   const isVisibleLines = useSelector((state: RootState) => state.mainPageReducer.linesVisibility);
 
 return (
    <section className={styles.innovation}>
@@ -50,7 +49,7 @@ return (
             })}
          </ul>
       </div>
-      {isVisibleLines && <Lines />}
+      {kukaVisible && <Arrows />}
    </section>
 )
 }
