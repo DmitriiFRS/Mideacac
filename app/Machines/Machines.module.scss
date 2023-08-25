@@ -1,0 +1,23 @@
+.machines {
+   margin: 200px 0 0 0;
+   padding: 10px;
+   display: flex;
+   justify-content: space-around;
+   &__magboost {
+      &__container {
+         width: 615px;
+         height: 100%;
+      }
+   }
+   &__v8 {
+      &__container {
+         width: 615px;
+         height: 100%;
+         display: flex;
+         justify-content: center;
+      }
+   }
+}
+
+.test {
+}
