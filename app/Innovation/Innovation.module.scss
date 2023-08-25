@@ -13,8 +13,8 @@
       opacity: 1;
       transition: 0.8s;
       &__active {
-         transform: translateY(-100%);
-      opacity: 0;
+         transform: translateX(-100%);
+         opacity: 0;
       }
    }
    &__imgContainer2 {
@@ -50,6 +50,10 @@
       justify-content: center;
       text-align: center;
       transition: 0.8s;
+      &__active {
+         transform: translateX(100%);
+         opacity: 0;
+      }
       &__item:not(:last-child) {
          margin: 0 0 30px 0;
       }
@@ -68,4 +72,51 @@
    border: 1px solid #000;
    height: 150px;
    visibility: hidden;
+}
+.fakeBlock2 {
+   margin: 50px 0 0 0;
+   text-align: center;
+   border: 1px solid #000;
+   height: 150px;
+   visibility: hidden;
+}
+
+.leftLine {
+   position: fixed;
+   left: 5%;
+   top: 200px;
+   width: 50%;
+   animation-name: showLineLeft;
+   animation-duration: 0.7s;
+   @media(max-width: 1500px) {
+      left: 3%;
+   }
+   @media(max-width: 1300px) {
+      left: 1%;
+   }
+}
+.rightLine {
+   position: fixed;
+   right: 5%;
+   top: 200px;
+   width: 50%;
+   animation-name: showLineRight;
+   animation-duration: 0.9s;
+}
+
+@keyframes showLineLeft {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
+}
+@keyframes showLineRight {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
 }

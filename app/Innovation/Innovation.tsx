@@ -1,11 +1,11 @@
 "use client"
-
 import styles from './Innovation.module.scss';
 import kuka from '../../public/img/Innovation/kuka.png';
 import lab from '../../public/img/Innovation/lab.png';
 import Image from 'next/image';
 import { RootState } from '../Redux/store';
 import { useSelector } from 'react-redux';
+import Lines from './Lines';
 
 const list = [{
    number: '$51.16 B',
@@ -27,6 +27,7 @@ const list = [{
 
 function Innovation() {
    const kukaVisible = useSelector((state: RootState) => state.mainPageReducer.kukaNotVisible);
+   const isVisibleLines = useSelector((state: RootState) => state.mainPageReducer.linesVisibility);
 
 return (
    <section className={styles.innovation}>
@@ -38,7 +39,7 @@ return (
          <div className={`${styles.innovation__imgContainer2} ${styles.innovation__imges} ${ kukaVisible ? styles.innovation__imgContainer2__active : ''}`}>
             <Image src={lab} alt='lab' fill={true} />
          </div>
-         <ul className={`${styles.innovation__sideTitle} ${ kukaVisible ? styles.innovation__imgContainer1__active : ''}`}>
+         <ul className={`${styles.innovation__sideTitle} ${ kukaVisible ? styles.innovation__sideTitle__active : ''}`}>
             {list.map((el, idx) => {
                return (
                   <li key={idx} className={styles.innovation__sideTitle__item}>
@@ -49,6 +50,7 @@ return (
             })}
          </ul>
       </div>
+      {isVisibleLines && <Lines />}
    </section>
 )
 }

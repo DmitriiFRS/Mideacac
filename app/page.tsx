@@ -5,6 +5,7 @@ import SideMenu from './Aside/SideMenu'
 import Innovation from './Innovation/Innovation'
 import Machines from './Machines/Machines'
 import FakeSection from './Innovation/FakeSection'
+import FakeSection2 from './Innovation/FakeSection2'
 
 const params = [{
   title: 'V8 Series VRF',
@@ -24,6 +25,7 @@ export default function Home() {
       <Achievments />
       <Innovation />
       <FakeSection />
+      <FakeSection2 />
       <Machines />
     </main>
   )
