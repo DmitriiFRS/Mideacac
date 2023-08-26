@@ -156,23 +156,27 @@
    left: 30%;
    top: 40%;
    max-width: 40%;
-   & > *:not(:last-child) {
-      margin: 0 0 20px 0;
+   @media(max-width: 1850px) {
+      top: 48%;
    }
    &:first-child {
       animation-name: leftToRight;
-      animation-duration: 0.8s
+      animation-duration: 0.8s;
    }
    &:nth-child(2) {
       margin: 120px 0 0 0;
    }
    &:nth-child(3) {
       margin: 240px 0 0 0;
+      overflow: hidden;
    }
    &__title {
       line-height: 190%;
       font-size: 25px;
       transition: 0.8s;
+      @media(max-width: 1850px) {
+         font-size: 20px;
+      }
    }
 }
 
