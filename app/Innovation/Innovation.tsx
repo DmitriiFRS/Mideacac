@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { RootState } from '../Redux/store';
 import { useSelector } from 'react-redux';
 import Arrows from './Arrows';
+import Titles from './Titles';
 
 const list = [{
    number: '$51.16 B',
@@ -50,6 +51,7 @@ return (
          </ul>
       </div>
       {kukaVisible && <Arrows />}
+      {kukaVisible && <Titles />}
    </section>
 )
 }

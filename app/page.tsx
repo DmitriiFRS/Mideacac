@@ -4,8 +4,10 @@ import Achievments from './Achievments/Achievments'
 import SideMenu from './Aside/SideMenu'
 import Innovation from './Innovation/Innovation'
 import Machines from './Machines/Machines'
-import FakeSection from './Innovation/FakeSection'
-import FakeSection2 from './Innovation/FakeSection2'
+import TriggerSection1 from './Innovation/inViewTriggerSections/TriggerSection1'
+import TriggerSection2 from './Innovation/inViewTriggerSections/TriggerSection2'
+import TriggerSection3 from './Innovation/inViewTriggerSections/TriggerSection3'
+import TriggerSection4 from './Innovation/inViewTriggerSections/TriggerSection4'
 
 const params = [{
   title: 'V8 Series VRF',
@@ -24,8 +26,10 @@ export default function Home() {
       <Intro />
       <Achievments />
       <Innovation />
-      <FakeSection />
-      <FakeSection2 />
+      <TriggerSection1 />
+      <TriggerSection2 />
+      <TriggerSection3 />
+      <TriggerSection4 />
       <Machines />
     </main>
   )

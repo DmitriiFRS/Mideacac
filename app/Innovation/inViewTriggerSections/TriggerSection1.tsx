@@ -1,12 +1,12 @@
 "use client"
 
 import { useInView } from 'react-intersection-observer';
-import styles from './Innovation.module.scss'
+import styles from '../Innovation.module.scss'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeKukaStatus } from '../Redux/Slice/mainPageSlice';
+import { changeKukaStatus } from '../../Redux/Slice/mainPageSlice';
 
-function FakeSection() {
+function TriggerSection1() {
    const dispatch = useDispatch()
    const {ref, inView} = useInView({
       threshold: 0
@@ -19,4 +19,4 @@ return (
    <div ref={ref} className={styles.fakeBlock}> inView checkpoint</div>
 )
 }
-export default FakeSection;
+export default TriggerSection1;
