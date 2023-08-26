@@ -73,15 +73,17 @@
    text-align: center;
    border: 1px solid #000;
    height: 50px;
+   visibility: hidden;
 }
 .fakeBlock2 {
-   margin: 100px 0 0 0;
+   margin: 140px 0 0 0;
    text-align: center;
    border: 1px solid #000;
    height: 50px;
    font-family: 'Everett-Light';
    font-weight: 700;
    font-size: 30px;
+   visibility: hidden;
 }
 .arrowMain {
    width: 80px;
