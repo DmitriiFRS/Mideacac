@@ -6,12 +6,13 @@ import { isTransitionAside, toggleSidebar, transformWindow } from '../Redux/Slic
 function AsideButton() {
    const dispatch = useDispatch();
    function openSideMenu() {
-      dispatch(toggleSidebar(true)) 
+      dispatch(toggleSidebar(true));
+      document.body.style.overflow = 'hidden'
+      document.body.style.paddingRight = `${window.innerWidth - document.body.clientWidth}px`
       setTimeout(() => {
          dispatch(transformWindow('translateX(0%)'));
          dispatch(isTransitionAside(true));
       })
-      
    }
    return (
    <button onClick={openSideMenu} className={styles.aside__openBtn}>

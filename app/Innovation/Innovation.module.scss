@@ -23,14 +23,18 @@
       position: absolute !important;
       top: 80px;
       left: 34%;
-         width: 30%;
-         height: 400px;
+      width: 30%;
+      height: 400px;
       &__active {
          position: fixed !important;
          width: 30%;
          height: 400px;
          top: 0;
          left: 34%;
+      }
+      &__unactive {
+         transition: 0.4s;
+         opacity: 0;
       }
    }
    &__imges {
@@ -69,27 +73,19 @@
    }
 }
 .fakeBlock {
-   margin: 550px 0 0 0;
+   margin: 500px 0 0 0;
    text-align: center;
    height: 50px;
    visibility: hidden;
 }
 .fakeBlock2 {
-   margin: 140px 0 0 0;
+   margin: 160px 0 0 0;
    text-align: center;
    height: 50px;
    font-family: 'Everett-Light';
    font-weight: 700;
    font-size: 30px;
-   visibility: hidden;
-}
-.lastFakeBlock {
-   margin: 20px;
-   text-align: center;
-   height: 50px;
-   font-family: 'Everett-Light';
-   font-weight: 700;
-   font-size: 30px;
+   border: 1px solid #000;
    visibility: hidden;
 }
 .arrowMain {
@@ -127,6 +123,10 @@
    animation-name: smoothAppearance;
    animation-duration: 0.7s;
    animation-iteration-count: initial;
+   &__unactive {
+      transition: 0.4s;
+      opacity: 0;
+   }
 }
 
 .arrow1 {
@@ -165,6 +165,10 @@
    top: 43%;
    flex-direction: column;
    max-width: 40%;
+   &__unactive {
+      transition: 0.4s;
+      opacity: 0;
+   }
 }
 .titleBody {
    transition: 0.8s;

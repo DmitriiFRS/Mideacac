@@ -7,9 +7,9 @@ import styles from './Innovation.module.scss';
 import { RootState } from '../Redux/store';
 
 function Arrows() {
-   const isShakeArrows = useSelector((state: RootState) => state.mainPageReducer.isFirstAction);
+   const isLastAction = useSelector((state: RootState) => state.mainPageReducer.isThirdAction);
 return (
-   <div className={`${styles.arrowsBody}`}>
+   <div className={`${styles.arrowsBody} ${isLastAction ? styles.arrowsBody__unactive : ''}`}>
       <Arrow1 />
       <Arrow2 />
    </div>

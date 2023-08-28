@@ -1,23 +1,27 @@
 import styles from './Machines.module.scss';
-import Image from 'next/image';
 import magboost from '../../public/img/Innovation/magboost.png';
 import v8 from '../../public/img/Innovation/v8.png';
+import NewestMachines from './NewestMachines';
+
+const newestData = [{
+   deviceName: 'Magboost',
+   image: magboost,
+   imageWidth: 614,
+   imageHeight: 302
+},
+{
+   deviceName: 'V8',
+   image: v8,
+   imageWidth: 300,
+   imageHeight: 314
+}]
 
 function Machines() {
 return (
    <section className={styles.machines}>
-      <div className={styles.machines__magboost}>
-         <p className={styles.machines__magboost__title}></p>
-         <div className={styles.machines__magboost__container}>
-            <Image className={styles.test} src={magboost} alt='magboost' width={614} height={302} />
-         </div>
-      </div>
-      <div className={styles.machines__v8}>
-         <p className={styles.machines__v8__title}></p>
-         <div className={styles.machines__v8__container}>
-            <Image className={styles.test} src={v8} alt='v8' width={300} height={314} />
-         </div>
-      </div>
+      {newestData.map((el, idx) => {
+         return <NewestMachines key={idx} deviceName={el.deviceName} image={el.image} imageWidth={el.imageWidth} imageHeight={el.imageHeight} />
+      })}
    </section>
 )
 }

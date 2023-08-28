@@ -15,8 +15,11 @@ function Sidebar() {
       if (transform === 'translateX(-110%)') return
       dispatch(transformWindow('translateX(-110%)'))
       dispatch(isTransitionAside(false))
+
       setTimeout(() => {
          dispatch(toggleSidebar(false))
+         document.body.style.overflow = 'auto'
+         document.body.style.paddingRight = '0px'
       },900)
    }
    return (

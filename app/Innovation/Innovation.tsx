@@ -7,7 +7,8 @@ import { RootState } from '../Redux/store';
 import { useSelector } from 'react-redux';
 import Arrows from './Arrows';
 import Titles from './Titles';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import ScrollLock from '../UtilsComponents/ScrollLock';
 
 const list = [{
    number: '$51.16 B',
@@ -29,17 +30,7 @@ const list = [{
 
 function Innovation() {
    const kukaVisible = useSelector((state: RootState) => state.mainPageReducer.kukaNotVisible);
-   const test = useSelector((state: RootState) => state.mainPageReducer.isFourthAction);
-
-   useEffect(() => {
-      if (test === true) {
-         document.body.style.overflow = 'hidden';
-         setTimeout(() => {
-            document.body.style.overflow = 'auto';
-         }, 1200)
-      }
-      
-   }, [test])
+   const isLastAction = useSelector((state: RootState) => state.mainPageReducer.isThirdAction);
 
 return (
    <section className={styles.innovation}>
@@ -48,7 +39,9 @@ return (
          <div className={`${styles.innovation__imgContainer1} ${styles.innovation__imges} ${ kukaVisible ? styles.innovation__imgContainer1__active : ''}`}>
             <Image src={kuka} alt='kuka' fill={true} />
          </div>
-         <div className={`${styles.innovation__imgContainer2} ${styles.innovation__imges} ${ kukaVisible ? styles.innovation__imgContainer2__active : ''}`}>
+         <div className={`${styles.innovation__imgContainer2} ${styles.innovation__imges}
+         ${ kukaVisible ? styles.innovation__imgContainer2__active : ''}
+         ${isLastAction ? styles.innovation__imgContainer2__unactive : ''}`}>
             <Image src={lab} alt='lab' fill={true} />
          </div>
          <ul className={`${styles.innovation__sideTitle} ${ kukaVisible ? styles.innovation__sideTitle__active : ''}`}>

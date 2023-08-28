@@ -11,8 +11,9 @@ function Titles() {
    const isKukaActive = useSelector((state: RootState) => state.mainPageReducer.kukaNotVisible);
    const isFirstAction = useSelector((state: RootState) => state.mainPageReducer.isFirstAction);
    const isSecondAction = useSelector((state: RootState) => state.mainPageReducer.isSecondAction);
+   const isLastAction = useSelector((state: RootState) => state.mainPageReducer.isThirdAction);
    return (
-      <section className={styles.titles}>
+      <section className={`${styles.titles} ${isLastAction ? styles.titles__unactive : ''}`}>
          {isKukaActive && <Title isAction={isKukaActive} translate={transformTranslate[0]} title={titleData[0]} />}
          {isKukaActive && <Title isAction={isFirstAction} translate={transformTranslate[1]} title={titleData[1]}/>}
          {isKukaActive && <Title isAction={isSecondAction} translate={transformTranslate[2]} title={titleData[2]}/>}
