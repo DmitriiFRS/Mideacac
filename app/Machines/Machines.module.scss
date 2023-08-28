@@ -30,6 +30,14 @@
       -webkit-text-fill-color: transparent;
       padding: 5px 0px;
    }
+   &__newest__title1 {
+      transform: translateX(-90%);
+      opacity: 0;
+   }
+   &__newest__title2 {
+      transform: translateX(90%);
+      opacity: 0;
+   }
 }
 .magboost__container {
    width: 615px;
@@ -52,4 +60,10 @@
    transform: translateX(0%);
    opacity: 1;
    cursor: pointer;
+}
+.titleActive {
+   transition: 0.8s;
+   transition-delay: 0.4s;
+   transform: translateX(0%);
+   opacity: 1;
 }

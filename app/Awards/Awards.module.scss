@@ -1,6 +1,15 @@
 .awards {
-   margin: 250px 0 0 0;
-   height: 100px;
-   width: 100%;
-   border: 1px solid #000;
+   max-width: 1580px;
+   margin: 300px auto 0 auto;
+   padding: 0 40px;
+   &__title {
+      text-align: center;
+      font-size: 40px;
+   }
+   &__iconsBody {
+      margin: 50px 0 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
 }
