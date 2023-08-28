@@ -8,6 +8,7 @@ import TriggerSection1 from './Innovation/inViewTriggerSections/TriggerSection1'
 import TriggerSection2 from './Innovation/inViewTriggerSections/TriggerSection2'
 import TriggerSection3 from './Innovation/inViewTriggerSections/TriggerSection3'
 import TriggerSection4 from './Innovation/inViewTriggerSections/TriggerSection4'
+import TriggerSection5 from './Innovation/inViewTriggerSections/TriggerSection5'
 
 const params = [{
   title: 'V8 Series VRF',
@@ -30,6 +31,7 @@ export default function Home() {
       <TriggerSection2 />
       <TriggerSection3 />
       <TriggerSection4 />
+      <TriggerSection5 />
       <Machines />
     </main>
   )

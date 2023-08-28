@@ -71,14 +71,21 @@
 .fakeBlock {
    margin: 550px 0 0 0;
    text-align: center;
-   border: 1px solid #000;
    height: 50px;
    visibility: hidden;
 }
 .fakeBlock2 {
    margin: 140px 0 0 0;
    text-align: center;
-   border: 1px solid #000;
+   height: 50px;
+   font-family: 'Everett-Light';
+   font-weight: 700;
+   font-size: 30px;
+   visibility: hidden;
+}
+.lastFakeBlock {
+   margin: 20px;
+   text-align: center;
    height: 50px;
    font-family: 'Everett-Light';
    font-weight: 700;
@@ -152,11 +159,16 @@
    drop-shadow(0px 4px 10px rgb(110, 0, 133))
    drop-shadow(0px 4px 30px rgb(110, 0, 133))
 }
-.titleBody {
+.titles {
    position: fixed;
    left: 30%;
-   top: 40%;
+   top: 43%;
+   flex-direction: column;
    max-width: 40%;
+}
+.titleBody {
+   transition: 0.8s;
+   width: 100%;
    @media(max-width: 1850px) {
       top: 48%;
    }
@@ -164,17 +176,12 @@
       animation-name: leftToRight;
       animation-duration: 0.8s;
    }
-   &:nth-child(2) {
-      margin: 120px 0 0 0;
-   }
-   &:nth-child(3) {
-      margin: 240px 0 0 0;
-      overflow: hidden;
+   &:not(:first-child) {
+      margin: 30px 0 0 0;
    }
    &__title {
       line-height: 190%;
       font-size: 25px;
-      transition: 0.8s;
       @media(max-width: 1850px) {
          font-size: 20px;
       }
@@ -213,7 +220,7 @@
 
 @keyframes leftToRight {
    0% {
-      transform: translateX(-100%);
+      transform: translateX(-50%);
       opacity: 0;
    }
    100% {

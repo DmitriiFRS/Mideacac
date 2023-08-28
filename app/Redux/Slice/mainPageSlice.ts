@@ -6,6 +6,7 @@ type initialStateType = {
    isFirstAction: boolean
    isSecondAction: boolean
    isThirdAction: boolean
+   isFourthAction: boolean
 }
 
 const initialState: initialStateType = {
@@ -13,7 +14,8 @@ const initialState: initialStateType = {
    linesVisibility: false,
    isFirstAction: false,
    isSecondAction: false,
-   isThirdAction: false
+   isThirdAction: false,
+   isFourthAction: false
 }
 
 const mainPageSlice = createSlice({
@@ -34,9 +36,12 @@ const mainPageSlice = createSlice({
       },
       thirdAction: (state, action: PayloadAction<boolean>) => {
          state.isThirdAction = action.payload
+      },
+      fourthAction: (state, action: PayloadAction<boolean>) => {
+         state.isFourthAction = action.payload
       }
    }
 })
 
-export const {changeKukaStatus, setVisibleLines, firstAction, secondAction, thirdAction} = mainPageSlice.actions;
+export const {changeKukaStatus, setVisibleLines, firstAction, secondAction, thirdAction, fourthAction} = mainPageSlice.actions;
 export default mainPageSlice.reducer;

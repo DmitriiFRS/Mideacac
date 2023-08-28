@@ -4,12 +4,15 @@ import styles from './Innovation.module.scss';
 
 type titlePropsType = {
    isAction?: boolean
+   translate: string
+   title: string
 }
 
-function Title({isAction}: titlePropsType) {
+function Title({isAction, translate, title}: titlePropsType) {
 return (
-   <div className={styles.titleBody}>
-      <p style={{transform: isAction ? 'translateX(0%)' : 'translateX(100%)', opacity: isAction ? '1' : '0'}} className={styles.titleBody__title}>Midea инвестирует в научно-исследовательскую работу и разработки в области холодильного оборудования.</p>
+   <div style={{transform: isAction ? 'translateX(0%)' : translate, opacity: isAction ? '1' : '0'}} className={styles.titleBody}>
+      <p
+      className={styles.titleBody__title}>{title}</p>
    </div>
 )
 }

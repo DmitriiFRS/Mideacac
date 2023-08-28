@@ -7,6 +7,7 @@ import { RootState } from '../Redux/store';
 import { useSelector } from 'react-redux';
 import Arrows from './Arrows';
 import Titles from './Titles';
+import { useEffect } from 'react';
 
 const list = [{
    number: '$51.16 B',
@@ -28,6 +29,17 @@ const list = [{
 
 function Innovation() {
    const kukaVisible = useSelector((state: RootState) => state.mainPageReducer.kukaNotVisible);
+   const test = useSelector((state: RootState) => state.mainPageReducer.isFourthAction);
+
+   useEffect(() => {
+      if (test === true) {
+         document.body.style.overflow = 'hidden';
+         setTimeout(() => {
+            document.body.style.overflow = 'auto';
+         }, 1200)
+      }
+      
+   }, [test])
 
 return (
    <section className={styles.innovation}>
