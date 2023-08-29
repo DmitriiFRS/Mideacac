@@ -61,8 +61,6 @@
       font-size: 35vh;
       font-weight: 600;
       color: #fff;
-      animation-name: firstAppearance;
-      animation-duration: 2.3s;
    }
    &__bgTitle {
       font-size: 30vh;
@@ -70,16 +68,5 @@
       left: 5%;
       top: 25%;
       text-shadow: 3px 1px 0 #ffffff;
-      animation-name: firstAppearance;
-      animation-duration: 1s;
-   }
-}
-
-@keyframes firstAppearance {
-   0% {
-      opacity: 0;
-   }
-   100% {
-      opacity: 1;
    }
 }

@@ -1,7 +1,7 @@
 "use client"
 import styles from './SideMenu.module.scss';
 import Image from 'next/image';
-import close from '../../public/icons/Close-sidebar.svg'
+import close from '../../public/icons/Close-sidebar.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { isTransitionAside, toggleSidebar, transformWindow } from '../Redux/Slice/asideMenuSlice';
 import { RootState } from '../Redux/store';
@@ -13,13 +13,13 @@ function Sidebar() {
    const dispatch = useDispatch()
    function closeSideMenu() {
       if (transform === 'translateX(-110%)') return
-      dispatch(transformWindow('translateX(-110%)'))
-      dispatch(isTransitionAside(false))
+      dispatch(transformWindow('translateX(-110%)'));
+      dispatch(isTransitionAside(false));
 
       setTimeout(() => {
          dispatch(toggleSidebar(false))
-         document.body.style.overflow = 'auto'
-         document.body.style.paddingRight = '0px'
+         document.body.style.overflow = 'auto';
+         document.body.style.paddingRight = '0px';
       },900)
    }
    return (
