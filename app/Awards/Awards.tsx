@@ -11,11 +11,11 @@ return (
    <section className={styles.awards}>
       <h2 className={styles.awards__title}>Награды и сертификаты</h2>
       <div className={styles.awards__iconsBody}>
-         <Image src={ahri} alt='' />
-         <Image src={iso} alt='' />
-         <Image src={eurovent} alt='' />
-         <Image src={gold2022} alt='' />
-         <Image src={eurovent} alt='' />
+         <Image src={ahri} alt='logo' />
+         <Image src={iso} alt='logo' />
+         <Image src={eurovent} alt='logo' />
+         <Image src={gold2022} alt='logo' />
+         <Image src={eurovent} alt='logo' />
       </div>
    </section>
 )

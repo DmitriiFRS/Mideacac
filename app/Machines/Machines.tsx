@@ -6,14 +6,14 @@ import NewestMachines from './NewestMachines';
 const newestData = [{
    deviceName: 'Magboost',
    image: magboost,
-   imageWidth: 614,
-   imageHeight: 302
+   imageWidth: 700,
+   imageHeight: 352
 },
 {
    deviceName: 'V8',
    image: v8,
-   imageWidth: 300,
-   imageHeight: 314
+   imageWidth: 350,
+   imageHeight: 364
 }]
 
 function Machines() {
