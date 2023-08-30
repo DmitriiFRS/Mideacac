@@ -7,15 +7,14 @@ type ordersType = {
 }
 
 type ImageTitleProps = {
-   margin?: string
    image: any
    description: string
    orders: ordersType
 }
 
-function ImageTitleRC({margin, image, description, orders}: ImageTitleProps) {
+function ImageTitleRC({ image, description, orders}: ImageTitleProps) {
    return (
-      <div style={{margin: margin}} className={styles.imageTitle}>
+      <div className={styles.imageTitle}>
          <div style={{order: orders.order1}} className={styles.image__container}>
             <Image src={image} alt='1' fill={true}/>
          </div>

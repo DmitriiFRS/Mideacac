@@ -10,12 +10,14 @@
 }
 .VRFMain {
    padding: 10px 70px;
-   margin: 65vh 0 0 0;
+   margin: 175vh auto 0 auto;
+   max-width: 1536px;
 }
 .imageTitle {
    display: grid;
    gap: 100px;
    grid-template-columns: 1fr 1fr;
+   margin: 10vh 0 0 0;
 }
 .image__container {
    position: relative;
@@ -72,4 +74,35 @@
       text-shadow: 3px 1px 0 #ffffff;
    }
 }
-//11.5
+.preview {
+   &__titleContainer {
+      font-size: 50px;
+   }
+   &__textLine {
+      position: relative;
+      line-height: 145%;
+      color: #b4b4b4;
+      z-index: 2;
+   }
+   &__textFiller {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0%;
+      color: rgb(27, 27, 27);
+      white-space: nowrap;
+      z-index: 3;
+      overflow: hidden;
+      transition: 0.7s;
+   }
+}
+
+@keyframes test {
+   0% {
+      width: 0%;
+   }
+   100% {
+      width: 100%;
+   }
+}

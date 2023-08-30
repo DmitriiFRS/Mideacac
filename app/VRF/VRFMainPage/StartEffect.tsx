@@ -16,6 +16,7 @@ function StartEffect() {
          else
          dispatch(scrollPosition(scrollPercentage / 2));
       }
+      console.log(scrollRate);
       window.addEventListener('scroll', handleScroll);
       return () => {
          window.removeEventListener('scroll', handleScroll)
@@ -23,7 +24,7 @@ function StartEffect() {
 
    })
    return (
-      <div style={{opacity: `${scrollRate > 5 ? 1 - scrollRate / 10 : 1}`}} className={styles.effect}>
+      <div style={{opacity: `${scrollRate > 5 ? 1 - scrollRate / 10 : 1}`, display: scrollRate > 12 ? 'none' : 'flex'}} className={styles.effect}>
          <h2 style={{transform: `scale(${scrollRate < 1 ? 1 : scrollRate})`}} className={styles.effect__title}>Magboost</h2>
          <h3 className={styles.effect__bgTitle}>A legendary</h3>
       </div>
