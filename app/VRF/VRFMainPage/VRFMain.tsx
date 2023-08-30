@@ -1,8 +1,11 @@
+"use client"
+
 import styles from '../VRFv8Page.module.scss';
 import ImageTitleRC from './ImageTitleRC';
 import vrf1 from '../../../public/img/VRFV8/VRF-1.png'
 import vrf2 from '../../../public/img/VRFV8/VRF-2.jpg'
 import PreviewTitle from './PreviewTitle';
+import { useEffect, useLayoutEffect } from 'react';
 
 const imageTitleParams = [{
    image: vrf1,
@@ -14,6 +17,9 @@ const imageTitleParams = [{
 }
 ]
 function VRFMain() {
+   useLayoutEffect(() => {
+      window.scrollTo(0,0)
+   },[])
    return (
       <section className={styles.VRFMain}>
          <PreviewTitle />

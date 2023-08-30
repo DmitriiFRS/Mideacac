@@ -58,7 +58,7 @@
    display: flex;
    align-items: center;
    justify-content: center;
-   z-index: 1;
+   z-index: 6;
    
    &__title {
       font-size: 35vh;
@@ -82,7 +82,7 @@
       position: relative;
       line-height: 145%;
       color: #b4b4b4;
-      z-index: 2;
+      z-index: 7;
    }
    &__textFiller {
       position: absolute;
