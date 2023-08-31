@@ -9,6 +9,9 @@ import { useEffect, useState } from 'react';
 
 
 function VRFMain() {
+   useEffect(() => {
+      window.scrollTo(0,0)
+   }, [])
    const [isView1, setIsView1] = useState(false)
    const [isView2, setIsView2] = useState(false)
    const imageTitleParams = [{
