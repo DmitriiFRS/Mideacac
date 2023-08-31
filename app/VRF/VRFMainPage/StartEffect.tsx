@@ -5,6 +5,8 @@ import styles from '../VRFv8Page.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/app/Redux/store';
 import { scrollPosition } from '@/app/Redux/Slice/innovationsSlice';
+import Image from 'next/image';
+import magboostStart from '../../../public/img/Innovation/MagboostStart.png';
 
 function StartEffect() {
    const dispatch = useDispatch();
@@ -16,7 +18,6 @@ function StartEffect() {
          else
          dispatch(scrollPosition(scrollPercentage / 2));
       }
-      console.log(scrollRate);
       window.addEventListener('scroll', handleScroll);
       return () => {
          window.removeEventListener('scroll', handleScroll)
@@ -25,8 +26,10 @@ function StartEffect() {
    })
    return (
       <div style={{opacity: `${scrollRate > 5 ? 1 - scrollRate / 10 : 1}`, display: scrollRate > 12 ? 'none' : 'flex'}} className={styles.effect}>
-         <h2 style={{transform: `scale(${scrollRate < 1 ? 1 : scrollRate})`}} className={styles.effect__title}>Magboost</h2>
-         <h3 className={styles.effect__bgTitle}>A legendary</h3>
+         <div style={{transform: `scale(${scrollRate < 1 ? 1 : scrollRate})`}} className={styles.effect__magboostContainer}>
+            <Image src={magboostStart} alt='Magboost' fill={true}></Image>
+         </div>
+         <h3 style={{transform: `scale(${scrollRate < 1 ? 1 : (scrollRate + 10) / 10})`}} className={styles.effect__bgTitle}>Legendary</h3>
       </div>
    )
 }

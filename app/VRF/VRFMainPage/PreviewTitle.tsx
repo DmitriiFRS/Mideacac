@@ -11,27 +11,27 @@ function PreviewTitle() {
       <div className={styles.preview__titleContainer}>
          <div className={styles.preview__textLine}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit
-            <div style={{width: scrollPosition > 15 ? '100%' :'0%'}} className={styles.preview__textFiller}>Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
+            <div style={{width: scrollPosition > 18.5 ? '100%' :'0%'}} className={styles.preview__textFiller}>Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
          </div>
          <div className={styles.preview__textLine}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit
-            <div style={{width: scrollPosition > 16.5 ? '100%' : '0%'}} className={styles.preview__textFiller}>Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
+            <div style={{width: scrollPosition > 20 ? '100%' : '0%'}} className={styles.preview__textFiller}>Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
          </div>
          <div className={styles.preview__textLine}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit
-            <div style={{width: scrollPosition > 18 ? '100%' : '0%'}} className={styles.preview__textFiller}>Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
+            <div style={{width: scrollPosition > 21.5 ? '100%' : '0%'}} className={styles.preview__textFiller}>Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
          </div>
          <div className={styles.preview__textLine}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit
-            <div style={{width: scrollPosition > 19.5 ? '100%' : '0%'}} className={styles.preview__textFiller}>Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
+            <div style={{width: scrollPosition > 23 ? '100%' : '0%'}} className={styles.preview__textFiller}>Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
          </div>
          <div className={styles.preview__textLine}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit
-            <div style={{width: scrollPosition > 21 ? '100%' : '0%'}} className={styles.preview__textFiller}>Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
+            <div style={{width: scrollPosition > 24.5 ? '100%' : '0%'}} className={styles.preview__textFiller}>Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
          </div>
          <div className={styles.preview__textLine}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit
-            <div style={{width: scrollPosition > 22.5 ? '100%' : '0%'}} className={styles.preview__textFiller}>Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
+            <div style={{width: scrollPosition > 25.5 ? '100%' : '0%'}} className={styles.preview__textFiller}>Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
          </div>
       </div>
    </div>
