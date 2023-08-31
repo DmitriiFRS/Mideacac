@@ -13,6 +13,8 @@
       object-fit: cover;
    }
    &__newest1 {
+      position: relative;
+      z-index: 5;
       opacity: 0;
       transform: translateX(-90%);
       transition: 0.3s;
@@ -21,6 +23,8 @@
       }
    }
    &__newest2 {
+      position: relative;
+      z-index: 5;
       opacity: 0;
       transform: translateX(90%);
       transition: 0.3s;
@@ -88,7 +92,4 @@
    transition-delay: 0.4s;
    transform: translateX(0%);
    opacity: 1;
-}
-.t {
-   
 }
