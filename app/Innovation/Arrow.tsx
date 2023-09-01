@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import styles from './Innovation.module.scss';
 import { RootState } from '../Redux/store';
 
-function component() {
+function Arrow() {
    const isLastAction = useSelector((state: RootState) => state.mainPageReducer.isThirdAction)
 return (
    <div className={`${styles.arrows__body} ${isLastAction ? styles.arrows__unactive : ''}`}>
@@ -24,4 +24,4 @@ return (
    
 )
 }
-export default component;
+export default Arrow;
