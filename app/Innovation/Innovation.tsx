@@ -5,8 +5,8 @@ import lab from '../../public/img/Innovation/lab_new.png';
 import Image from 'next/image';
 import { RootState } from '../Redux/store';
 import { useSelector } from 'react-redux';
-import Arrows from './Arrows';
 import Titles from './Titles';
+import Arrows from './Arrows';
 
 const list = [{
    number: '$51.16 B',
