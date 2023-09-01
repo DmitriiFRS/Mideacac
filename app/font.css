@@ -3,3 +3,5 @@
    src: local('TWKEverett-Light'),
    url('/public/fonts/Everett/TWKEverett-Light.otf') format('otf');
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&display=swap');

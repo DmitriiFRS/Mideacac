@@ -4,9 +4,6 @@ import { useInView } from 'react-intersection-observer';
 import styles from '../VRFv8Page.module.scss';
 import Image from 'next/image';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../Redux/store';
-import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 
 type ImageTitleProps = {
    image: any
@@ -19,7 +16,7 @@ type ImageTitleProps = {
 
 function ImageTitleRC({ image, description, title, orders, isView, setIsView}: ImageTitleProps) {
    const {ref, inView} = useInView({
-      threshold: 0,
+      threshold: [0, 0],
    })
    useEffect(() => {
       setIsView(inView)
@@ -34,10 +31,10 @@ function ImageTitleRC({ image, description, title, orders, isView, setIsView}: I
                <h3 className={`${styles.title__mainTitle} ${isView ? styles.title__mainTitle__active : ''}`}>{title}</h3>
             </div>
             <ul className={styles.title__list}>
-               <li className={styles.title__item}>{description[0]}</li>
-               <li className={styles.title__item}>{description[1]}</li>
-               <li className={styles.title__item}>{description[2]}</li>
-               <li className={styles.title__item}>{description[3]}</li>
+               <li className={`${styles.title__item} ${styles.title__item__el1} ${isView ? styles.title__item__active : ''}`}>{description[0]}</li>
+               <li className={`${styles.title__item} ${styles.title__item__el2} ${isView ? styles.title__item__active : ''}`}>{description[1]}</li>
+               <li className={`${styles.title__item} ${styles.title__item__el3} ${isView ? styles.title__item__active : ''}`}>{description[2]}</li>
+               <li className={`${styles.title__item} ${styles.title__item__el4} ${isView ? styles.title__item__active : ''}`}>{description[3]}</li>
             </ul>
          </div>
       </div>

@@ -29,10 +29,6 @@ function VRFMain() {
       setIsView: setIsView2
    }
    ]
-
-   function itemIsView(status: boolean) {
-      
-   }
    return (
       <section className={styles.VRFMain}>
          <PreviewTitle />
