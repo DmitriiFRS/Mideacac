@@ -1,4 +1,4 @@
-
+"use client"
 
 import Arrow from './Arrow';
 import styles from './Innovation.module.scss';
