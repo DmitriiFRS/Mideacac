@@ -1,20 +1,36 @@
 .aside {
+   border: 1px solid #000;
    &__openBtn {
+      margin: 0 0 0 20px;
       position: fixed;
       left: 0;
-      top: calc(50vh - 49px);
-      z-index: 2;
+      top: 30vh;
+      z-index: 20;
+      height: 40vh;
+      width: 4vw;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       background: transparent;
       padding: 10px;
+      cursor: auto;
+      & span:not(:last-child) {
+         margin: 0 0 10px 0;
+      }
+   }
+   &__btnBlock {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 20%;
+      width: 100%;
+      border: 1px solid #000;
+      cursor: pointer;
       & span {
          width: 25px;
          height: 3px;
          background: #000;
-      }
-      & span:not(:last-child) {
-         margin: 0 0 10px 0;
       }
    }
 }
