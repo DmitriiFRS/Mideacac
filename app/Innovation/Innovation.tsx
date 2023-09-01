@@ -7,8 +7,6 @@ import { RootState } from '../Redux/store';
 import { useSelector } from 'react-redux';
 import Arrows from './Arrows';
 import Titles from './Titles';
-import { useEffect, useState } from 'react';
-import ScrollLock from '../UtilsComponents/ScrollLock';
 
 const list = [{
    number: '$51.16 B',
