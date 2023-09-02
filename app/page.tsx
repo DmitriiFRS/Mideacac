@@ -15,8 +15,8 @@ const params = [{
   href: '/VRF'
 },
 {
-  title: 'VRF Fancoil',
-  href: '/Fancoil'
+  title: 'V8',
+  href: '/V8'
 }
 ]
 

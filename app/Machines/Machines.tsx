@@ -9,13 +9,15 @@ const newestData = [{
    deviceName: 'Magboost',
    image: magboost,
    imageWidth: 700,
-   imageHeight: 352
+   imageHeight: 352,
+   href: '/Magboost'
 },
 {
    deviceName: 'V8',
    image: v8,
    imageWidth: 700,
-   imageHeight: 504
+   imageHeight: 504,
+   href: 'V8'
 }]
 
 function Machines() {
@@ -25,7 +27,7 @@ return (
          <Image src={shadowbg} alt='' fill={true}></Image>
       </div>
       {newestData.map((el, idx) => {
-         return <NewestMachines key={idx} deviceName={el.deviceName} image={el.image} imageWidth={el.imageWidth} imageHeight={el.imageHeight} />
+         return <NewestMachines key={idx} deviceName={el.deviceName} image={el.image} imageWidth={el.imageWidth} imageHeight={el.imageHeight} href={el.href} />
       })}
    </section>
 )

@@ -9,20 +9,20 @@ import Titles from './Titles';
 import Arrows from './Arrows';
 
 const list = [{
-   number: '$51.16 B',
-   subtitle: 'Total Revenue'
+   number: '0%',
+   subtitle: 'Количество брака'
 },
 {
-   number: '166,000+',
-   subtitle: 'Employees'
+   number: '17',
+   subtitle: 'Научно-исследовательских центров'
 },
 {
-   number: '278th',
-   subtitle: 'On the Fortune Global 500'
+   number: '20,000+',
+   subtitle: 'Экспертов НИЦ'
 },
 {
-   number: '200+',
-   subtitle: 'Countries & Regions of Operation'
+   number: '$4.05 млрд',
+   subtitle: 'Инвестиций за последние 5 лет'
 }
 ]
 

@@ -10,12 +10,13 @@ type NewestMachinesPropsType = {
    image: any
    imageWidth: number
    imageHeight: number
+   href: string
 }
 
-function NewestMachines({deviceName, image, imageWidth, imageHeight}: NewestMachinesPropsType) {
+function NewestMachines({deviceName, image, imageWidth, imageHeight, href}: NewestMachinesPropsType) {
    const visibility = useSelector((state: RootState) => state.mainPageReducer.isThirdAction);
    return (
-      <Link href='/VRF' className={`${deviceName === 'Magboost' ? styles.machines__newest1 : styles.machines__newest2} ${visibility ? styles.active : ''}`}>
+      <Link href={href} className={`${deviceName === 'Magboost' ? styles.machines__newest1 : styles.machines__newest2} ${visibility ? styles.active : ''}`}>
          <p className={`${styles.machines__newest__title} ${deviceName === 'Magboost' ? styles.machines__newest__title1 : styles.machines__newest__title2} ${visibility ? styles.titleActive : ''}`}>{deviceName}</p>
          <div className={styles.machines__container}>
             <Image className={styles.t} src={image} alt='magboost' width={imageWidth} height={imageHeight} />

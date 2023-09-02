@@ -1,19 +1,19 @@
 import styles from './Achievments.module.scss';
 const list = [{
-   number: '$51.16 B',
-   subtitle: 'Total Revenue'
+   number: '$51.16 млрд',
+   subtitle: 'Общий доход'
 },
 {
    number: '166,000+',
-   subtitle: 'Employees'
+   subtitle: 'Наших специалистов по всему миру'
 },
 {
-   number: '278th',
-   subtitle: 'On the Fortune Global 500'
+   number: '278 место',
+   subtitle: 'В списке Fortune Global 500'
 },
 {
    number: '200+',
-   subtitle: 'Countries & Regions of Operation'
+   subtitle: 'Стран и регионов деятельности'
 }
 ]
 
