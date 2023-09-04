@@ -9,6 +9,7 @@ import TriggerSection2 from './Innovation/inViewTriggerSections/TriggerSection2'
 import TriggerSection3 from './Innovation/inViewTriggerSections/TriggerSection3'
 import TriggerSection4 from './Innovation/inViewTriggerSections/TriggerSection4'
 import Awards from './Awards/Awards'
+import ReferenceProject from './ReferenceProject/ReferenceProject'
 
 const params = [{
   title: 'V8 Series VRF',
@@ -33,6 +34,7 @@ export default function Home() {
       <TriggerSection4 />
       <Machines />
       <Awards />
+      <ReferenceProject />
     </main>
   )
 }

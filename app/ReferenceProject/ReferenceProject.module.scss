@@ -1,0 +1,21 @@
+.reference {
+   padding: 50px 0 0 0;
+   background: #fff;
+   display: flex;
+   flex-direction: column;
+   &__title {
+      font-size: 36px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+   }
+   &__imgBody {
+      padding: 50px 0 0 0;
+      transition: 5s;
+   }
+   &__img {
+      position: relative;
+      width: 100vw;
+      height: 65vh;
+   }
+}
