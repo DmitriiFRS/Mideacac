@@ -82,6 +82,9 @@
       padding: 130px 0 0 0;
       display: flex;
       justify-content: center;
+      position: relative;
+      z-index: 2;
+      background: #ffffff;
       &__list {
          display: flex;
          flex-direction: column;
@@ -122,26 +125,65 @@
       flex: 0 1 50%;
       height: 100%;
       background: #d8d8d8;
+      &__title {
+         font-size: 22px;
+         font-weight: 500;
+         width: 120%;
+         max-width: 170px;
+         text-align: center;
+      }
       &__list {
          display: flex;
          flex-direction: column;
          align-items: center;
-         height: 100%;
+         height: 80%;
          width: 100%;
          overflow: auto;
          font-size: 20px;
+         position: relative;
+         z-index: 1;
+         animation-name: animateSubmenu;
+         animation-duration: 1.5s;
+         transition: 0.5s;
       }
-      &__item:not(:last-child) {
-         margin: 0 0 25px 0;
+      &__item {
+         cursor: pointer;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         height: 100%;
+         width: 60%;
+         &:not(:last-child) {
+            margin: 0 0 25px 0;
+         }
+         &:nth-child(2) {
+            height: 100%;
+            width: 25%;
+         }
+         &:nth-child(3) {
+            height: 100%;
+            width: 25%;
+         }
       }
       &__img {
+         margin: 20px 0 0 0;
          position: relative;
          width: 100%;
-         height: 20%;
+         height: 70%;
       }
    }
 }
-// anim
+@keyframes animateSubmenu {
+   0% {
+      transform: translateX(-100%);
+   }
+   30% {
+      transform: translateX(-100%);
+   }
+   100% {
+      transform: translateX(0%);
+   }
+}
 @keyframes openSideMenu {
    0% {
       transform: translateX(-120%);

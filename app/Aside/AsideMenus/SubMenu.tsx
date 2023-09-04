@@ -7,9 +7,10 @@ import Image from 'next/image';
 
 function SubMenu() {
    const activeSubMenu = useSelector((state: RootState) => state.asideReducer.subMenuActive);
+   const isToggle = useSelector((state: RootState) => state.asideReducer.isToggleSubmenu);
    return (
       <nav className={styles.sidebar__subMenu}>
-         <ul className={styles.sidebar__subMenu__list}>
+         <ul style={{transform: isToggle ? 'translateX(-100%)' : 'translateX(0%)'}} className={styles.sidebar__subMenu__list}>
             {activeSubMenu.map((el, index) => {
                return (
                   <li className={styles.sidebar__subMenu__item} key={index}>

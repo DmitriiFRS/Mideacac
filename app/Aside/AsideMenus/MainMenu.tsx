@@ -6,20 +6,29 @@ import styles from '../SideMenu.module.scss';
 import arrow from '../../../public/icons/ArrowNext.svg';
 import { RootState } from '@/app/Redux/store';
 import { useDispatch, useSelector } from 'react-redux';
-import { setActiveMenuItem, setActiveSubMenu } from '@/app/Redux/Slice/asideMenuSlice';
+import { animateSubmenu, setActiveMenuItem, setActiveSubMenu } from '@/app/Redux/Slice/asideMenuSlice';
+import { useState } from 'react';
 
 
 function MainMenu() {
+   const [isProgress, setProgress] = useState<boolean>(false);
    const mainMenuList = useSelector((state: RootState) => state.asideReducer.mainMenuList);
-   const isOpenAsideMenu = useSelector((state: RootState) => state.asideReducer.isTransition)
+   const isToggle = useSelector((state: RootState) => state.asideReducer.isToggleSubmenu);
    const dispatch = useDispatch()
    function changeMenuItem (index: number) {
-      const newMenu = mainMenuList.map((el, idx) => {
-         if (index === idx) return {...el, isActive: true}
-         else return {...el, isActive: false}
-      })
-      dispatch(setActiveMenuItem(newMenu))
-      dispatch(setActiveSubMenu(index))
+      if (isToggle) return;
+      dispatch(animateSubmenu(true));
+      setTimeout(() => {
+         const newMenu = mainMenuList.map((el, idx) => {
+            if (index === idx) return {...el, isActive: true}
+            else return {...el, isActive: false}
+         })
+         dispatch(setActiveMenuItem(newMenu))
+         dispatch(setActiveSubMenu(index))
+      }, 500)
+      setTimeout(() => {
+         dispatch(animateSubmenu(false));
+      }, 1000)
    }
    return (
       <nav className={styles.sidebar__mainMenu}>

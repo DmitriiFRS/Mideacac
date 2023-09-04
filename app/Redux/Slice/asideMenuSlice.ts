@@ -8,6 +8,7 @@ type initialStateType = {
    isTransition: boolean
    mainMenuList: Array<mainMenuListType> 
    subMenuActive: Array<goodsObjType>
+   isToggleSubmenu: boolean
 }
 type mainMenuListType = {
    title: string
@@ -58,7 +59,8 @@ const initialState: initialStateType = {
          id: 5
       },
    ],
-   subMenuActive: subMenuGoods[0]
+   subMenuActive: subMenuGoods[0],
+   isToggleSubmenu: false
 }
 
 const sidebarSlice = createSlice({
@@ -69,18 +71,21 @@ const sidebarSlice = createSlice({
          state.isSidebarOpen = action.payload;
       },
       transformWindow: (state, action: PayloadAction<string>) => {
-         state.translateWindow = action.payload
+         state.translateWindow = action.payload;
       },
       setActiveMenuItem: (state, action: PayloadAction<Array<mainMenuListType>>) => {
-         state.mainMenuList = action.payload
+         state.mainMenuList = action.payload;
       },
       isTransitionAside: (state, action: PayloadAction<boolean>) => {
-         state.isTransition = action.payload
+         state.isTransition = action.payload;
       },
       setActiveSubMenu: (state, action: PayloadAction<number>) => {
-         state.subMenuActive = subMenuGoods[action.payload]
+         state.subMenuActive = subMenuGoods[action.payload];
       },
+      animateSubmenu: (state, action: PayloadAction<boolean>) => {
+         state.isToggleSubmenu = action.payload;
+      }
    }
 })
-export const {toggleSidebar, transformWindow, setActiveMenuItem, isTransitionAside, setActiveSubMenu} = sidebarSlice.actions;
+export const {toggleSidebar, transformWindow, setActiveMenuItem, isTransitionAside, setActiveSubMenu, animateSubmenu} = sidebarSlice.actions;
 export default sidebarSlice.reducer;
