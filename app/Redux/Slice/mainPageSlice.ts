@@ -7,6 +7,8 @@ type initialStateType = {
    isSecondAction: boolean
    isThirdAction: boolean
    isNewestVisible: boolean
+   even: boolean,
+   odd: boolean
 }
 
 const initialState: initialStateType = {
@@ -15,7 +17,9 @@ const initialState: initialStateType = {
    isFirstAction: false,
    isSecondAction: false,
    isThirdAction: false,
-   isNewestVisible: false
+   isNewestVisible: false,
+   even: false,
+   odd: false,
 }
 
 const mainPageSlice = createSlice({
@@ -29,19 +33,25 @@ const mainPageSlice = createSlice({
          state.linesVisibility = action.payload;
       },
       firstAction: (state, action: PayloadAction<boolean>) => {
-         state.isFirstAction = action.payload
+         state.isFirstAction = action.payload;
       },
       secondAction: (state, action: PayloadAction<boolean>) => {
-         state.isSecondAction = action.payload
+         state.isSecondAction = action.payload;
       },
       thirdAction: (state, action: PayloadAction<boolean>) => {
-         state.isThirdAction = action.payload
+         state.isThirdAction = action.payload;
       },
       newestVisible: (state, action: PayloadAction<boolean>) => {
-         state.isNewestVisible = action.payload
+         state.isNewestVisible = action.payload;
+      },
+      referenceEven: (state, action: PayloadAction<boolean>) => {
+         state.even = action.payload;
+      },
+      referenceOdd: (state, action: PayloadAction<boolean>) => {
+         state.odd = action.payload;
       }
    }
 })
 
-export const {changeKukaStatus, setVisibleLines, firstAction, secondAction, thirdAction, newestVisible} = mainPageSlice.actions;
+export const {changeKukaStatus, setVisibleLines, firstAction, secondAction, thirdAction, newestVisible, referenceEven, referenceOdd} = mainPageSlice.actions;
 export default mainPageSlice.reducer;

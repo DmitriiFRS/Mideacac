@@ -10,12 +10,50 @@
       text-align: center;
    }
    &__imgBody {
-      padding: 50px 0 0 0;
       transition: 5s;
+      position: relative;
    }
    &__img {
       position: relative;
       width: 100vw;
       height: 65vh;
+      &__effects {
+         position: absolute;
+         top: 0;
+         z-index: 10;
+      }
+      &__effect1 {
+         left: -2.7%;
+         height: 100%;
+         width: 24.85%;
+         transform: skew(-8.2deg);
+         background: #ffffff;
+         transition: 0.7s;
+
+      }
+      &__effect2 {
+         left: 25.5%;
+         height: 100%;
+         width: 24.85%;
+         transform: skew(-8.1deg);
+         background: #ffffff;
+         transition: 0.7s;
+      }
+      &__effect3 {
+         left: 50.3%;
+         height: 100%;
+         width: 24.85%;
+         transform: skew(-7.9deg);
+         background: #ffffff;
+         transition: 0.7s;
+      }
+      &__effect4 {
+         left: 75%;
+         height: 100%;
+         width: 27.75%;
+         transform: skew(-7.9deg);
+         background: #ffffff;
+         transition: 0.7s;
+      }
    }
 }

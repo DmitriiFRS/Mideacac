@@ -1,6 +1,7 @@
 import styles from './ReferenceProject.module.scss';
 import Image from 'next/image';
 import reference from '../../public/img/ReferenceImg.png';
+import Effectbg from './Effectbg';
 
 function ReferenceProject() {
    return (
@@ -10,8 +11,10 @@ function ReferenceProject() {
          <div className={styles.reference__img}>
             <Image quality={100} fill={true} src={reference} alt='referenceProjects' />
          </div>
+         <Effectbg />
       </div>
    </section>
    )
 }
 export default ReferenceProject;
+// first block width: active '28.3%' hide '30.5%'
