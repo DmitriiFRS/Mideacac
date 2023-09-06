@@ -4,7 +4,7 @@ import styles from './V8.module.scss';
 
 const v8 = {
    video: '/video/V8-Main-Video.mp4',
-   modelStartText: '/img/Innovation/v8Text.png',
+   modelStartText: '/img/Innovation/v8Text2.png',
    previewTitle: {
       title1: 'Мы не ограничиваемся просто созданием продукта. Мы стремимся к совершенству, и наша',
       title2: 'новейшая серия - Midea V8 VRF - это воплощение этой философии.',
