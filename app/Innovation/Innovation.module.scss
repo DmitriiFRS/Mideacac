@@ -86,7 +86,7 @@
 }
 .titles {
    position: fixed;
-   left: 30%;
+   left: 28%;
    top: 43%;
    flex-direction: column;
    max-width: 40%;
@@ -112,6 +112,7 @@
    &__title {
       line-height: 140%;
       font-size: 25px;
+      font-weight: 500;
       @media(max-width: 1850px) {
          font-size: 20px;
       }
@@ -125,6 +126,7 @@
    height: 100%;
    display: flex;
    justify-content: space-around;
+   gap: 10%;
    &__body {
       width: 10%;
       &:last-child {

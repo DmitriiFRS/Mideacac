@@ -8,7 +8,7 @@ import { RootState } from '../Redux/store';
 const transformTranslate = ['translateX(-50%)', 'translateX(50%)', 'translateX(-50%)']
 const titleData = ['17 научно-исследовательских центров Midea играют определяющую роль в способности компании предлагать клиентам передовые, энергоэффективные и надежные климатические системы и оборудование.',
    'Благодаря инвестициям в инновации Midea остается в авангарде технологий ОВКВ и предоставляет своим клиентам абсолютно революционные разработки в области изготовления чиллеров и систем VRF.',
-   'Техника соответствует заявленным характеристикам, стоимости и качеству']
+   'Техника соответствует заявленным характеристикам, стоимости и качеству.']
 function Titles() {
    const isKukaActive = useSelector((state: RootState) => state.mainPageReducer.kukaNotVisible);
    const isFirstAction = useSelector((state: RootState) => state.mainPageReducer.isFirstAction);

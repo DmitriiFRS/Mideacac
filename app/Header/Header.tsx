@@ -1,6 +1,6 @@
 import styles from './Header.module.scss';
 import Image from 'next/image';
-import MideaLogo from '../../public/icons/MideaCAC.png'
+import MideaLogo from '../../public/icons/MainLogo.png'
 import Link from 'next/link';
 
 function Header() {

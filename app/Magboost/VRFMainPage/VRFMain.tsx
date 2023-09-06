@@ -3,7 +3,7 @@
 import styles from '../VRFv8Page.module.scss';
 import ImageTitleRC from './ImageTitleRC';
 import vrf1 from '../../../public/gif/fonsiz_siklli0000-1000.gif';
-import vrf2 from '../../../public/img/VRFV8/VRF-2.jpg'
+import vrf2 from '../../../public/img/Innovation/VRF-2.jpg'
 import PreviewTitle from './PreviewTitle';
 import { useEffect, useState } from 'react';
 

@@ -1,7 +1,7 @@
 "use client"
 import styles from './Innovation.module.scss';
 import kuka from '../../public/img/Innovation/kuka.png';
-import lab from '../../public/img/Innovation/lab_new.png';
+import lab from '../../public/img/Innovation/lab2.png';
 import Image from 'next/image';
 import { RootState } from '../Redux/store';
 import { useSelector } from 'react-redux';
