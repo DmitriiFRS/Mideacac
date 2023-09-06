@@ -59,19 +59,13 @@
       font-weight: 500;
       overflow: hidden;
    }
+   &__description {
+      margin: 0 0 0 1vw;
+   }
    &__item {
       transform: translateX(-800%);
       opacity: 0;
-      &::before {
-         content: "";
-         display: inline-block;
-         background-repeat: no-repeat;
-         background-image: url(../../public/icons/check.svg);
-         height: 30px;
-         width: 30px;
-         transform: translateY(4px);
-         margin: 0 20px 0 0;
-      }
+      display: flex;
       &:not(:last-child) {
          margin: 0 0 20px 0;
       }

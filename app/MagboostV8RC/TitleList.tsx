@@ -2,10 +2,12 @@
 import { useInView } from 'react-intersection-observer';
 import styles from './MagboostV8.module.scss';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 type TitleListTypeProps = {
    description: Array<string>
+   icons: Array<string>
 }
-function TitleList({description} : TitleListTypeProps) {
+function TitleList({description, icons} : TitleListTypeProps) {
    const {ref, inView} = useInView({
       threshold: [0, 0],
       rootMargin: '20% 0% 0% 0%'
@@ -16,10 +18,22 @@ function TitleList({description} : TitleListTypeProps) {
    }, [inView])
    return (
       <ul ref={ref} className={styles.title__list}>
-         <li className={`${styles.title__item} ${styles.title__item__el1} ${isView ? styles.title__item__active : ''}`}>{description[0]}</li>
-         <li className={`${styles.title__item} ${styles.title__item__el2} ${isView ? styles.title__item__active : ''}`}>{description[1]}</li>
-         <li className={`${styles.title__item} ${styles.title__item__el3} ${isView ? styles.title__item__active : ''}`}>{description[2]}</li>
-         <li className={`${styles.title__item} ${styles.title__item__el4} ${isView ? styles.title__item__active : ''}`}>{description[3]}</li>
+         <li className={`${styles.title__item} ${styles.title__item__el1} ${isView ? styles.title__item__active : ''}`}>
+            <Image src={icons[0]} alt='' width={30} height={30}></Image>
+            <p className={styles.title__description}>{description[0]}</p>
+         </li>
+         <li className={`${styles.title__item} ${styles.title__item__el2} ${isView ? styles.title__item__active : ''}`}>
+            <Image src={icons[0]} alt='' width={30} height={30}></Image>
+            <p className={styles.title__description}>{description[1]}</p>
+         </li>
+         <li className={`${styles.title__item} ${styles.title__item__el3} ${isView ? styles.title__item__active : ''}`}>
+            <Image src={icons[0]} alt='' width={30} height={30}></Image>
+            <p className={styles.title__description}>{description[2]}</p>
+         </li>
+         <li className={`${styles.title__item} ${styles.title__item__el4} ${isView ? styles.title__item__active : ''}`}>
+            <Image src={icons[0]} alt='' width={30} height={30}></Image>
+            <p className={styles.title__description}>{description[3]}</p>
+         </li>
       </ul>
    )
 }

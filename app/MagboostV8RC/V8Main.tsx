@@ -6,6 +6,7 @@ import vrf1 from '../../public/gif/fonsiz_siklli0000-1000.gif';
 import vrf2 from '../../public/img/Innovation/VRF-2.jpg'
 import PreviewTitle from './PreviewTitle';
 import { useEffect, useState } from 'react';
+import test from '../../public/icons/MagboostV8/icon1.png'
 
 type PreviewTitleType = {
    title1: string,
@@ -31,6 +32,7 @@ function VRFMain({previewTitle} : V8MagboostMainType) {
       image: vrf1,
       title: 'Магнитный подшипник с пространственно-векторным управлением',
       description: ['Меньше трения', 'Меньше износа', 'Высокая точность', 'Большая стабильность'],
+      icons: ['/icons/MagboostV8/icon1.png'],
       isView: isView1,
       setIsView: setIsView1
    },
@@ -38,6 +40,7 @@ function VRFMain({previewTitle} : V8MagboostMainType) {
       image: vrf2,
       title: 'Компрессор Back-to-Back с магнитной подвеской вала',
       description: ['Меньше трения', 'Отсутствие масла', 'Уменьшение уровня шума', 'Минимальная вибрация'],
+      icons: ['/icons/MagboostV8/icon1.png'],
       isView: isView2,
       setIsView: setIsView2
    }
@@ -50,7 +53,7 @@ function VRFMain({previewTitle} : V8MagboostMainType) {
             index % 2 === 0 ? orders.push('2','1') : orders.push('1','2')
             return (
                <ImageTitleRC key={index} image={el.image} title={el.title} description={el.description}
-               orders={orders} isView={el.isView} setIsView={el.setIsView}/>
+               icons={el.icons} orders={orders} isView={el.isView} setIsView={el.setIsView}/>
             )
          })}
       </section>

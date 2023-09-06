@@ -10,12 +10,13 @@ type ImageTitleProps = {
    image: any
    title: string
    description: Array<string>
+   icons: Array<string>
    orders: Array<string>
    isView: boolean
    setIsView: Function
 }
 
-function ImageTitleRC({ image, description, title, orders, isView, setIsView}: ImageTitleProps) {
+function ImageTitleRC({ image, description, icons, title, orders, isView, setIsView}: ImageTitleProps) {
    const {ref, inView} = useInView({
       threshold: [0, 0],
    })
@@ -31,7 +32,7 @@ function ImageTitleRC({ image, description, title, orders, isView, setIsView}: I
             <div className={styles.title__mainTitleBody}>
                <h3 className={`${styles.title__mainTitle} ${isView ? styles.title__mainTitle__active : ''}`}>{title}</h3>
             </div>
-            <TitleList description={description} />
+            <TitleList description={description} icons={icons} />
          </div>
       </div>
    )
