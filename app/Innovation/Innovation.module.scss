@@ -21,7 +21,7 @@
    }
    &__imgContainer2 {
       position: absolute !important;
-      top: -30%;
+      top: -40%;
       left: 13%;
       width: 70%;
       height: 800px !important;
@@ -70,52 +70,29 @@
       }
    }
 }
-.fakeBlock {
-   margin: 500px 0 0 0;
-   text-align: center;
-   height: 50px;
-   visibility: hidden;
-}
-.fakeBlock2 {
-   margin: 160px 0 0 0;
-   text-align: center;
-   height: 50px;
-   font-weight: 700;
-   font-size: 30px;
-   visibility: hidden;
-}
 .titles {
    position: fixed;
-   left: 28%;
+   left: 23%;
    top: 43%;
    flex-direction: column;
-   max-width: 40%;
    &__unactive {
       transition: 0.4s;
       opacity: 0;
    }
 }
-.titleBody {
-   transition: 0.8s;
+.textLine {
    width: 100%;
-   margin: 30px 0 0 0;
-   @media(max-width: 1850px) {
-      top: 48%;
+   transition: 0.8s;
+   font-size: 25px;
+   white-space: nowrap;
+   overflow: hidden;
+   font-weight: 500;
+   line-height: 150%;
+   &:not(:last-child) {
+      margin:  1.5vh 0 0 0;
    }
-   &:first-child {
-      animation-name: leftToRight;
-      animation-duration: 0.8s;
-   }
-   &:not(:first-child) {
-      margin: 40px 0 0 0;
-   }
-   &__title {
-      line-height: 140%;
-      font-size: 25px;
-      font-weight: 500;
-      @media(max-width: 1850px) {
-         font-size: 20px;
-      }
+   &:nth-child(5) {
+      margin: 5vh 0 0 0;
    }
 }
 .arrows {
@@ -161,6 +138,14 @@
       transition: 0.4s;
       opacity: 0;
    }
+}
+.trigger {
+   position: relative;
+   margin: 145vh 0 0 0;
+   z-index: 20;
+   height: 1vh;
+   width: 100vw;
+   visibility: hidden;
 }
 
 @keyframes slide {

@@ -1,12 +1,13 @@
 "use client"
 import styles from './Innovation.module.scss';
-import kuka from '../../public/img/Innovation/kuka.png';
 import lab from '../../public/img/Innovation/lab.png';
 import Image from 'next/image';
 import { RootState } from '../Redux/store';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Titles from './Titles';
 import Arrows from './Arrows';
+import { useEffect } from 'react';
+import { scrollPosition } from '../Redux/Slice/mainPageSlice';
 
 const list = [{
    number: '0%',
@@ -27,22 +28,31 @@ const list = [{
 ]
 
 function Innovation() {
-   const kukaVisible = useSelector((state: RootState) => state.mainPageReducer.kukaNotVisible);
-   const isLastAction = useSelector((state: RootState) => state.mainPageReducer.isThirdAction);
-
+   const isFixedEventActive = useSelector((state: RootState) => state.mainPageReducer.isFixedEventActive);
+   const dispatch = useDispatch();
+   const scrollRate = useSelector((state: RootState) => state.mainPageReducer.scrollRate);
+   useEffect(() => {
+      function handleScroll() {
+         const scrollPercentage = (window.pageYOffset / (document.body.scrollHeight - window.innerHeight) * 100)
+         if (scrollPercentage < 1) dispatch(scrollPosition(1));
+         else
+         dispatch(scrollPosition(scrollPercentage / 2));
+      }
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+         window.removeEventListener('scroll', handleScroll)
+      }
+   })
 return (
    <section className={styles.innovation}>
       <h2 className={styles.innovation__title}>Innovation and technologies</h2>
       <div className={styles.innovation__contentBody}>
-         <div className={`${styles.innovation__imgContainer1} ${styles.innovation__imges} ${ kukaVisible ? styles.innovation__imgContainer1__active : ''}`}>
-            <Image src={kuka} alt='kuka' fill={true} />
-         </div>
          <div className={`${styles.innovation__imgContainer2} ${styles.innovation__imges}
-         ${ kukaVisible ? styles.innovation__imgContainer2__active : ''}
-         ${isLastAction ? styles.innovation__imgContainer2__unactive : ''}`}>
+         ${scrollRate > 17.1 ? styles.innovation__imgContainer2__active : ''}
+         ${isFixedEventActive || scrollRate > 30 ? styles.innovation__imgContainer2__unactive : ''}`}>
             <Image src={lab} alt='lab' fill={true} />
          </div>
-         <ul className={`${styles.innovation__sideTitle} ${ kukaVisible ? styles.innovation__sideTitle__active : ''}`}>
+         <ul className={`${styles.innovation__sideTitle} ${scrollRate > 17.1 ? styles.innovation__sideTitle__active : ''}`}>
             {list.map((el, idx) => {
                return (
                   <li key={idx} className={styles.innovation__sideTitle__item}>
@@ -53,8 +63,8 @@ return (
             })}
          </ul>
       </div>
-      {kukaVisible && <Arrows />}
-      {kukaVisible && <Titles />}
+      {scrollRate > 17.1 && !isFixedEventActive && scrollRate < 30 && <Arrows />}
+      {scrollRate > 17.1 && <Titles />}
    </section>
 )
 }
