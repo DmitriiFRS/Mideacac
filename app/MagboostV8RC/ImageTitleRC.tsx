@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import styles from './MagboostV8.module.scss';
 import Image from 'next/image';
 import { useEffect } from 'react';
+import TitleList from './TitleList';
 
 type ImageTitleProps = {
    image: any
@@ -30,12 +31,7 @@ function ImageTitleRC({ image, description, title, orders, isView, setIsView}: I
             <div className={styles.title__mainTitleBody}>
                <h3 className={`${styles.title__mainTitle} ${isView ? styles.title__mainTitle__active : ''}`}>{title}</h3>
             </div>
-            <ul className={styles.title__list}>
-               <li className={`${styles.title__item} ${styles.title__item__el1} ${isView ? styles.title__item__active : ''}`}>{description[0]}</li>
-               <li className={`${styles.title__item} ${styles.title__item__el2} ${isView ? styles.title__item__active : ''}`}>{description[1]}</li>
-               <li className={`${styles.title__item} ${styles.title__item__el3} ${isView ? styles.title__item__active : ''}`}>{description[2]}</li>
-               <li className={`${styles.title__item} ${styles.title__item__el4} ${isView ? styles.title__item__active : ''}`}>{description[3]}</li>
-            </ul>
+            <TitleList description={description} />
          </div>
       </div>
    )
