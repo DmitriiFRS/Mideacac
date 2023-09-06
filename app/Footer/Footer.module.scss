@@ -3,7 +3,8 @@
    width: 100%;
    background: #000;
    color: #fff;
-   font-size: 15px;
+   line-height: 150%;
+   font-weight: 300;
    &__container {
       max-width: 1536px;
       margin: 0 auto;
@@ -11,6 +12,7 @@
       display: flex;
       align-items: center;
       height: 100%;
+      gap: 40px;
    }
    &__logo {
       max-width: 400px;
