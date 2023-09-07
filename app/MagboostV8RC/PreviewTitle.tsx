@@ -2,7 +2,6 @@
 import { useSelector } from 'react-redux';
 import styles from './MagboostV8.module.scss';
 import { RootState } from '@/app/Redux/store';
-import { stixTwoText } from '../layout';
 
 
 function PreviewTitle({previewTitle}: {previewTitle: Array<string>}) {
@@ -10,7 +9,7 @@ function PreviewTitle({previewTitle}: {previewTitle: Array<string>}) {
    const scrollPosition = useSelector((state: RootState) => state.innovationsReducer.scrollRate);
    return (
    <div className={styles.preview}>
-      <div className={`${styles.preview__titleContainer} ${stixTwoText.className}`}>
+      <div className={`${styles.preview__titleContainer}`}>
          {previewTitle.map((el, index) => {
             scrollPositionCount += 1;
             return (
@@ -20,7 +19,6 @@ function PreviewTitle({previewTitle}: {previewTitle: Array<string>}) {
                </div>
             )
          })}
-
       </div>
    </div>
    )
