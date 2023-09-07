@@ -2,44 +2,27 @@
 
 import styles from './MagboostV8.module.scss';
 import ImageTitleRC from './ImageTitleRC';
-import vrf1 from '../../public/gif/fonsiz_siklli0000-1000.gif';
-import vrf2 from '../../public/img/Innovation/VRF-2.jpg';
 import PreviewTitle from './PreviewTitle';
 import { useEffect, useState } from 'react';
-
-type PreviewTitleType = {
-   title1: string,
-   title2: string,
-   title3: string,
-   title4: string,
-   title5: string,
-   title6: string,
-   title7: string,
-   title8: string
+type ImageTitleBlockType = {
+   image: any
+   title: string
+   description: Array<string>
+   icons: Array<string>
 }
-export type V8MagboostMainType = {
-   previewTitle: PreviewTitleType;
- }
 
-function VRFMain({previewTitle} : V8MagboostMainType) {
+function V8Main({previewTitle, imageTitleBlock} : {previewTitle: Array<string>, imageTitleBlock: Array<ImageTitleBlockType>}) {
    useEffect(() => {
       window.scrollTo(0,0)
+      console.log(previewTitle, imageTitleBlock)
    }, [])
    const [isView1, setIsView1] = useState(false)
    const [isView2, setIsView2] = useState(false)
    const imageTitleParams = [{
-      image: vrf1,
-      title: 'Магнитный подшипник с пространственно-векторным управлением',
-      description: ['Меньше трения', 'Меньше износа', 'Высокая точность', 'Большая стабильность'],
-      icons: ['/icons/MagboostV8/icon12.png', '/icons/MagboostV8/icon4.png', '/icons/MagboostV8/icon13.png', '/icons/MagboostV8/icon14.png'],
       isView: isView1,
       setIsView: setIsView1
    },
    {
-      image: vrf2,
-      title: 'Компрессор Back-to-Back с магнитной подвеской вала',
-      description: ['Меньше трения', 'Отсутствие масла', 'Уменьшение уровня шума', 'Минимальная вибрация'],
-      icons: ['/icons/MagboostV8/icon1.png', '/icons/MagboostV8/icon2.png', '/icons/MagboostV8/icon3.png', '/icons/MagboostV8/icon4.png'],
       isView: isView2,
       setIsView: setIsView2
    }
@@ -51,11 +34,11 @@ function VRFMain({previewTitle} : V8MagboostMainType) {
             let orders = [];
             index % 2 === 0 ? orders.push('2','1') : orders.push('1','2')
             return (
-               <ImageTitleRC key={index} image={el.image} title={el.title} description={el.description}
-               icons={el.icons} orders={orders} isView={el.isView} setIsView={el.setIsView}/>
+               <ImageTitleRC key={index} image={imageTitleBlock[index].image} title={imageTitleBlock[index].title} description={imageTitleBlock[index].description}
+               icons={imageTitleBlock[index].icons} orders={orders} isView={el.isView} setIsView={el.setIsView}/>
             )
          })}
       </section>
    )
 }
-export default VRFMain;
+export default V8Main;

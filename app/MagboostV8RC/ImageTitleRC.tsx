@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useEffect } from 'react';
 import TitleList from './TitleList';
 
-type ImageTitleProps = {
+export type ImageTitleProps = {
    image: any
    title: string
    description: Array<string>
