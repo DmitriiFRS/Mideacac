@@ -14,7 +14,6 @@ function PreviewTitle({previewTitle}: {previewTitle: Array<string>}) {
       <div className={`${styles.preview__titleContainer} ${stixTwoText.className}`}>
          {previewTitle.map((el, index) => {
             scrollPositionCount += 1;
-            console.log(el)
             return (
                <div key={index} className={styles.preview__textLine}>
                   {el}
