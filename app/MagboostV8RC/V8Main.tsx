@@ -3,10 +3,9 @@
 import styles from './MagboostV8.module.scss';
 import ImageTitleRC from './ImageTitleRC';
 import vrf1 from '../../public/gif/fonsiz_siklli0000-1000.gif';
-import vrf2 from '../../public/img/Innovation/VRF-2.jpg'
+import vrf2 from '../../public/img/Innovation/VRF-2.jpg';
 import PreviewTitle from './PreviewTitle';
 import { useEffect, useState } from 'react';
-import test from '../../public/icons/MagboostV8/icon1.png'
 
 type PreviewTitleType = {
    title1: string,
@@ -32,7 +31,7 @@ function VRFMain({previewTitle} : V8MagboostMainType) {
       image: vrf1,
       title: 'Магнитный подшипник с пространственно-векторным управлением',
       description: ['Меньше трения', 'Меньше износа', 'Высокая точность', 'Большая стабильность'],
-      icons: ['/icons/MagboostV8/icon1.png'],
+      icons: ['/icons/MagboostV8/icon12.png', '/icons/MagboostV8/icon4.png', '/icons/MagboostV8/icon13.png', '/icons/MagboostV8/icon14.png'],
       isView: isView1,
       setIsView: setIsView1
    },
@@ -40,7 +39,7 @@ function VRFMain({previewTitle} : V8MagboostMainType) {
       image: vrf2,
       title: 'Компрессор Back-to-Back с магнитной подвеской вала',
       description: ['Меньше трения', 'Отсутствие масла', 'Уменьшение уровня шума', 'Минимальная вибрация'],
-      icons: ['/icons/MagboostV8/icon1.png'],
+      icons: ['/icons/MagboostV8/icon1.png', '/icons/MagboostV8/icon2.png', '/icons/MagboostV8/icon3.png', '/icons/MagboostV8/icon4.png'],
       isView: isView2,
       setIsView: setIsView2
    }

@@ -23,15 +23,15 @@ function TitleList({description, icons} : TitleListTypeProps) {
             <p className={styles.title__description}>{description[0]}</p>
          </li>
          <li className={`${styles.title__item} ${styles.title__item__el2} ${isView ? styles.title__item__active : ''}`}>
-            <Image src={icons[0]} alt='' width={30} height={30}></Image>
+            <Image src={icons[1]} alt='' width={30} height={30}></Image>
             <p className={styles.title__description}>{description[1]}</p>
          </li>
          <li className={`${styles.title__item} ${styles.title__item__el3} ${isView ? styles.title__item__active : ''}`}>
-            <Image src={icons[0]} alt='' width={30} height={30}></Image>
+            <Image src={icons[2]} alt='' width={30} height={30}></Image>
             <p className={styles.title__description}>{description[2]}</p>
          </li>
          <li className={`${styles.title__item} ${styles.title__item__el4} ${isView ? styles.title__item__active : ''}`}>
-            <Image src={icons[0]} alt='' width={30} height={30}></Image>
+            <Image src={icons[3]} alt='' width={30} height={30}></Image>
             <p className={styles.title__description}>{description[3]}</p>
          </li>
       </ul>

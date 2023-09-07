@@ -4,12 +4,13 @@ import { useSelector } from 'react-redux';
 import styles from './MagboostV8.module.scss';
 import { RootState } from '@/app/Redux/store';
 import { V8MagboostMainType } from './V8Main';
+import { stixTwoText } from '../layout';
 
 function PreviewTitle({previewTitle}: V8MagboostMainType) {
    const scrollPosition = useSelector((state: RootState) => state.innovationsReducer.scrollRate);
    return (
    <div className={styles.preview}>
-      <div className={styles.preview__titleContainer}>
+      <div className={`${styles.preview__titleContainer} ${stixTwoText.className}`}>
          <div className={styles.preview__textLine}>
             {previewTitle.title1}
             <div style={{width: scrollPosition > 18.5 ? '100%' :'0%'}} className={styles.preview__textFiller}>{previewTitle.title1}</div>
