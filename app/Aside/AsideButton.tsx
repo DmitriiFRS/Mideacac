@@ -10,6 +10,7 @@ import icon3 from '../../public/icons/Sidemenu/sideIcon3.svg';
 import icon4 from '../../public/icons/Sidemenu/sideIcon4.svg';
 import icon5 from '../../public/icons/Sidemenu/sideIcon5.svg';
 import icon6 from '../../public/icons/Sidemenu/sideIcon6.svg';
+import { useEffect, useState } from 'react';
 const btnSections = [{
    id: 1,
    icon: icon1
@@ -35,10 +36,14 @@ const btnSections = [{
 function AsideButton() {
    const dispatch = useDispatch();
    const mainMenuList = useSelector((state: RootState) => state.asideReducer.mainMenuList);
+   const [scrollWidth, setScrollWidth] = useState<null | number>(null)
+   useEffect(() => {
+      setScrollWidth(window.innerWidth - document.body.clientWidth)
+   }, [])
    function openSideMenu() {
       dispatch(toggleSidebar(true));
       document.body.style.overflow = 'hidden'
-      document.body.style.paddingRight = `${window.innerWidth - document.body.clientWidth}px`
+      document.body.style.paddingRight = `${scrollWidth}px`;
       setTimeout(() => {
          dispatch(transformWindow('translateX(0%)'));
          dispatch(isTransitionAside(true));
