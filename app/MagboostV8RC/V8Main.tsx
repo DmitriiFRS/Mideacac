@@ -4,6 +4,9 @@ import styles from './MagboostV8.module.scss';
 import ImageTitleRC from './ImageTitleRC';
 import PreviewTitle from './PreviewTitle';
 import { useEffect, useState } from 'react';
+import PreviewTitleText from './PreviewTitleText';
+import { useSelector } from 'react-redux';
+import { RootState } from '../Redux/store';
 type ImageTitleBlockType = {
    image: any
    title: string
@@ -27,9 +30,12 @@ function V8Main({previewTitle, imageTitleBlock} : {previewTitle: Array<string>, 
       setIsView: setIsView2
    }
    ]
+   const scrollPosition = useSelector((state: RootState) => state.innovationsReducer.scrollRate);
    return (
       <section className={styles.VRFMain}>
-         <PreviewTitle previewTitle={previewTitle} />
+         <PreviewTitle>
+            <PreviewTitleText previewTitle={previewTitle} scrollPosition={scrollPosition}/>
+         </PreviewTitle>
          {imageTitleParams.map((el, index) => {
             let orders = [];
             index % 2 === 0 ? orders.push('2','1') : orders.push('1','2')

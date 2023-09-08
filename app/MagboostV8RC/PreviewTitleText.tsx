@@ -1,3 +1,4 @@
+
 import styles from './MagboostV8.module.scss';
 
 function PreviewTitleText({previewTitle, scrollPosition}: {previewTitle: Array<string>, scrollPosition: number}) {
