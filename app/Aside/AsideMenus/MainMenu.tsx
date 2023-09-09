@@ -14,21 +14,27 @@ function MainMenu() {
    const [isProgress, setProgress] = useState<boolean>(false);
    const mainMenuList = useSelector((state: RootState) => state.asideReducer.mainMenuList);
    const isToggle = useSelector((state: RootState) => state.asideReducer.isToggleSubmenu);
-   const dispatch = useDispatch()
+   const dispatch = useDispatch();
    function changeMenuItem (index: number) {
-      if (isToggle) return;
+      if (isToggle || isProgress) return;
+      if (mainMenuList[index].isActive) return
+      const newMenu = mainMenuList.map((el, idx) => {
+         if (index === idx) return {...el, isActive: true}
+         else return {...el, isActive: false}
+      })
+      console.log(index)
+      setProgress(true);
       dispatch(animateSubmenu(true));
       setTimeout(() => {
-         const newMenu = mainMenuList.map((el, idx) => {
-            if (index === idx) return {...el, isActive: true}
-            else return {...el, isActive: false}
-         })
          dispatch(setActiveMenuItem(newMenu))
          dispatch(setActiveSubMenu(index))
       }, 500)
       setTimeout(() => {
          dispatch(animateSubmenu(false));
-      }, 1000)
+      }, 500)
+      setTimeout(() => {
+         setProgress(false);
+      }, 900)
    }
    return (
       <nav className={styles.sidebar__mainMenu}>

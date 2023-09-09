@@ -1,5 +1,4 @@
 .aside {
-   border: 1px solid #000;
    &__openBtn {
       margin: 0 0 0 20px;
       position: fixed;
@@ -131,6 +130,7 @@
          width: 120%;
          max-width: 170px;
          text-align: center;
+         color: #5f5f5f;
       }
       &__list {
          display: flex;
