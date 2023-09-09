@@ -11,7 +11,7 @@ function SideMenu() {
    const isSidebarOpen = useSelector((state: RootState) => state.asideReducer.isSidebarOpen);
 return (
    <section className={styles.aside}>
-      {isSidebarOpen && pathname === '/' ? <Sidebar /> : !isSidebarOpen && pathname === '/' ? <AsideButton /> : ''} 
+      {isSidebarOpen ? <Sidebar /> : !isSidebarOpen ? <AsideButton /> : ''} 
    </section>
 )
 }

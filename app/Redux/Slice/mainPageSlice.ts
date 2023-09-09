@@ -3,7 +3,7 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 type initialStateType = {
    isFixedEventActive: boolean
    linesVisibility: boolean
-   scrollRate: number
+   scrollRate: number | null
    isNewestVisible: boolean
    even: boolean,
    odd: boolean
@@ -12,7 +12,7 @@ type initialStateType = {
 const initialState: initialStateType = {
    isFixedEventActive: false,
    linesVisibility: false,
-   scrollRate: 1,
+   scrollRate: null,
    isNewestVisible: false,
    even: false,
    odd: false,

@@ -36,7 +36,7 @@ const btnSections = [{
 function AsideButton() {
    const dispatch = useDispatch();
    const mainMenuList = useSelector((state: RootState) => state.asideReducer.mainMenuList);
-   const [scrollWidth, setScrollWidth] = useState<null | number>(null)
+   const [scrollWidth, setScrollWidth] = useState<null | number>(null);
    useEffect(() => {
       setScrollWidth(window.innerWidth - document.body.clientWidth)
    }, [])

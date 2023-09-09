@@ -7,6 +7,7 @@ export type goodsObjType = {
    title: string
    img: any
    id: number
+   href?: string
 }
 type subMenuGoodsType = Array<Array<goodsObjType>>
 
@@ -15,17 +16,20 @@ export const subMenuGoods: subMenuGoodsType = [[
    {
       title: 'Magboost',
       img: magboostSide,
-      id: 0
+      id: 0,
+      href: '/Magboost'
    },
    {
       title: 'V8 series VRF',
       img: v8Side,
-      id: 0
+      id: 0,
+      href: '/V8'
    },
    {
       title: 'V6 series VRF',
       img: v6Side,
-      id: 0
+      id: 0,
+      href: '/V6'
    },
 ],
 [

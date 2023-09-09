@@ -34,16 +34,18 @@ function Innovation() {
    useEffect(() => {
       function handleScroll() {
          const scrollPercentage = (window.pageYOffset / (document.body.scrollHeight - window.innerHeight) * 100)
-         if (scrollPercentage < 1) dispatch(scrollPosition(1));
+         if (scrollPercentage < 1 && scrollPercentage !== null) dispatch(scrollPosition(1));
          else
          dispatch(scrollPosition(scrollPercentage / 2));
       }
       window.addEventListener('scroll', handleScroll);
+      console.log(scrollRate)
       return () => {
          window.removeEventListener('scroll', handleScroll)
       }
    })
 return (
+   scrollRate &&
    <section className={styles.innovation}>
       <h2 className={styles.innovation__title}>Innovation and technologies</h2>
       <div className={styles.innovation__contentBody}>
