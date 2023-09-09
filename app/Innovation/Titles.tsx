@@ -8,6 +8,7 @@ function Titles() {
    const isFixedEventActive = useSelector((state: RootState) => state.mainPageReducer.isFixedEventActive);
    const scrollRate = useSelector((state: RootState) => state.mainPageReducer.scrollRate);
    return (
+      scrollRate && 
       <section className={`${styles.titles} ${isFixedEventActive || scrollRate > 30 ? styles.titles__unactive : ''}`}>
          <p style={{width: scrollRate < 17.5 ? '0%' : '100%'}} className={styles.textLine}>17 научно-исследовательских центров Midea играют определяющую</p>
          <p style={{width: scrollRate < 18.7 ? '0%' : '100%'}} className={styles.textLine}>роль в способности компании предлагать клиентам передовые,</p>
