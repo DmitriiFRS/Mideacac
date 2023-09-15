@@ -1,4 +1,6 @@
 import styles from './Achievments.module.scss';
+import Image from 'next/image';
+import imagebg from '../../public/img/second/second_framebg.png';
 const list = [{
    number: '$51.16 млрд',
    subtitle: 'Общий доход'
@@ -19,18 +21,14 @@ const list = [{
 
 function Navigation() {
    return (
-   <nav className={styles.navigation}>
-      <ul className={styles.navigation__list}>
-         {list.map((el, index) => {
-            return (
-               <li key={index} className={styles.navigation__item}>
-                  <h4 className={styles.navigation__main}>{el.number}</h4>
-                  <p className={styles.navigation__subtitle}>{el.subtitle}</p>
-               </li>
-            )
-         })}
-      </ul>
-   </nav>
+      <section className={styles.achievments}>
+         <div className={styles.achievments__img}>
+            <Image src={imagebg} alt='bg' fill={true} />
+         </div>
+         <nav className={styles.achievments__nav}>
+            
+         </nav>
+      </section>
    )
 }
 export default Navigation;

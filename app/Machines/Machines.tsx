@@ -26,9 +26,7 @@ return (
       <div className={styles.machines__shadow}>
          <Image src={shadowbg} alt='' fill={true}></Image>
       </div>
-      {newestData.map((el, idx) => {
-         return <NewestMachines key={idx} deviceName={el.deviceName} image={el.image} imageWidth={el.imageWidth} imageHeight={el.imageHeight} href={el.href} />
-      })}
+      
    </section>
 )
 }

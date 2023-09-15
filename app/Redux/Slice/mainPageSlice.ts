@@ -5,7 +5,9 @@ type initialStateType = {
    linesVisibility: boolean
    scrollRate: number | null
    isNewestVisible: boolean
-   even: boolean,
+   isAwardsView: boolean
+   isReferenceView: boolean
+   even: boolean
    odd: boolean
 }
 
@@ -14,6 +16,8 @@ const initialState: initialStateType = {
    linesVisibility: false,
    scrollRate: null,
    isNewestVisible: false,
+   isAwardsView: false,
+   isReferenceView: false,
    even: false,
    odd: false,
 }
@@ -39,9 +43,15 @@ const mainPageSlice = createSlice({
       },
       referenceOdd: (state, action: PayloadAction<boolean>) => {
          state.odd = action.payload;
+      },
+      setAwardsView: (state, action: PayloadAction<boolean>) => {
+         state.isAwardsView = action.payload
+      },
+      setReferenceView: (state, action: PayloadAction<boolean>) => {
+         state.isReferenceView = action.payload
       }
    }
 })
 
-export const {changeEventStatus, setVisibleLines, scrollPosition, newestVisible, referenceEven, referenceOdd} = mainPageSlice.actions;
+export const {changeEventStatus, setVisibleLines, scrollPosition, newestVisible, referenceEven, referenceOdd, setAwardsView, setReferenceView} = mainPageSlice.actions;
 export default mainPageSlice.reducer;
