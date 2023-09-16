@@ -7,20 +7,6 @@ import Image from 'next/image';
 import shadowbg from '../../public/img/Innovation/shadow_bg.jpg';
 import { useState } from 'react';
 
-const newestData = [{
-   deviceName: 'Magboost',
-   image: magboost,
-   imageWidth: 700,
-   imageHeight: 352,
-   href: '/Magboost'
-},
-{
-   deviceName: 'V8',
-   image: v8,
-   imageWidth: 700,
-   imageHeight: 504,
-   href: 'V8'
-}]
 const machineSettings = [{
    magboost: {
       width: '40%',
@@ -53,8 +39,9 @@ const machineSettings = [{
       filter: 'blur(0)'
    }
 }]
+
 function Machines() {
-   const [toggleMachine, setToggleMachine] = useState<boolean>(false)
+   const [toggleMachine, setToggleMachine] = useState<boolean>(false);
 return (
    <section className={styles.machines}>
       <div className={styles.machines__shadow}>
@@ -64,10 +51,10 @@ return (
          <p style={{transform: toggleMachine  ? 'translateX(-25vw)' : 'translateX(0)', opacity: toggleMachine ? 0 : 1}} className={styles.machines__title1}>Magboost</p>
          <p style={{transform: toggleMachine ? 'translateX(-9.5vw)' : 'translateX(15vw)', opacity: toggleMachine ? 1 : 0}} className={styles.machines__title2}>V8</p>
       </div>
-      <div onClick={() => {setToggleMachine(true)}} style={toggleMachine ? machineSettings[1].magboost : machineSettings[0].magboost} className={styles.machines__magboost}>
+      <div onClick={() => {setToggleMachine(false)}} style={toggleMachine ? machineSettings[1].magboost : machineSettings[0].magboost} className={styles.machines__magboost}>
          <Image src={magboost} alt='magboost' fill={true}></Image>
       </div>
-      <div onClick={() => {setToggleMachine(false)}} style={toggleMachine ? machineSettings[1].v8 : machineSettings[0].v8} className={styles.machines__v8}>
+      <div onClick={() => {setToggleMachine(true)}} style={toggleMachine ? machineSettings[1].v8 : machineSettings[0].v8} className={styles.machines__v8}>
          <Image src={v8} alt='v8' fill={true}></Image>
       </div>
    </section>
