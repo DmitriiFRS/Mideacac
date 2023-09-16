@@ -9,6 +9,7 @@ type initialStateType = {
    isReferenceView: boolean
    even: boolean
    odd: boolean
+   wrapperRef: any
 }
 
 const initialState: initialStateType = {
@@ -20,6 +21,7 @@ const initialState: initialStateType = {
    isReferenceView: false,
    even: false,
    odd: false,
+   wrapperRef: null
 }
 
 const mainPageSlice = createSlice({
