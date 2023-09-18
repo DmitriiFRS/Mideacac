@@ -1,9 +1,10 @@
-
+"use client"
 import styles  from '../V8/V8.module.scss';
 import V8Video from '../MagboostV8RC/V8Video';
 import V8Main from '../MagboostV8RC/V8Main';
 import vrf1 from '../../public/gif/fonsiz_siklli0000-1000.gif';
 import vrf2 from '../../public/img/Innovation/VRF-2.jpg';
+import { useEffect } from 'react';
 
 const magboost = {
    video: '/video/Magboost-Main-Video.mp4',
@@ -29,7 +30,7 @@ const magboost = {
 
 function VRFv8Page() {
 return (
-   <section className={`${styles.vrf}`}>
+   <section className={styles.vrf}>
       <V8Video video={magboost.video} modelStartText={magboost.modelStartText} />
       <V8Main previewTitle={magboost.previewTitle} imageTitleBlock={magboost.imageTitleBlock} />
    </section>

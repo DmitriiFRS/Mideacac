@@ -8,6 +8,7 @@ import Awards from './Awards/Awards'
 import ReferenceProject from './ReferenceProject/ReferenceProject'
 import SmartScrollWrapper from './SmartScrollWrapper'
 import Footer from './Footer/Footer'
+import { useRef } from 'react'
 
 const params = [{
   title: 'V8 Series VRF',
