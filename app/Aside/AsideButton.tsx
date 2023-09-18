@@ -48,8 +48,7 @@ function AsideButton() {
    }, [])
    function openSideMenu() {
       dispatch(toggleSidebar(true));
-      document.body.style.overflow = 'hidden'
-      document.body.style.paddingRight = `${scrollWidth}px`;
+      
       setTimeout(() => {
          dispatch(transformWindow('translateX(0%)'));
          dispatch(isTransitionAside(true));

@@ -4,7 +4,6 @@ import V8Video from '../MagboostV8RC/V8Video';
 import V8Main from '../MagboostV8RC/V8Main';
 import vrf1 from '../../public/gif/fonsiz_siklli0000-1000.gif';
 import vrf2 from '../../public/img/Innovation/VRF-2.jpg';
-import { useEffect } from 'react';
 
 const magboost = {
    video: '/video/Magboost-Main-Video.mp4',
