@@ -13,29 +13,35 @@ import icon6 from '../../public/icons/Sidemenu/sideIcon6.svg';
 import { useEffect, useState } from 'react';
 const btnSections = [{
    id: 1,
-   icon: icon1
+   icon: icon1,
+   transitiodDelay: '0s'
 },
 {
    id: 2,
-   icon: icon2
+   icon: icon2,
+   transitiodDelay: '0.1s'
 },
 {
    id: 3,
-   icon: icon3
+   icon: icon3,
+   transitiodDelay: '0.2s'
 },
 {
    id: 4,
-   icon: icon4
+   icon: icon4,
+   transitiodDelay: '0.3s'
 },
 {
    id: 5,
-   icon: icon5
+   icon: icon5,
+   transitiodDelay: '0.4s'
 }
    ]
 
 function AsideButton() {
    const dispatch = useDispatch();
    const mainMenuList = useSelector((state: RootState) => state.asideReducer.mainMenuList);
+   const isSidemenuVisible = useSelector((state: RootState) => state.mainPageReducer.isSidemenuVisible);
    const [scrollWidth, setScrollWidth] = useState<null | number>(null);
    useEffect(() => {
       setScrollWidth(window.innerWidth - document.body.clientWidth)
@@ -61,7 +67,8 @@ function AsideButton() {
    <button onClick={openSideMenu} className={styles.aside__openBtn}>
       {btnSections.map((el, index) => {
          return (
-            <li onClick={() => changeMenuItem(index)} key={index} className={styles.aside__btnBlock}>
+            <li style={{opacity: isSidemenuVisible ? 0 : 0.5, transform: isSidemenuVisible ? 'translateX(-80%)' : 'translateX(0%)', transitionDelay: el.transitiodDelay}} 
+            onClick={() => changeMenuItem(index)} key={index} className={styles.aside__btnBlock}>
                <div className={styles.aside__iconBody}>
                   <Image src={el.icon} alt='icon' />
                </div>

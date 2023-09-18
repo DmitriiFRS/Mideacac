@@ -9,7 +9,8 @@ type initialStateType = {
    isReferenceView: boolean
    even: boolean
    odd: boolean
-   wrapperRef: any
+   wrapperRef: any,
+   isSidemenuVisible: boolean
 }
 
 const initialState: initialStateType = {
@@ -21,7 +22,8 @@ const initialState: initialStateType = {
    isReferenceView: false,
    even: false,
    odd: false,
-   wrapperRef: null
+   wrapperRef: null,
+   isSidemenuVisible: true
 }
 
 const mainPageSlice = createSlice({
@@ -51,9 +53,12 @@ const mainPageSlice = createSlice({
       },
       setReferenceView: (state, action: PayloadAction<boolean>) => {
          state.isReferenceView = action.payload
+      },
+      setSidemenuVisible: (state, action: PayloadAction<boolean>) => {
+         state.isSidemenuVisible = action.payload
       }
    }
 })
 
-export const {changeEventStatus, setVisibleLines, scrollPosition, newestVisible, referenceEven, referenceOdd, setAwardsView, setReferenceView} = mainPageSlice.actions;
+export const {changeEventStatus, setVisibleLines, scrollPosition, newestVisible, referenceEven, referenceOdd, setAwardsView, setReferenceView, setSidemenuVisible} = mainPageSlice.actions;
 export default mainPageSlice.reducer;
