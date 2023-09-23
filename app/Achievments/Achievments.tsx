@@ -7,29 +7,13 @@ import imagebg from '../../public/img/second/second_framebg.png';
 import AchievmentsTitles from './AchievmentsTitles';
 import { useInView } from 'react-intersection-observer';
 import { useEffect, useState } from 'react';
-const list = [{
-   number: '$51.16 млрд',
-   subtitle: 'Общий доход'
-},
-{
-   number: '166,000+',
-   subtitle: 'Наших специалистов по всему миру'
-},
-{
-   number: '278 место',
-   subtitle: 'В списке Fortune Global 500'
-},
-{
-   number: '200+',
-   subtitle: 'Стран и регионов деятельности'
-}
-]
-
+import Shadow from '../Shadow/Shadow';
+const shadowbg = '0px -40px 80px 120px rgb(0, 0, 0)'
 function Navigation() {
    const [isFrameInView, setFrameView] = useState<boolean>(false);
    const {ref, inView} = useInView({
-      threshold: 1,
-      delay: isFrameInView ? 2000 : 0
+      threshold: 0.8,
+      delay: isFrameInView ? 4000 : 0
    });
    useEffect(() => {
       setFrameView(inView)
@@ -42,6 +26,7 @@ function Navigation() {
          <nav className={`${styles.achievments__nav} container`}>
             <AchievmentsTitles isFrameInView={isFrameInView} />
          </nav>
+         <Shadow shadowbg={shadowbg}/>
       </section>
    )
 }

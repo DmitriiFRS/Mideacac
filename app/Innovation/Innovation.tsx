@@ -4,6 +4,7 @@ import Image from 'next/image';
 import imagebg from '../../public/img/Innovation/innovation_bg.png'
 import { useInView } from 'react-intersection-observer';
 import { useEffect, useState } from 'react';
+import Shadow from '../Shadow/Shadow';
 
 const list = [{
    number: '0%',
@@ -18,12 +19,12 @@ const list = [{
    subtitle2: 'Инвестиций за последние 5 лет'
 },
 ]
-
+const shadowbg = '0px 30px 80px 100px rgb(255, 255, 255)'
 function Innovation() {
    const [isFrameInView, setFrameView] = useState<boolean>(false);
    const {ref, inView} = useInView({
-      threshold: 1,
-      delay: isFrameInView ? 2000 : 0
+      threshold: 0.7,
+      delay: isFrameInView ? 4000 : 0
    });
    useEffect(() => {
       setFrameView(inView)

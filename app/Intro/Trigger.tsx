@@ -12,7 +12,6 @@ function Trigger() {
       threshold: 0.05
    })
    useEffect(() => {
-      console.log(isSidemenuVisible)
    }, [isSidemenuVisible])
    useEffect(() => {
       dispatch(setSidemenuVisible(inView))

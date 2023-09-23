@@ -44,9 +44,6 @@ function Machines() {
    const [toggleMachine, setToggleMachine] = useState<boolean>(false);
 return (
    <section className={styles.machines}>
-      <div className={styles.machines__shadow}>
-         <Image src={shadowbg} alt='' fill={true}></Image>
-      </div>
       <div className={styles.machines__titles}>
          <p style={{transform: toggleMachine  ? 'translateX(-25vw)' : 'translateX(0)', opacity: toggleMachine ? 0 : 1}} className={styles.machines__title1}>Magboost</p>
          <p style={{transform: toggleMachine ? 'translateX(-7.5vw)' : 'translateX(15vw)', opacity: toggleMachine ? 1 : 0}} className={styles.machines__title2}>V8</p>
