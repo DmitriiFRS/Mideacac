@@ -71,20 +71,32 @@ function Innovation() {
             setImage(true);
          }, 600)
       }
+      if (scrollRate !== null && scrollRate < 20) {
+         setZoom(false);
+         setTimeout(() => {
+            setImage(false);
+         }, 600)
+      }
    }, [scrollRate])
 return (
    scrollRate &&
    <section style={sectionStyle} className={styles.innovation}>
-      <div className={`${styles.innovation__img}`}>
+      {!changeImage && 
+      <div className={`${styles.innovation__img} ${isZoomed ? styles.innovation__img__active : '' }`}>
          <Image src={imagebg} alt='bg' fill={true} />
       </div>
-         <h2 className={`${styles.innovation__title}`}>Innovations and technologies</h2>
+      }
+      {changeImage && 
+      <div className={`${styles.innovation__img} ${!isZoomed ? styles.innovation__img__active : '' }`}>
+         <Image src={imagebg2} alt='bg' fill={true} />
+      </div>}
+      <h2 className={`${styles.innovation__title}`}>Innovations and technologies</h2>
       <nav className={styles.innovation__nav}>
          <ul className={styles.innovation__list}>
             {list.map((el, index) => {
                return (
                   <li key={index} className={`${styles.innovation__item} ${index === 0 ? styles.innovation__item1 : styles.innovation__item2}
-                  ${scrollRate > 8 ? styles.innovation__item__active : ''}`}>
+                  ${scrollRate > 7 ? styles.innovation__item__active : ''}`}>
                      <div className={styles.innovation__titleBlock}>
                         <p className={styles.innovation__titleElem}>{el.number}</p>
                         <p className={styles.innovation__subElem}>{el.subtitle}</p>
