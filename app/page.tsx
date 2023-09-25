@@ -6,7 +6,7 @@ import Innovation from './Innovation/Innovation'
 import Machines from './Machines/Machines'
 import Awards from './Awards/Awards'
 import ReferenceProject from './ReferenceProject/ReferenceProject'
-import TriggerFixEvent from './Innovation/TriggerFixEvent'
+import TriggerFixEvent from './Machines/TriggerFixEvent'
 
 const params = [{
   title: 'V8 Series VRF',
@@ -24,7 +24,6 @@ export default function Home() {
       <SideMenu />
       <Intro />
       <Innovation />
-      <TriggerFixEvent />
       <Machines />
       <Awards />
       <ReferenceProject />

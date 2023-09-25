@@ -4,6 +4,7 @@ import v8 from '../../public/img/Innovation/v8.png';
 import NewestMachines from './NewestMachines';
 import Image from 'next/image';
 import shadowbg from '../../public/img/Innovation/shadow_bg.jpg';
+import TriggerFixEvent from './TriggerFixEvent';
 
 const newestData = [{
    deviceName: 'Magboost',
@@ -29,6 +30,7 @@ return (
       {newestData.map((el, idx) => {
          return <NewestMachines key={idx} deviceName={el.deviceName} image={el.image} imageWidth={el.imageWidth} imageHeight={el.imageHeight} href={el.href} />
       })}
+      <TriggerFixEvent />
    </section>
 )
 }

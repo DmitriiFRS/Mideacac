@@ -1,6 +1,6 @@
 "use client"
 import { useEffect } from 'react';
-import styles from './Innovation.module.scss';
+import styles from '../Machines/Machines.module.scss';
 import { useInView } from "react-intersection-observer";
 import { useDispatch, useSelector } from 'react-redux';
 import { changeEventStatus } from '../Redux/Slice/mainPageSlice';

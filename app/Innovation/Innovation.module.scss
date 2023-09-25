@@ -149,14 +149,6 @@
       margin: 5vh 0 0 0;
    }
 }
-.trigger {
-   position: relative;
-   margin: 145vh 0 0 0;
-   z-index: 20;
-   height: 1vh;
-   width: 100vw;
-   visibility: hidden;
-}
 @keyframes smoothAppearance {
    0% {
       opacity: 0;
