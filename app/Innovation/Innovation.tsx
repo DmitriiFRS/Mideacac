@@ -74,7 +74,8 @@ return (
          <ul className={styles.innovation__list}>
             {list.map((el, index) => {
                return (
-                  <li key={index} className={styles.innovation__item}>
+                  <li key={index} className={`${styles.innovation__item} ${index === 0 ? styles.innovation__item1 : styles.innovation__item2}
+                  ${scrollRate > 8 ? styles.innovation__item__active : ''}`}>
                      <div className={styles.innovation__titleBlock}>
                         <p className={styles.innovation__titleElem}>{el.number}</p>
                         <p className={styles.innovation__subElem}>{el.subtitle}</p>

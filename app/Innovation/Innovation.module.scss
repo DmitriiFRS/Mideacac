@@ -37,6 +37,49 @@
          opacity: 0;
       }
    }
+   &__nav {
+      position: relative;
+      z-index: 1000;
+      height: 100%;
+   }
+   &__list {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 10vw;
+      height: 100%;
+      align-items: center;
+      color: #494949;
+      font-weight: 700;
+   }
+   
+   &__item1 {
+      transform: translateX(-40vw);
+   }
+   &__item2 {
+      transform: translateX(35vw);
+      
+   }
+   &__item {
+      opacity: 0;
+      transition: 0.5s;
+      &__active {
+         transform: translateX(0vw);
+         opacity: 1;
+      }
+   }
+   
+   &__titleBlock {
+      max-width: 470px;
+      &:not(:last-child) {
+         margin: 0 0 35px 0;
+      }
+   }
+   &__titleElem {
+      font-size: 60px;
+   }
+   &__subElem {
+      font-size: 30px;
+   }
    &__imges {
       height: 400px;
       position: relative;
@@ -70,16 +113,6 @@
       }
    }
 }
-.titles {
-   position: fixed;
-   left: 23%;
-   top: 43%;
-   flex-direction: column;
-   &__unactive {
-      transition: 0.4s;
-      opacity: 0;
-   }
-}
 .textLine {
    width: 100%;
    transition: 0.8s;
@@ -93,50 +126,6 @@
    }
    &:nth-child(5) {
       margin: 5vh 0 0 0;
-   }
-}
-.arrows {
-   position: fixed;
-   left: 0;
-   top: 60%;
-   width: 100%;
-   height: 100%;
-   display: flex;
-   justify-content: space-around;
-   gap: 10%;
-   &__body {
-      width: 10%;
-      &:last-child {
-         margin: 0 0 0 10%;
-      }
-   }
-   &__arrow {
-   width: 5vw;
-   height: 5vw;
-   border: 1.3vw solid;
-   border-color: black transparent transparent black !important;
-   transform: rotate(-135deg);
-   }
-   &__sliding {
-      position: absolute;
-      -webkit-animation: slide 4s linear infinite; 
-      animation: slide 4s linear infinite;
-   }
-   &__delay1 {
-      -webkit-animation-delay: 1s; 
-      animation-delay: 1s;
-   }
-   &__delay2 {
-      -webkit-animation-delay: 2s; 
-      animation-delay: 2s;
-   }
-   &__delay3 {
-      -webkit-animation-delay: 3s; 
-      animation-delay: 3s;
-   }
-   &__unactive {
-      transition: 0.4s;
-      opacity: 0;
    }
 }
 .trigger {

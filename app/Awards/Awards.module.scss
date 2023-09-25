@@ -1,6 +1,8 @@
 .awards {
    padding: 200px 40px 50px 40px;
    background: rgb(254,255,250);
+   position: relative;
+   z-index: 10;
    &__title {
       text-align: center;
       font-size: 40px;
