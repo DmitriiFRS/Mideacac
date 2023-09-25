@@ -5,6 +5,8 @@
    color: #fff;
    line-height: 150%;
    font-weight: 300;
+   position: relative;
+   z-index: 10;
    &__container {
       max-width: 1536px;
       margin: 0 auto;

@@ -23,7 +23,6 @@ export default function Home() {
     <main className={styles.main}>
       <SideMenu />
       <Intro />
-      <Achievments />
       <Innovation />
       <TriggerFixEvent />
       <Machines />

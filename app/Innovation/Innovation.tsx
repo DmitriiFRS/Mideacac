@@ -1,33 +1,44 @@
 "use client"
 import styles from './Innovation.module.scss';
-import lab from '../../public/img/Innovation/lab.png';
 import Image from 'next/image';
 import { RootState } from '../Redux/store';
 import { useDispatch, useSelector } from 'react-redux';
-import Titles from './Titles';
-import Arrows from './Arrows';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { scrollPosition } from '../Redux/Slice/mainPageSlice';
+import imagebg from '../../public/img/Innovation/innovation_bg.png'
 
 const list = [{
    number: '0%',
-   subtitle: 'Количество брака'
-},
-{
-   number: '17',
-   subtitle: 'Научно-исследовательских центров'
+   subtitle: 'Количество брака',
+   number2: '17',
+   subtitle2: 'Научно-исследовательских центров'
 },
 {
    number: '20,000+',
-   subtitle: 'Экспертов НИЦ'
+   subtitle: 'Экспертов НИЦ',
+   number2: '$4.05 млрд',
+   subtitle2: 'Инвестиций за последние 5 лет'
+},
+]
+type styledStateType = {
+   position: any
+   margin: string
+   left?: string
+   top?: string
+}
+const styledState = [{
+   position: 'relative',
+   margin: 'calc(100vh - 90px) 0 0 0'
 },
 {
-   number: '$4.05 млрд',
-   subtitle: 'Инвестиций за последние 5 лет'
-}
-]
+   position: 'fixed',
+   margin: '0px',
+   left: '0',
+   top: '0',
 
+}]
 function Innovation() {
+   const [sectionStyle, setStyles] = useState<styledStateType>(styledState[0])
    const isFixedEventActive = useSelector((state: RootState) => state.mainPageReducer.isFixedEventActive);
    const dispatch = useDispatch();
    const scrollRate = useSelector((state: RootState) => state.mainPageReducer.scrollRate);
@@ -44,29 +55,39 @@ function Innovation() {
          window.removeEventListener('scroll', handleScroll)
       }
    })
+   useEffect(() => {
+      if (scrollRate !== null && scrollRate > 7) {
+         setStyles(styledState[1])
+      }
+      else if (scrollRate !== null && scrollRate < 17) {
+         setStyles(styledState[0])
+      }
+   }, [scrollRate])
 return (
    scrollRate &&
-   <section className={styles.innovation}>
-      <h2 className={styles.innovation__title}>Innovation and technologies</h2>
-      <div className={styles.innovation__contentBody}>
-         <div className={`${styles.innovation__imgContainer2} ${styles.innovation__imges}
-         ${scrollRate > 17.1 ? styles.innovation__imgContainer2__active : ''}
-         ${isFixedEventActive || scrollRate > 30 ? styles.innovation__imgContainer2__unactive : ''}`}>
-            <Image src={lab} alt='lab' fill={true} />
-         </div>
-         <ul className={`${styles.innovation__sideTitle} ${scrollRate > 17.1 ? styles.innovation__sideTitle__active : ''}`}>
-            {list.map((el, idx) => {
+   <section style={sectionStyle} className={styles.innovation}>
+      <div className={styles.innovation__img}>
+            <Image src={imagebg} alt='bg' fill={true} />
+      </div>
+         <h2 className={`${styles.innovation__title}`}>Innovations and technologies</h2>
+      <nav className={styles.innovation__nav}>
+         <ul className={styles.innovation__list}>
+            {list.map((el, index) => {
                return (
-                  <li key={idx} className={styles.innovation__sideTitle__item}>
-                     <p className={styles.innovation__sideTitle__title}>{el.number}</p>
-                     <p className={styles.innovation__sideTitle__subtitle}>{el.subtitle}</p>
+                  <li key={index} className={styles.innovation__item}>
+                     <div className={styles.innovation__titleBlock}>
+                        <p className={styles.innovation__titleElem}>{el.number}</p>
+                        <p className={styles.innovation__subElem}>{el.subtitle}</p>
+                     </div>
+                     <div className={styles.innovation__titleBlock}>
+                        <p className={styles.innovation__titleElem}>{el.number2}</p>
+                        <p className={styles.innovation__subElem}>{el.subtitle2}</p>
+                     </div>
                   </li>
                )
             })}
          </ul>
-      </div>
-      {scrollRate > 17.1 && !isFixedEventActive && scrollRate < 30 && <Arrows />}
-      {scrollRate > 17.1 && <Titles />}
+      </nav>
    </section>
 )
 }
