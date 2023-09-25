@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { scrollPosition } from '../Redux/Slice/mainPageSlice';
 import imagebg from '../../public/img/Innovation/innovation_bg.png'
+import imagebg2 from '../../public/img/Innovation/innovation-2.jpg';
 
 const list = [{
    number: '0%',
@@ -39,7 +40,8 @@ const styledState = [{
 }]
 function Innovation() {
    const [sectionStyle, setStyles] = useState<styledStateType>(styledState[0])
-   const isFixedEventActive = useSelector((state: RootState) => state.mainPageReducer.isFixedEventActive);
+   const [changeImage, setImage] = useState<boolean>(false);
+   const [isZoomed, setZoom] = useState<boolean>(false);
    const dispatch = useDispatch();
    const scrollRate = useSelector((state: RootState) => state.mainPageReducer.scrollRate);
    useEffect(() => {
@@ -62,12 +64,19 @@ function Innovation() {
       else if (scrollRate !== null && scrollRate < 17) {
          setStyles(styledState[0])
       }
+
+      if (scrollRate !== null && scrollRate > 20) {
+         setZoom(true);
+         setTimeout(() => {
+            setImage(true);
+         }, 600)
+      }
    }, [scrollRate])
 return (
    scrollRate &&
    <section style={sectionStyle} className={styles.innovation}>
-      <div className={styles.innovation__img}>
-            <Image src={imagebg} alt='bg' fill={true} />
+      <div className={`${styles.innovation__img}`}>
+         <Image src={imagebg} alt='bg' fill={true} />
       </div>
          <h2 className={`${styles.innovation__title}`}>Innovations and technologies</h2>
       <nav className={styles.innovation__nav}>
