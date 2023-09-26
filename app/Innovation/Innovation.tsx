@@ -4,9 +4,10 @@ import Image from 'next/image';
 import { RootState } from '../Redux/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { scrollPosition } from '../Redux/Slice/mainPageSlice';
-import imagebg from '../../public/img/Innovation/innovation_bg.png'
+import { scrollPosition, setSidemenuVisible } from '../Redux/Slice/mainPageSlice';
+import imagebg from '../../public/img/Innovation/innovation_bg.png';
 import imagebg2 from '../../public/img/Innovation/Screenshot_1.png';
+
 
 const list = [{
    number: '0%',
@@ -76,6 +77,12 @@ function Innovation() {
          setTimeout(() => {
             setImage(false);
          }, 0)
+      }
+      if (scrollRate !== null && scrollRate > 7) {
+         dispatch(setSidemenuVisible(false))
+      }
+      if (scrollRate !== null && scrollRate < 7) {
+         dispatch(setSidemenuVisible(true))
       }
    }, [scrollRate])
 return (

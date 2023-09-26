@@ -1,4 +1,3 @@
-"use client"
 
 import styles from '../SideMenu.module.scss';
 import MainMenu from './MainMenu';

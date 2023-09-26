@@ -7,7 +7,7 @@ function Header() {
    return (
    <header className={styles.header}>
       <Link href={'/'}>
-         <Image src={MideaLogo} alt='Midea-CAC logo' width={256} height={90} priority={true} />
+         <h1 className={styles.header__title}>Midea|cac</h1>
       </Link>
    </header>
    )

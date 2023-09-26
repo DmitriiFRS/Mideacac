@@ -6,7 +6,6 @@ import { RootState } from '@/app/Redux/store';
 import Image from 'next/image';
 import Link from 'next/link';
 import { isTransitionAside, toggleSidebar, transformWindow } from '@/app/Redux/Slice/asideMenuSlice';
-import { transform } from 'typescript';
 
 function SubMenu() {
    const dispatch = useDispatch();
@@ -20,7 +19,6 @@ function SubMenu() {
 
       setTimeout(() => {
          dispatch(toggleSidebar(false))
-         document.body.style.overflow = 'auto';
          document.body.style.paddingRight = '0px';
       },900)
    }
