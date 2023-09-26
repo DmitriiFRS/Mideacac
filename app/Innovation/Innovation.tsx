@@ -7,21 +7,9 @@ import { useEffect, useState } from 'react';
 import { scrollPosition, setSidemenuVisible } from '../Redux/Slice/mainPageSlice';
 import imagebg from '../../public/img/Innovation/innovation_bg.png';
 import imagebg2 from '../../public/img/Innovation/Screenshot_1.png';
+import Titles2 from './Titles2';
+import Titles1 from './Titles1';
 
-
-const list = [{
-   number: '0%',
-   subtitle: 'Количество брака',
-   number2: '17',
-   subtitle2: 'Научно-исследовательских центров'
-},
-{
-   number: '20,000+',
-   subtitle: 'Экспертов НИЦ',
-   number2: '$4.05 млрд',
-   subtitle2: 'Инвестиций за последние 5 лет'
-},
-]
 type styledStateType = {
    position: any
    margin: string
@@ -41,7 +29,6 @@ const styledState = [{
 }]
 function Innovation() {
    const [sectionStyle, setStyles] = useState<styledStateType>(styledState[0])
-   const [changeImage, setImage] = useState<boolean>(false);
    const [isZoomed, setZoom] = useState<boolean>(false);
    const dispatch = useDispatch();
    const scrollRate = useSelector((state: RootState) => state.mainPageReducer.scrollRate);
@@ -53,7 +40,6 @@ function Innovation() {
          dispatch(scrollPosition(scrollPercentage / 2));
       }
       window.addEventListener('scroll', handleScroll);
-      console.log(scrollRate)
       return () => {
          window.removeEventListener('scroll', handleScroll)
       }
@@ -68,15 +54,9 @@ function Innovation() {
 
       if (scrollRate !== null && scrollRate > 20) {
          setZoom(true);
-         setTimeout(() => {
-            setImage(true);
-         }, 0)
       }
       if (scrollRate !== null && scrollRate < 20) {
          setZoom(false);
-         setTimeout(() => {
-            setImage(false);
-         }, 0)
       }
       if (scrollRate !== null && scrollRate > 7) {
          dispatch(setSidemenuVisible(false))
@@ -95,25 +75,8 @@ return (
          <Image src={imagebg2} alt='bg' fill={true} />
       </div>
       <h2 className={`${styles.innovation__title}`}>Innovations and technologies</h2>
-      <nav className={styles.innovation__nav}>
-         <ul className={styles.innovation__list}>
-            {list.map((el, index) => {
-               return (
-                  <li key={index} className={`${styles.innovation__item} ${index === 0 ? styles.innovation__item1 : styles.innovation__item2}
-                  ${scrollRate > 7 ? styles.innovation__item__active : ''}`}>
-                     <div className={styles.innovation__titleBlock}>
-                        <p className={styles.innovation__titleElem}>{el.number}</p>
-                        <p className={styles.innovation__subElem}>{el.subtitle}</p>
-                     </div>
-                     <div className={styles.innovation__titleBlock}>
-                        <p className={styles.innovation__titleElem}>{el.number2}</p>
-                        <p className={styles.innovation__subElem}>{el.subtitle2}</p>
-                     </div>
-                  </li>
-               )
-            })}
-         </ul>
-      </nav>
+      <Titles1 isZoomed={isZoomed} setZoom={setZoom} />
+      <Titles2 isZoomed={isZoomed} setZoom={setZoom} />
    </section>
 )
 }
