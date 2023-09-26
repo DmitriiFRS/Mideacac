@@ -20,6 +20,7 @@ function SubMenu() {
       setTimeout(() => {
          dispatch(toggleSidebar(false))
          document.body.style.paddingRight = '0px';
+         document.body.style.overflow = 'auto';
       },900)
    }
    return (
