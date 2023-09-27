@@ -3,12 +3,13 @@ import styles from './Innovation.module.scss';
 import Image from 'next/image';
 import { RootState } from '../Redux/store';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { scrollPosition, setSidemenuVisible } from '../Redux/Slice/mainPageSlice';
 import imagebg from '../../public/img/Innovation/innovation_bg.png';
 import imagebg2 from '../../public/img/Innovation/Screenshot_1.png';
 import Titles2 from './Titles2';
 import Titles1 from './Titles1';
+import { useMediaQuery } from '../hooks/useMediaQuery';
 
 type styledStateType = {
    position: any
@@ -28,10 +29,13 @@ const styledState = [{
 
 }]
 function Innovation() {
+   const matches = useMediaQuery('(max-height: 820px)');
    const [sectionStyle, setStyles] = useState<styledStateType>(styledState[0])
    const [isZoomed, setZoom] = useState<boolean>(false);
    const dispatch = useDispatch();
    const scrollRate = useSelector((state: RootState) => state.mainPageReducer.scrollRate);
+   const scrollWidth = useSelector((state: RootState) => state.mainPageReducer.scrollWidth);
+   const isSidebarOpen = useSelector((state: RootState) => state.asideReducer.isSidebarOpen);
    useEffect(() => {
       function handleScroll() {
          const scrollPercentage = (window.pageYOffset / (document.body.scrollHeight - window.innerHeight) * 100)
@@ -46,7 +50,10 @@ function Innovation() {
    })
    useEffect(() => {
       console.log(scrollRate)
-      if (scrollRate !== null && scrollRate > 7) {
+      if (matches && scrollRate !== null && scrollRate > 5.5) {
+         setStyles(styledState[1])
+      }
+      else if (scrollRate !== null && scrollRate > 6.5) {
          setStyles(styledState[1])
       }
       else if (scrollRate !== null && scrollRate < 17) {
@@ -68,12 +75,12 @@ function Innovation() {
    }, [scrollRate])
 return (
    scrollRate &&
-   <section style={sectionStyle} className={styles.innovation}>
+   <section style={{...sectionStyle, paddingRight: isSidebarOpen ? `${scrollWidth}px` : ''}} className={styles.innovation}>
       <div className={`${styles.innovation__img} ${isZoomed ? styles.innovation__img__active : '' } ${styles.innovation__img1}`}>
-         <Image src={imagebg} alt='bg' fill={true} />
+         <Image style={{objectFit: 'cover', objectPosition: 'top'}} src={imagebg} alt='bg' fill={true} />
       </div>
       <div className={`${styles.innovation__img} ${!isZoomed ? styles.innovation__img__active : '' } ${styles.innovation__img2}`}>
-         <Image src={imagebg2} alt='bg' fill={true} />
+         <Image style={{objectFit: 'cover', objectPosition: 'top'}} src={imagebg2} alt='bg' fill={true} />
       </div>
       <h2 className={`${styles.innovation__title}`}>Innovations and technologies</h2>
       <Titles1 isZoomed={isZoomed} setZoom={setZoom} />

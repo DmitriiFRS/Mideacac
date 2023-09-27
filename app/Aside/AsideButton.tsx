@@ -11,6 +11,7 @@ import icon4 from '../../public/icons/Sidemenu/sideIcon4.svg';
 import icon5 from '../../public/icons/Sidemenu/sideIcon5.svg';
 import icon6 from '../../public/icons/Sidemenu/sideIcon6.svg';
 import { useEffect, useState } from 'react';
+import { setScrollWidth } from '../Redux/Slice/mainPageSlice';
 const btnSections = [{
    id: 1,
    icon: icon1,
@@ -42,9 +43,9 @@ function AsideButton() {
    const dispatch = useDispatch();
    const mainMenuList = useSelector((state: RootState) => state.asideReducer.mainMenuList);
    const isSidemenuVisible = useSelector((state: RootState) => state.mainPageReducer.isSidemenuVisible);
-   const [scrollWidth, setScrollWidth] = useState<null | number>(null);
+   const scrollWidth = useSelector((state: RootState) => state.mainPageReducer.scrollWidth)
    useEffect(() => {
-      setScrollWidth(window.innerWidth - document.body.clientWidth)
+      dispatch(setScrollWidth(window.innerWidth - document.body.clientWidth))
    }, [])
    function openSideMenu() {
       dispatch(toggleSidebar(true));

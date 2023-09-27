@@ -8,3 +8,11 @@
    object-fit: cover;
    z-index: 4;
 }
+.shadow {
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   z-index: 4;
+   box-shadow: 0px 0px 40px 49px rgba(0,0,0,1);
+}

@@ -8,6 +8,7 @@ type initialStateType = {
    even: boolean
    odd: boolean
    isSidemenuVisible: boolean
+   scrollWidth: null | number
 }
 
 const initialState: initialStateType = {
@@ -17,7 +18,8 @@ const initialState: initialStateType = {
    isNewestVisible: false,
    even: false,
    odd: false,
-   isSidemenuVisible: true
+   isSidemenuVisible: true,
+   scrollWidth: null
 }
 
 const mainPageSlice = createSlice({
@@ -44,9 +46,12 @@ const mainPageSlice = createSlice({
       },
       setSidemenuVisible: (state, action: PayloadAction<boolean>) => {
          state.isSidemenuVisible = action.payload
+      },
+      setScrollWidth: (state, action: PayloadAction<number>) => {
+         state.scrollWidth = action.payload
       }
    }
 })
 
-export const {changeEventStatus, setVisibleLines, scrollPosition, newestVisible, referenceEven, referenceOdd, setSidemenuVisible} = mainPageSlice.actions;
+export const {changeEventStatus, setVisibleLines, scrollPosition, newestVisible, referenceEven, referenceOdd, setSidemenuVisible, setScrollWidth} = mainPageSlice.actions;
 export default mainPageSlice.reducer;
