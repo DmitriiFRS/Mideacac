@@ -5,6 +5,7 @@
    height: 100vh;
    position: relative;
    z-index: 3;
+   overflow: hidden;
    &__title {
       text-align: center;
       font-size: 36px;

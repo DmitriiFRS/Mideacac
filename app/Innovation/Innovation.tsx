@@ -45,6 +45,7 @@ function Innovation() {
       }
    })
    useEffect(() => {
+      console.log(scrollRate)
       if (scrollRate !== null && scrollRate > 7) {
          setStyles(styledState[1])
       }
