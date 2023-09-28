@@ -71,7 +71,7 @@ function AsideButton() {
             <li style={{opacity: isSidemenuVisible ? 0 : 0.5, transform: isSidemenuVisible ? 'translateX(-900%)' : 'translateX(0%)', transitionDelay: el.transitiodDelay}} 
             onClick={() => changeMenuItem(index)} key={index} className={styles.aside__btnBlock}>
                <div className={styles.aside__iconBody}>
-                  <Image src={el.icon} alt='icon' />
+                  <Image src={el.icon} alt='icon' fill={true} />
                </div>
             </li>
          )

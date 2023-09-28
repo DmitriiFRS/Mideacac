@@ -3,7 +3,7 @@ import styles from './Innovation.module.scss';
 import Image from 'next/image';
 import { RootState } from '../Redux/store';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { scrollPosition, setSidemenuVisible } from '../Redux/Slice/mainPageSlice';
 import imagebg from '../../public/img/Innovation/innovation_bg.png';
 import imagebg2 from '../../public/img/Innovation/Screenshot_1.png';
@@ -14,23 +14,20 @@ import { useMediaQuery } from '../hooks/useMediaQuery';
 type styledStateType = {
    position: any
    margin: string
-   left?: string
-   top?: string
+   left: string
+   top: string
 }
-const styledState = [{
-   position: 'relative',
-   margin: 'calc(100vh - 90px) 0 0 0'
-},
+const styledState: styledStateType = 
 {
    position: 'fixed',
    margin: '0px',
    left: '0',
    top: '0',
 
-}]
+}
 function Innovation() {
-   const matches = useMediaQuery('(max-height: 820px)');
-   const [sectionStyle, setStyles] = useState<styledStateType>(styledState[0])
+   const matchHeight820 = useMediaQuery('(max-height: 820px)');
+   const matchWidth1650 = useMediaQuery('(max-width: 1650px)');
    const [isZoomed, setZoom] = useState<boolean>(false);
    const dispatch = useDispatch();
    const scrollRate = useSelector((state: RootState) => state.mainPageReducer.scrollRate);
@@ -45,21 +42,12 @@ function Innovation() {
       }
       window.addEventListener('scroll', handleScroll);
       return () => {
-         window.removeEventListener('scroll', handleScroll)
+         window.removeEventListener('scroll', handleScroll);
       }
    })
    useEffect(() => {
-      console.log(scrollRate)
-      if (matches && scrollRate !== null && scrollRate > 5.5) {
-         setStyles(styledState[1])
-      }
-      else if (scrollRate !== null && scrollRate > 6.5) {
-         setStyles(styledState[1])
-      }
-      else if (scrollRate !== null && scrollRate < 17) {
-         setStyles(styledState[0])
-      }
-
+   // ---------------------- start fixed position ------------------------- //
+   // ---------------------- start fixed position ------------------------- //
       if (scrollRate !== null && scrollRate > 20) {
          setZoom(true);
       }
@@ -75,7 +63,7 @@ function Innovation() {
    }, [scrollRate])
 return (
    scrollRate &&
-   <section style={{...sectionStyle, paddingRight: isSidebarOpen ? `${scrollWidth}px` : ''}} className={styles.innovation}>
+   <section style={{...styledState, paddingRight: isSidebarOpen ? `${scrollWidth}px` : ''}} className={styles.innovation}>
       <div className={`${styles.innovation__img} ${isZoomed ? styles.innovation__img__active : '' } ${styles.innovation__img1}`}>
          <Image style={{objectFit: 'cover', objectPosition: 'top'}} src={imagebg} alt='bg' fill={true} />
       </div>
