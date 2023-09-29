@@ -15,7 +15,7 @@ function V8Video({video, modelStartText}: VideoComponentType) {
    return (
       <div className={styles.vrf__container}>
          <StartEffect modelStartText={modelStartText} />
-         <video style={{position: scrollPosition < 15.5 ? 'fixed' : 'absolute', top: scrollPosition < 15.5 ? '0' : '94vh'}} className={styles.vrf__videoContainer} autoPlay muted loop>
+         <video style={{position: scrollPosition < 12.5 ? 'fixed' : 'absolute', top: scrollPosition < 15.5 ? '0' : '94vh'}} className={styles.vrf__videoContainer} autoPlay muted loop>
             <source className={styles.video} src={video} type='video/mp4' />
          </video>
       </div>

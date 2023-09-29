@@ -5,7 +5,7 @@ import { ReactNode } from 'react';
 
 function PreviewTitle({children}: {children: ReactNode}) {
    return (
-   <div className={styles.preview}>
+   <div className={`${styles.preview} ${styles.container}`}>
       {children}
    </div>
    )

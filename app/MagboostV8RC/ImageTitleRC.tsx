@@ -7,16 +7,16 @@ import { useEffect } from 'react';
 import TitleList from './TitleList';
 
 export type ImageTitleProps = {
+   bg: any
    image: any
-   title: string
-   description: Array<string>
-   icons: Array<string>
+   vector: Array<string>
+   titles: Array<string>
    orders: Array<string>
    isView: boolean
    setIsView: Function
 }
 
-function ImageTitleRC({ image, description, icons, title, orders, isView, setIsView}: ImageTitleProps) {
+function ImageTitleRC({ bg, image, vector, titles, orders, isView, setIsView }: ImageTitleProps) {
    const {ref, inView} = useInView({
       threshold: [0, 0],
    })
@@ -25,14 +25,11 @@ function ImageTitleRC({ image, description, icons, title, orders, isView, setIsV
    },[inView])
    return (
       <div ref={ref} className={styles.imageTitle}>
-         <div style={{order: orders[0]}} className={`${styles.image__container} ${isView ? styles.image__container__active : ''}`}>
-            <Image quality={100} src={image} alt='1' fill={true}/>
+         <div className={styles.imageTitle__bg}>
+            <Image src={bg} alt='' fill={true} />
          </div>
-         <div style={{order: orders[1]}} className={styles.title}>
-            <div className={styles.title__mainTitleBody}>
-               <h3 className={`${styles.title__mainTitle} ${isView ? styles.title__mainTitle__active : ''}`}>{title}</h3>
-            </div>
-            <TitleList description={description} icons={icons} />
+         <div className={`${styles.imageTitle__container} ${styles.container}`}>
+
          </div>
       </div>
    )

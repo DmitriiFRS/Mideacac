@@ -1,8 +1,11 @@
 import V8Main from '../MagboostV8RC/V8Main';
 import V8Video from '../MagboostV8RC/V8Video';
 import styles from './V8.module.scss';
-import vrf1 from '../../public/gif/fonsiz_siklli0000-1000.gif';
-import vrf2 from '../../public/img/Innovation/VRF-2.jpg';
+import shieldBox from '../../public/icons/MagboostV8/shieldbox.svg';
+import v8a1 from '../../public/img/v8magboost/v8 1.png';
+import bg1 from '../../public/img/v8magboost/cubesbg1.png';
+import bg2 from '../../public/img/v8magboost/cubesbg2.png';
+import bg3 from '../../public/img/v8magboost/cubesbg3.png';
 
 const v8 = {
    video: '/video/V8-Main-Video.mp4',
@@ -11,17 +14,26 @@ const v8 = {
    'Она объединяет не только ключевые инновации VRF технологий, но и дополняет их', 'передовыми усовершенствованиями, отвечающими потребностям клиентов и вызовам времени.',
    'Наши инженеры и исследователи уделяли внимание каждой детали, чтобы Midea V8 VRF стала', 'идеальным сочетанием функциональности и элегантности.',
    'Это не просто система - это опыт, который добавит', 'качества в вашу жизнь.'],
-   imageTitleBlock: [{
-      image: vrf1,
-      title: 'Магнитный подшипник с пространственно-векторным управлением',
-      description: ['Меньше трения', 'Меньше износа', 'Высокая точность', 'Большая стабильность'],
-      icons: ['/icons/MagboostV8/icon12.png', '/icons/MagboostV8/icon4.png', '/icons/MagboostV8/icon13.png', '/icons/MagboostV8/icon14.png'],
+   titleBlock: [{
+      bg: bg1,
+      image: v8a1,
+      vector: shieldBox,
+      titles: ['Степень защиты IP55 от влаги, соли, пыли и насекомых', 'Система микроканального охлаждения электронных компонентов хладагентом',
+   'Встроенный циркуляционный вентилятор, PTC нагреватель и пять высокоточных температурных датчиков для поддержания постоянной температуры внутри шкафа управления и электроснабжения']
    },
    {
-      image: vrf2,
-      title: 'Компрессор Back-to-Back с магнитной подвеской вала',
-      description: ['Меньше трения', 'Отсутствие масла', 'Уменьшение уровня шума', 'Минимальная вибрация'],
-      icons: ['/icons/MagboostV8/icon1.png', '/icons/MagboostV8/icon2.png', '/icons/MagboostV8/icon3.png', '/icons/MagboostV8/icon4.png'],
+      bg: bg2,
+      image: v8a1,
+      vector: shieldBox,
+      titles: ['Степень защиты IP55 от влаги, соли, пыли и насекомых', 'Система микроканального охлаждения электронных компонентов хладагентом',
+   'Встроенный циркуляционный вентилятор, PTC нагреватель и пять высокоточных температурных датчиков для поддержания постоянной температуры внутри шкафа управления и электроснабжения']
+   },
+   {
+      bg: bg3,
+      image: v8a1,
+      vector: shieldBox,
+      titles: ['Степень защиты IP55 от влаги, соли, пыли и насекомых', 'Система микроканального охлаждения электронных компонентов хладагентом',
+   'Встроенный циркуляционный вентилятор, PTC нагреватель и пять высокоточных температурных датчиков для поддержания постоянной температуры внутри шкафа управления и электроснабжения']
    }]
 }
 
@@ -29,7 +41,7 @@ function V8Magboost() {
    return (
       <section className={styles.v8}>
          <V8Video video={v8.video} modelStartText={v8.modelStartText} />
-         <V8Main previewTitle={v8.previewTitle} imageTitleBlock={v8.imageTitleBlock} />
+         <V8Main previewTitle={v8.previewTitle} titleBlock={v8.titleBlock} />
       </section>
    )
 }
