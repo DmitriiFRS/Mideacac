@@ -1,20 +1,30 @@
 "use client"
 
 import styles from './MagboostV8.module.scss';
-import ImageTitleRC from './ImageTitleRC';
+import Description from './Description';
 import PreviewTitle from './PreviewTitle';
 import { useEffect, useState } from 'react';
 import PreviewTitleText from './PreviewTitleText';
 import { useSelector } from 'react-redux';
 import { RootState } from '../Redux/store';
+import Description2 from './Description2';
 type ImageTitleBlockType = {
    bg: any
    image: any
    vector: any
    titles: Array<string>
 }
+type titles = {
+   title: string
+   range: string
+}
+type titleBlock2 = {
+   bg: any
+   title: string
+   titles?: Array<titles>
+}
 
-function V8Main({previewTitle, titleBlock} : {previewTitle: Array<string>, titleBlock: Array<ImageTitleBlockType>}) {
+function V8Main({previewTitle, titleBlock, titleBlock2} : {previewTitle: Array<string>, titleBlock: Array<ImageTitleBlockType>, titleBlock2: Array<titleBlock2>}) {
    useEffect(() => {
       window.scrollTo(0,0)
    }, [])
@@ -41,11 +51,14 @@ function V8Main({previewTitle, titleBlock} : {previewTitle: Array<string>, title
             <PreviewTitleText previewTitle={previewTitle} scrollPosition={scrollPosition}/>
          </PreviewTitle>
          {imageTitleParams.map((el, index) => {
-            let orders = [];
-            index % 2 === 0 ? orders.push('1','2') : orders.push('2','1')
             return (
-               <ImageTitleRC bg={titleBlock[index].bg} image={titleBlock[index].image} vector={titleBlock[index].vector}
-               titles={titleBlock[index].titles} orders={orders} isView={el.isView} setIsView={el.setIsView}/>
+               <Description key={index} bg={titleBlock[index].bg} image={titleBlock[index].image} vector={titleBlock[index].vector}
+               titles={titleBlock[index].titles} index={index} isView={el.isView} setIsView={el.setIsView}/>
+            )
+         })}
+         {titleBlock2.map((el, index) => {
+            return (
+               <Description2 key={index} el={el} />
             )
          })}
       </section>
