@@ -52,7 +52,7 @@ function V8Main({previewTitle, titleBlock, titleBlock2} : {previewTitle: Array<s
          {imageTitleParams.map((el, index) => {
             return (
                <Description key={index} bg={titleBlock[index].bg} image={titleBlock[index].image} vector={titleBlock[index].vector}
-               titles={titleBlock[index].titles} index={index} isView={el.isView} setIsView={el.setIsView}/>
+               titles={titleBlock[index].titles} index={index}/>
             )
          })}
          {titleBlock2.map((el, index) => {
