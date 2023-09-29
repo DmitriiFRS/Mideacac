@@ -10,7 +10,6 @@ import bg2 from '../../public/img/v8magboost/cubesbg2.png';
 import bg3 from '../../public/img/v8magboost/cubesbg3.png';
 import bg4 from '../../public/img/v8magboost/cubesbg4.png';
 import temp from '../../public/img/v8magboost/temp.png';
-import V8Main2 from '../MagboostV8RC/Description2';
 
 
 const v8 = {
@@ -40,8 +39,9 @@ const v8 = {
       bg: bg3,
       image: v8a1,
       vector: hyperlink,
-      titles: ['Степень защиты IP55 от влаги, соли, пыли и насекомых', 'Система микроканального охлаждения электронных компонентов хладагентом',
-   'Встроенный циркуляционный вентилятор, PTC нагреватель и пять высокоточных температурных датчиков для поддержания постоянной температуры внутри шкафа управления и электроснабжения']
+      titles: ['19 датчиков в холодильном контуре для анализа состояния в режиме реального времени',
+      'В случае отказа физического датчика система создает виртуальный датчик (система Digital twin)',
+      'Контроль количества хладагента']
    }],
    titleBlock2: [{
       bg: bg4,

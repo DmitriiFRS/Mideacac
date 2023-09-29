@@ -16,7 +16,7 @@ function Description2({el}: {el : Description2Props}) {
    return (
       <div className={styles.description2}>
          <div className={`${styles.description2__bg}`}>
-            <Image src={el.bg} alt='' />
+            <Image src={el.bg} alt='' fill={true} quality={100}/>
          </div>
          <h2 className={styles.description2__title}>{el.title}</h2>
          {el.titles && <div className={styles.container}>

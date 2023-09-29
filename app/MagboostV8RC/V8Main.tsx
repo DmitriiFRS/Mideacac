@@ -1,5 +1,4 @@
 "use client"
-
 import styles from './MagboostV8.module.scss';
 import Description from './Description';
 import PreviewTitle from './PreviewTitle';
