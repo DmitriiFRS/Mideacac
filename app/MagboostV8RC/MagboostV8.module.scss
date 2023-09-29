@@ -3,6 +3,7 @@
    max-width: 1556px;
    margin: 0 auto;
    padding: 0 10px;
+   font-family: --font-M_PLUS_1;
 }
 .vrf {
    &__videoContainer {
@@ -206,8 +207,6 @@
    }
    &__img {
       position: relative;
-   }
-   &__body {
    }
    &__list {
       display: flex;
