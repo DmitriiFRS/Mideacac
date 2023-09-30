@@ -41,14 +41,14 @@ const initialState: initialStateType = {
          id: 2
       },
       {
-         title: 'Проектирование и что-то еще',
+         title: 'Проектирование',
          href: null,
          isActive: false,
          id: 3
       },
       {
-         title: 'И еще что-то',
-         href: null,
+         title: 'Сервис',
+         href: '/Service',
          isActive: false,
          id: 4
       },

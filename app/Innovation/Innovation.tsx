@@ -9,7 +9,6 @@ import imagebg from '../../public/img/Innovation/innovation_bg.png';
 import imagebg2 from '../../public/img/Innovation/Screenshot_1.png';
 import Titles2 from './Titles2';
 import Titles1 from './Titles1';
-import { useMediaQuery } from '../hooks/useMediaQuery';
 
 type styledStateType = {
    position: any
@@ -26,8 +25,6 @@ const styledState: styledStateType =
 
 }
 function Innovation() {
-   const matchHeight820 = useMediaQuery('(max-height: 820px)');
-   const matchWidth1650 = useMediaQuery('(max-width: 1650px)');
    const [isZoomed, setZoom] = useState<boolean>(false);
    const dispatch = useDispatch();
    const scrollRate = useSelector((state: RootState) => state.mainPageReducer.scrollRate);
@@ -46,8 +43,6 @@ function Innovation() {
       }
    })
    useEffect(() => {
-   // ---------------------- start fixed position ------------------------- //
-   // ---------------------- start fixed position ------------------------- //
       if (scrollRate !== null && scrollRate > 20) {
          setZoom(true);
       }

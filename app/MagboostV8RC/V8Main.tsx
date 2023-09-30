@@ -4,9 +4,10 @@ import Description from './Description';
 import PreviewTitle from './PreviewTitle';
 import { useEffect, useState } from 'react';
 import PreviewTitleText from './PreviewTitleText';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../Redux/store';
 import Description2 from './Description2';
+import { setSidemenuVisible } from '../Redux/Slice/mainPageSlice';
 type ImageTitleBlockType = {
    bg: any
    image: any
@@ -28,6 +29,7 @@ function V8Main({previewTitle, titleBlock, titleBlock2}
    useEffect(() => {
       window.scrollTo(0,0)
    }, [])
+   const dispatch = useDispatch();
    const [isView1, setIsView1] = useState(false)
    const [isView2, setIsView2] = useState(false)
    const [isView3, setIsView3] = useState(false)
@@ -45,6 +47,14 @@ function V8Main({previewTitle, titleBlock, titleBlock2}
    }
    ]
    const scrollPosition = useSelector((state: RootState) => state.innovationsReducer.scrollRate);
+   useEffect(() => {
+      if (scrollPosition !== null && scrollPosition > 7) {
+         dispatch(setSidemenuVisible(false))
+      }
+      if (scrollPosition !== null && scrollPosition < 7) {
+         dispatch(setSidemenuVisible(true))
+      }
+   }, [scrollPosition])
    return (
       <section className={styles.VRFMain}>
          <PreviewTitle>
