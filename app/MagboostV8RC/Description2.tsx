@@ -1,4 +1,5 @@
 
+import Description2List from './Description2List';
 import styles from './MagboostV8.module.scss';
 import Image from 'next/image';
 type titles = {
@@ -6,7 +7,7 @@ type titles = {
    range: string
 }
 
-type Description2Props = {
+export type Description2Props = {
    bg: any
    title: string
    titles?: Array<titles>
@@ -19,19 +20,9 @@ function Description2({el}: {el : Description2Props}) {
             <Image src={el.bg} alt='' fill={true} quality={100}/>
          </div>
          <h2 className={styles.description2__title}>{el.title}</h2>
-         {el.titles && <div className={styles.container}>
-            <ul className={styles.description2__titles}>
-                  {el.titles.map((el, index) => {
-                     return (
-                        <li key={index} className={styles.description2__titleItem}>
-                           <span className={styles.description2__range}>{el.range}</span>
-                           <p className={styles.description2__subtitle}>{el.title}</p>
-                        </li>
-                     )
-                  })}
-            </ul>
+         <div className={styles.container}> 
+            {el.titles && <Description2List el={el}/>} 
          </div>
-         }
       </div>
    )
 }

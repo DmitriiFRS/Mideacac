@@ -101,7 +101,7 @@
    display: flex;
    align-items: center;
    justify-content: center;
-   z-index: 6;
+   z-index: 11;
 
    &__magboostContainer {
       position: absolute;
@@ -207,6 +207,9 @@
    }
    &__img {
       position: relative;
+      animation-name: glow;
+      animation-iteration-count: infinite;
+      animation-duration: 3s;
    }
    &__list {
       display: flex;
@@ -261,7 +264,7 @@
    &__title {
       background: #404040;
       position: relative;
-      z-index: 10;
+      z-index: 2;
       height: 102px;
       text-align: center;
       display: flex;
@@ -295,8 +298,15 @@
    }
    &__titleItem {
       display: flex;
+      opacity: 0;
+      transition: 0.3s;
+      transform: translateX(-30%);
       & > p {
          margin: 0 0 25px 108px;
+      }
+      &__active {
+         opacity: 1;
+         transform: translateX(0%);
       }
    }
    &__range {
@@ -313,4 +323,16 @@
       color: #404040;
    }
 
+}
+
+@keyframes glow {
+   0% {
+      opacity: 1;
+   }
+   50% {
+      opacity: 0.4;
+   }
+   100% {
+      opacity: 1;
+   }
 }

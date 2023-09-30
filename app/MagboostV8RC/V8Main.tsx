@@ -23,7 +23,8 @@ type titleBlock2 = {
    titles?: Array<titles>
 }
 
-function V8Main({previewTitle, titleBlock, titleBlock2} : {previewTitle: Array<string>, titleBlock: Array<ImageTitleBlockType>, titleBlock2: Array<titleBlock2>}) {
+function V8Main({previewTitle, titleBlock, titleBlock2}
+   : {previewTitle: Array<string>, titleBlock: Array<ImageTitleBlockType>, titleBlock2: Array<titleBlock2>}) {
    useEffect(() => {
       window.scrollTo(0,0)
    }, [])
