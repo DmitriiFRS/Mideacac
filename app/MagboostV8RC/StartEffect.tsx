@@ -30,7 +30,7 @@ function StartEffect({modelStartText}: StartEffectPropsType) {
    return (
       <div style={{opacity: `${scrollRate > 5 ? 1 - scrollRate / 10 : 1}`, display: scrollRate > 12 ? 'none' : 'flex'}} className={styles.effect}>
          <div style={{transform: `scale(${scrollRate < 1 ? 1 : scrollRate})`}} className={styles.effect__magboostContainer}>
-            <Image src={modelStartText} alt='Magboost' fill={true}></Image>
+            <Image src={modelStartText} alt='Innovation' fill={true}></Image>
          </div>
          <h3 style={{transform: `scale(${scrollRate < 1 ? 1 : (scrollRate + 10) / 10})`}} className={styles.effect__bgTitle}>Legendary</h3>
       </div>
