@@ -16,6 +16,10 @@
       & span:not(:last-child) {
          margin: 0 0 10px 0;
       }
+      @media(max-width: 1000px) {
+         height: 250px;
+         margin: 0 0 0 10px;
+      }
    }
    &__btnBlock {
       display: flex;
@@ -32,6 +36,10 @@
          width: 25px;
          height: 3px;
          background: #000;
+      }
+      @media(max-width: 1000px) {
+         max-height: 50px;
+         max-width: 50px;
       }
    }
    &__iconBody {

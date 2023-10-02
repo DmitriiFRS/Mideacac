@@ -24,8 +24,8 @@ type titleBlock2 = {
    titles?: Array<titles>
 }
 
-function V8Main({previewTitle, titleBlock, titleBlock2}
-   : {previewTitle: Array<string>, titleBlock: Array<ImageTitleBlockType>, titleBlock2: Array<titleBlock2>}) {
+function V8Main({previewTitle, previewTitleMobile, titleBlock, titleBlock2}
+   : {previewTitle: Array<string>, previewTitleMobile: Array<string>, titleBlock: Array<ImageTitleBlockType>, titleBlock2: Array<titleBlock2>}) {
    useEffect(() => {
       window.scrollTo(0,0)
    }, [])
@@ -58,7 +58,7 @@ function V8Main({previewTitle, titleBlock, titleBlock2}
    return (
       <section className={styles.VRFMain}>
          <PreviewTitle>
-            <PreviewTitleText previewTitle={previewTitle} scrollPosition={scrollPosition}/>
+            <PreviewTitleText previewTitle={previewTitle} previewTitleMobile={previewTitleMobile} scrollPosition={scrollPosition}/>
          </PreviewTitle>
          {imageTitleParams.map((el, index) => {
             return (
