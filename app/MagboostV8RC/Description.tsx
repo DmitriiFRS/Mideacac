@@ -13,6 +13,7 @@ export type ImageTitleProps = {
 }
 
 function Description({ bg, image, vector, titles, index }: ImageTitleProps) {
+   // flexDirection: index % 2 === 0 ? 'row' : 'row-reverse' and  flex-direction: column !important when max-width: 725px
    return (
       <div className={styles.description}>
          <div className={styles.description__bg}>
