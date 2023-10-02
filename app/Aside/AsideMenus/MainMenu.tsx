@@ -6,14 +6,16 @@ import styles from '../SideMenu.module.scss';
 import arrow from '../../../public/icons/ArrowNext.svg';
 import { RootState } from '@/app/Redux/store';
 import { useDispatch, useSelector } from 'react-redux';
-import { animateSubmenu, setActiveMenuItem, setActiveSubMenu } from '@/app/Redux/Slice/asideMenuSlice';
+import { animateSubmenu, isTransitionAside, setActiveMenuItem, setActiveSubMenu, toggleSidebar, transformWindow } from '@/app/Redux/Slice/asideMenuSlice';
 import { useState } from 'react';
+import { transform } from 'typescript';
 
 
 function MainMenu() {
    const [isProgress, setProgress] = useState<boolean>(false);
    const mainMenuList = useSelector((state: RootState) => state.asideReducer.mainMenuList);
    const isToggle = useSelector((state: RootState) => state.asideReducer.isToggleSubmenu);
+   const transform = useSelector((state: RootState) => state.asideReducer.translateWindow);
    const dispatch = useDispatch();
    function changeMenuItem (index: number) {
       if (isToggle || isProgress) return;
@@ -36,6 +38,17 @@ function MainMenu() {
          setProgress(false);
       }, 900)
    }
+   function closeMenu() {
+      if (transform === 'translateX(-110%)') return
+      dispatch(transformWindow('translateX(-110%)'));
+      dispatch(isTransitionAside(false));
+
+      setTimeout(() => {
+         dispatch(toggleSidebar(false))
+         document.body.style.paddingRight = '0px';
+         document.body.style.overflow = 'auto';
+      },900)
+   }
    return (
       <nav className={styles.sidebar__mainMenu}>
          <ul className={styles.sidebar__mainMenu__list}>
@@ -52,7 +65,13 @@ function MainMenu() {
                   )
                } else {
                   return (
-                     <Link key={index} href={el.href}>{el.title}</Link>
+                     <Link style={{animationDuration: ((index + 2) / 7)+'s'}}
+                     onClick={closeMenu} className={`${styles.sidebar__mainMenu__item} ${el.isActive ? styles.sidebar__mainMenu__itemActive : ''}`}
+                     key={index} href={el.href}>
+                        <button className={styles.sidebar__mainMenu__btn}>
+                           {el.title}
+                        </button>
+                     </Link>
                   )
                }
             })}
