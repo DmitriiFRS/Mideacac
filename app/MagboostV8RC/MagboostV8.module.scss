@@ -13,17 +13,50 @@
    &__videoContainer {
       position: fixed;
       left: 0;
-      top: 0;
+      top: 190vh;
       height: 115vh;
       width: 100%;
       object-fit: cover;
       z-index: 3;
+      @media(max-height: 600px) {
+         top: 250vh;
+      }
+      @media(max-height: 550px) {
+         top: 290vh;
+      }
+      @media(max-height: 500px) {
+         top: 330vh;
+      }
+      @media(max-height: 450px) {
+         top: 370vh;
+      }
+      @media(max-height: 400px) {
+         top: 420vh;
+      }
+      &__unactive {
+         top: 0;
+      }
    }
 }
 .VRFMain {
    margin: 335vh 0 0 0;
    @media(max-width: 960px) {
       margin: 310vh 0 0 0;
+   }
+   @media(max-height: 600px) {
+      margin: 360vh 0 0 0;
+   }
+   @media(max-height: 550px) {
+      margin: 400vh 0 0 0;
+   }
+   @media(max-height: 500px) {
+      margin: 440vh 0 0 0;
+   }
+   @media(max-height: 450px) {
+      margin: 480vh 0 0 0;
+   }
+   @media(max-height: 400px) {
+      margin: 530vh 0 0 0;
    }
 }
 .image__container {
@@ -308,7 +341,10 @@
    position: relative;
    display: flex;
    align-items: center;
-   justify-content: center;   
+   justify-content: center;
+   @media(max-height: 800px) {
+      height: 800px;
+   }
    &__bg {
       height: 100%;
       width: 100%;
@@ -316,6 +352,10 @@
       left: 0;
       top: 0;
       object-fit: cover;
+      object-position: center;
+      @media(max-height: 780px) {
+         height: 130%;
+      }
    }
    &__container {
       position: relative;
@@ -440,6 +480,9 @@
    height: 100vh;
    width: 100%;
    position: relative;
+   @media(max-height: 800px) {
+      height: 800px;
+   }
    &__container {
       @media(max-width: 600px) {
          width: 100%;

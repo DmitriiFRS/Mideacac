@@ -3,6 +3,7 @@
 import { useInView } from 'react-intersection-observer';
 import styles from './MagboostV8.module.scss';
 import { useEffect, useState } from 'react';
+import { useMediaQuery } from '../hooks/useMediaQuery';
 const listLine = [{
    left: '-20px'
 },
@@ -14,9 +15,10 @@ type DescriptionListProps = {
    titles: Array<string>
 }
 function DescriptionList({index, titles}: DescriptionListProps) {
+   const height800 = useMediaQuery('(max-height: 800px)');
    const [isImageIsIntersect, setIntersect] = useState(false);
    const {ref, inView} = useInView({
-      threshold: 1,
+      threshold: height800 ? 0.3 : 1,
       triggerOnce: true
    })
    useEffect(() => {

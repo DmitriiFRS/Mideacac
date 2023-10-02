@@ -4,11 +4,13 @@ import { useInView } from 'react-intersection-observer';
 import { Description2Props } from './Description2';
 import styles from './MagboostV8.module.scss';
 import { useEffect, useState } from 'react';
+import { useMediaQuery } from '../hooks/useMediaQuery';
 
 function Description2List({el}: {el: Description2Props}) {
    const [isElementInView, setIsView] = useState<boolean>(false);
+   const height800 = useMediaQuery('(max-height: 800px)');
    const {ref, inView} = useInView({
-      threshold: 1,
+      threshold: height800 ? 0.2 : 1,
       triggerOnce: true
    })
    useEffect(() => {
