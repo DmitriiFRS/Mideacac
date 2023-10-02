@@ -16,7 +16,7 @@ function Description({ bg, image, vector, titles, index }: ImageTitleProps) {
    return (
       <div className={styles.description}>
          <div className={styles.description__bg}>
-            <Image src={bg} alt='' />
+            <Image src={bg} alt='' fill={true} quality={100} />
          </div>
          <div style={{flexDirection: index % 2 === 0 ? 'row' : 'row-reverse'}} className={`${styles.description__container} ${styles.container}`}>
             <TitleImage image={image} />
