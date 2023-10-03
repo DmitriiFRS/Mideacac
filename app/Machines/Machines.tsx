@@ -24,12 +24,12 @@ const newestData = [{
    imageHeight: 504,
    href: 'V8'
 }]
-
+//31
 function Machines() {
    const scrollRate = useSelector((state: RootState) => state.mainPageReducer.scrollRate);
-   // (scrollRate - 32) * 100 / 3
+   //(32 - 31) * 0.10
 return (
-   <section className={styles.machines}>
+   <section style={{opacity: scrollRate !== null && scrollRate > 34 ? 1 : 0}} className={`${styles.machines}`}>
       <div className={styles.machines__shadow}>
          <Image src={shadowbg} alt='' fill={true}></Image>
       </div>
