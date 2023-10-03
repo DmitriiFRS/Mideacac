@@ -7,7 +7,6 @@ function Intro() {
    <section className={styles.intro}>
       <div className={`${styles.intro__container} container`}></div>
       <Video />
-      <ShadowLine />
    </section>
    )
 }
