@@ -8,7 +8,8 @@ function PreviewTitleText({previewTitle, previewTitleMobile, scrollPosition}:
    {previewTitle: Array<string>, previewTitleMobile: Array<string>, scrollPosition: number}) {
       const [client, setIsClient] = useState(false)
    const mobileWidth = useMediaQuery('(max-width: 510px)');
-   let scrollPositionCount = 15;
+   const mobileHeight = useMediaQuery('(max-height: 800px)');
+   let scrollPositionCount = mobileHeight ? 14.5 : 15.5;
    const pathname = usePathname();
    useEffect(() => {
       setIsClient(true)

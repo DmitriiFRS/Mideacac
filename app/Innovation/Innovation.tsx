@@ -3,10 +3,9 @@ import styles from './Innovation.module.scss';
 import Image from 'next/image';
 import { RootState } from '../Redux/store';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { scrollPosition, setSidemenuVisible } from '../Redux/Slice/mainPageSlice';
 import imagebg from '../../public/img/Innovation/innovation_bg.png';
-import imagebg2 from '../../public/img/Innovation/Screenshot_1.png';
 import Titles2 from './Titles2';
 import Titles1 from './Titles1';
 
@@ -25,11 +24,20 @@ const styledState: styledStateType =
 
 }
 function Innovation() {
+   const videoRef = useRef<any>(undefined);
    const [isZoomed, setZoom] = useState<boolean>(false);
    const dispatch = useDispatch();
    const scrollRate = useSelector((state: RootState) => state.mainPageReducer.scrollRate);
    const scrollWidth = useSelector((state: RootState) => state.mainPageReducer.scrollWidth);
    const isSidebarOpen = useSelector((state: RootState) => state.asideReducer.isSidebarOpen);
+   useEffect(() => {
+      console.log(scrollRate)
+   }, [scrollRate])
+   useEffect(() => {
+      if (videoRef.current) {
+         videoRef.current.defaultMuted = true
+      }
+   })
    useEffect(() => {
       function handleScroll() {
          const scrollPercentage = (window.pageYOffset / (document.body.scrollHeight - window.innerHeight) * 100)
@@ -62,10 +70,13 @@ return (
       <div className={`${styles.innovation__img} ${isZoomed ? styles.innovation__img__active : '' } ${styles.innovation__img1}`}>
          <Image style={{objectFit: 'cover', objectPosition: 'top'}} src={imagebg} alt='bg' fill={true} />
       </div>
-      <div className={`${styles.innovation__img} ${!isZoomed ? styles.innovation__img__active : '' } ${styles.innovation__img2}`}>
-         <Image style={{objectFit: 'cover', objectPosition: 'top'}} src={imagebg2} alt='bg' fill={true} />
+      <div style={{filter: scrollRate > 28 ? `blur(${(scrollRate - 27) * 100 / 30}px)` : 'none'}} className={`${styles.innovation__img} ${!isZoomed ? styles.innovation__img__active : '' } ${styles.innovation__img2}`}>
+         <video ref={videoRef} autoPlay muted loop playsInline>
+            <source className={styles.video} src='/video/LabVideo.mp4' type='video/mp4' />
+         </video>
       </div>
-      <h2 className={`${styles.innovation__title}`}>Innovations and technologies</h2>
+      <h2 className={`${styles.innovation__title} ${isZoomed ? styles.innovation__title__white : ''}
+      ${scrollRate > 31 ? styles.innovation__title__unactive : ''}`}>Innovations and technologies</h2>
       <Titles1 isZoomed={isZoomed} setZoom={setZoom} />
       <Titles2 isZoomed={isZoomed} setZoom={setZoom} />
    </section>

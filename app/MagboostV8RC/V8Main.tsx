@@ -48,6 +48,7 @@ function V8Main({previewTitle, previewTitleMobile, titleBlock, titleBlock2}
    ]
    const scrollPosition = useSelector((state: RootState) => state.innovationsReducer.scrollRate);
    useEffect(() => {
+      console.log(scrollPosition)
       if (scrollPosition !== null && scrollPosition > 7) {
          dispatch(setSidemenuVisible(false))
       }

@@ -1,3 +1,5 @@
+"use client"
+
 import styles from './Machines.module.scss';
 import magboost from '../../public/img/Innovation/magboost.png';
 import v8 from '../../public/img/Innovation/v8.png';
@@ -5,6 +7,8 @@ import NewestMachines from './NewestMachines';
 import Image from 'next/image';
 import shadowbg from '../../public/img/Innovation/shadow_bg.jpg';
 import TriggerFixEvent from './TriggerFixEvent';
+import { useSelector } from 'react-redux';
+import { RootState } from '../Redux/store';
 
 const newestData = [{
    deviceName: 'Magboost',
@@ -22,6 +26,8 @@ const newestData = [{
 }]
 
 function Machines() {
+   const scrollRate = useSelector((state: RootState) => state.mainPageReducer.scrollRate);
+   // (scrollRate - 32) * 100 / 3
 return (
    <section className={styles.machines}>
       <div className={styles.machines__shadow}>

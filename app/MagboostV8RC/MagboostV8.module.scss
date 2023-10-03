@@ -18,8 +18,14 @@
       width: 100%;
       object-fit: cover;
       z-index: 3;
-      @media(max-height: 600px) {
+      @media(max-height: 960px) {
+         top: 220vh;
+      }
+      @media(max-height: 750px) {
          top: 250vh;
+      }
+      @media(max-height: 600px) {
+         top: 270vh;
       }
       @media(max-height: 550px) {
          top: 290vh;
@@ -40,11 +46,14 @@
 }
 .VRFMain {
    margin: 335vh 0 0 0;
-   @media(max-width: 960px) {
-      margin: 310vh 0 0 0;
+   @media(max-height: 960px) {
+      margin: 350vh 0 0 0;
+   }
+   @media(max-height: 750px) {
+      margin: 370vh 0 0 0;
    }
    @media(max-height: 600px) {
-      margin: 360vh 0 0 0;
+      margin: 380vh 0 0 0;
    }
    @media(max-height: 550px) {
       margin: 400vh 0 0 0;
@@ -101,6 +110,7 @@
    }
    &__description {
       margin: 0 0 0 1vw;
+      border: 1px solid #000;
    }
    &__item {
       transform: translateX(-800%);
@@ -198,6 +208,7 @@
    }
 }
 .preview {
+   margin: 0 0 100px 0;
    &__titleContainer {
       font-size: 32px;
       padding: 0 0 0 80px;
@@ -205,7 +216,7 @@
          padding: 0 0 0 70px;
       }
       @media(max-width: 604px) {
-         padding: 0 0 0 60px;
+         padding: 0 0 0 50px;
       }
    }
    &__textLine {
@@ -324,7 +335,7 @@
       white-space: nowrap;
       z-index: 3;
       overflow: hidden;
-      transition: 0.7s;
+      transition: 0.4s;
    }
 }
 .img {
