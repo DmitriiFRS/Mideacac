@@ -9,7 +9,7 @@ import icon2 from '../../public/icons/Sidemenu/sideIcon2.png';
 import icon3 from '../../public/icons/Sidemenu/sideIcon3.png';
 import icon4 from '../../public/icons/Sidemenu/sideIcon4.png';
 import icon5 from '../../public/icons/Sidemenu/sideIcon5.png';
-import icon6 from '../../public/icons/Sidemenu/sideIcon6.svg';
+import icon6 from '../../public/icons/Sidemenu/sideIcon6.png';
 import { useEffect } from 'react';
 import { setScrollWidth } from '../Redux/Slice/mainPageSlice';
 const btnSections = [{

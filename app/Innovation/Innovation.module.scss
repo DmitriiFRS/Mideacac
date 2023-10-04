@@ -25,6 +25,12 @@
       &__unactive {
          opacity: 0;
       }
+      @media(max-width: 580px) {
+         font-size: 40px;
+      }
+      @media(max-width: 460px) {
+         top: 60px;
+      }
    }
    &__imgContainer1 {
       transform: translateY(0%);
@@ -96,13 +102,13 @@
          padding: 0 100px;
       }
       @media(max-width: 1000px) {
-         justify-content: space-between;
          padding: 0 70px;
          gap: 20px;
       }
+      @media(max-width: 500px) {
+         padding: 0 10px;
+      }
       @media(max-width: 420px) {
-         justify-content: space-between;
-         padding: 0 60px;
          gap: 15px;
       }
       @media(max-width: 380px) {
@@ -114,10 +120,21 @@
    
    &__item1 {
       transform: translateX(-40vw);
+      @media(max-width: 1300px) {
+         transform: translateX(-60vw);
+      }
+      @media(max-width: 390px) {
+         transform: translateX(-100vw);
+      }
    }
    &__item2 {
       transform: translateX(40vw);
-      
+      @media(max-width: 1300px) {
+         transform: translateX(60vw);
+      }
+      @media(max-width: 390px) {
+         transform: translateX(100vw);
+      }
    }
    &__item {
       opacity: 1;
@@ -174,6 +191,15 @@
       z-index: 10;
       height: 100%;
       width: 100%;
+      @media(max-width: 750px) {
+         left: 12%;
+      }
+      @media(max-width: 600px) {
+         left: 14%;
+      }
+      @media(max-width: 500px) {
+         left: 3%;
+      }
    }
    &__listTwo {
       height: 100%;
@@ -213,9 +239,27 @@
    }
    &__titleElemTwo {
       font-size: 45px;
+      @media(max-width: 580px) {
+         font-size: 40px;
+      }
+      @media(max-width: 450px) {
+         font-size: 35px;
+      }
+      @media(max-width: 380px) {
+         font-size: 10vw;
+      }
    }
    &__subElemTwo {
       font-size: 30px;
+      @media(max-width: 580px) {
+         font-size: 26px;
+      }
+      @media(max-width: 450px) {
+         font-size: 22px;
+      }
+      @media(max-width: 380px) {
+         font-size: 5.7vw;
+      }
    }
    &__imges {
       height: 400px;
