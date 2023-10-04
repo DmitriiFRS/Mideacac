@@ -20,8 +20,8 @@ function NewestMachines({deviceName, image, imageWidth, imageHeight, href}: Newe
          <p className={`${styles.machines__newest__title} 
          ${deviceName === 'Magboost' ? styles.machines__newest__title1 : styles.machines__newest__title2} ${isFixedEventActive ? styles.titleActive : ''}`}>{deviceName}
          </p>
-         <div className={styles.machines__container}>
-            <Image className={styles.t} src={image} alt='magboost' width={imageWidth} height={imageHeight} />
+         <div className={deviceName === 'Magboost' ? styles.machines__container__magboost : styles.machines__container}>
+            <Image className={styles.t} src={image} alt='magboost' fill={true} />
          </div>
       </Link>
    )

@@ -27,7 +27,6 @@ const newestData = [{
 //31
 function Machines() {
    const scrollRate = useSelector((state: RootState) => state.mainPageReducer.scrollRate);
-   //(32 - 31) * 0.10
 return (
    <section style={{opacity: scrollRate !== null && scrollRate > 34 ? 1 : 0}} className={`${styles.machines}`}>
       <div className={styles.machines__shadow}>
