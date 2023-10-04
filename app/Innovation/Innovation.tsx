@@ -76,7 +76,7 @@ return (
          </video>
       </div>
       <h2 className={`${styles.innovation__title} ${isZoomed ? styles.innovation__title__white : ''}
-      ${scrollRate > 31 ? styles.innovation__title__unactive : ''}`}>Innovations and technologies</h2>
+      ${scrollRate > 31 ? styles.innovation__title__unactive : ''}`}>Инновации и технологии</h2>
       <Titles1 isZoomed={isZoomed} setZoom={setZoom} />
       <Titles2 isZoomed={isZoomed} setZoom={setZoom} />
    </section>

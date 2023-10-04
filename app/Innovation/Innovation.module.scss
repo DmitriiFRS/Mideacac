@@ -5,6 +5,7 @@
    position: relative;
    z-index: 3;
    overflow: hidden;
+   font-family: --font-avant_garde;
    &__title {
       text-align: center;
       font-size: 50px;
@@ -15,9 +16,11 @@
       width: 100%;
       z-index: 200;
       color: #202020;
+      text-shadow: 2px 2px 4px #ffffff;
       transition: 0.6s;
       &__white {
          color: #ffffff;
+         text-shadow: 2px 2px 4px #202020;
       }
       &__unactive {
          opacity: 0;
@@ -86,7 +89,27 @@
       width: 100%;
       align-items: center;
       color: #202020;
+      text-shadow: 2px 2px 4px #ffffff;
       font-weight: 700;
+      @media(max-width: 1150px) {
+         justify-content: space-between;
+         padding: 0 100px;
+      }
+      @media(max-width: 1000px) {
+         justify-content: space-between;
+         padding: 0 70px;
+         gap: 20px;
+      }
+      @media(max-width: 420px) {
+         justify-content: space-between;
+         padding: 0 60px;
+         gap: 15px;
+      }
+      @media(max-width: 380px) {
+         flex-direction: column;
+         justify-content: center;
+         margin: 40px 0 0 0;
+      }
    }
    
    &__item1 {
@@ -99,6 +122,22 @@
    &__item {
       opacity: 1;
       transition: 0.5s;
+      @media(max-width: 1150px) {
+         text-align: center;
+         height: 250px;
+      }
+      @media(max-width: 1000px) {
+         background: rgba($color: #ffffff, $alpha: 0.2);
+      }
+      @media(max-width: 590px) {
+         height: 170px;
+      }
+      @media(max-width: 420px) {
+         height: 190px;
+      }
+      @media(max-width: 380px) {
+         width: 100%;
+      }
       &__active {
          transform: translateX(0vw);
          opacity: 1;
@@ -112,9 +151,21 @@
    }
    &__titleElem {
       font-size: 60px;
+      @media(max-width: 1380px) {
+         font-size: 40px;
+      }
+      @media(max-width: 590px) {
+         font-size: 30px;
+      }
    }
    &__subElem {
       font-size: 30px;
+      @media(max-width: 1380px) {
+         font-size: 25px;
+      }
+      @media(max-width: 590px) {
+         font-size: 15px;
+      }
    }
    &__navTwo {
       position: absolute;
@@ -129,6 +180,7 @@
       display: flex;
       flex-direction: column;
       color: #ffffff;
+      text-shadow: 2px 2px 4px #000000;
       font-weight: 700;
    }
    &__titleBlockTwo {

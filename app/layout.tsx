@@ -1,12 +1,16 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Montserrat, STIX_Two_Text, M_PLUS_1 } from 'next/font/google'
+import localFont from 'next/font/local'
 import Header from './Header/Header';
 import SideMenu from './Aside/SideMenu';
 import ReduxProvider from './Redux/Provider';
 import Footer from './Footer/Footer';
 
-const inter = Montserrat({ subsets: ['latin', 'cyrillic'] });
+const avantGarde = localFont({
+  src: '../public/fonts/avantgardebkbtrusbyme_demi.otf',
+  variable: '--font-avant_garde'
+});
 const mplusone = M_PLUS_1({
   subsets: ['latin'],
   style: 'normal',
@@ -33,7 +37,7 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body className={`${inter.className} ${mplusone.variable}`}>
+      <body className={`${mplusone.variable} ${avantGarde.variable}`}>
         <div className="wrapper">
           <ReduxProvider>
             <Header />
