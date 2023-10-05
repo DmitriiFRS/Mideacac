@@ -65,18 +65,17 @@ function Innovation() {
       }
    }, [scrollRate])
 return (
-   scrollRate &&
    <section style={{...styledState, paddingRight: isSidebarOpen ? `${scrollWidth}px` : ''}} className={styles.innovation}>
       <div className={`${styles.innovation__img} ${isZoomed ? styles.innovation__img__active : '' } ${styles.innovation__img1}`}>
          <Image style={{objectFit: 'cover', objectPosition: 'top'}} src={imagebg} alt='bg' fill={true} />
       </div>
-      <div style={{filter: scrollRate > 28 ? `blur(${(scrollRate - 27) * 100 / 30}px)` : 'none'}} className={`${styles.innovation__img} ${!isZoomed ? styles.innovation__img__active : '' } ${styles.innovation__img2}`}>
+      <div style={{filter: scrollRate !== null && scrollRate > 28 ? `blur(${(scrollRate - 27) * 100 / 30}px)` : 'none'}} className={`${styles.innovation__img} ${!isZoomed ? styles.innovation__img__active : '' } ${styles.innovation__img2}`}>
          <video ref={videoRef} autoPlay muted loop playsInline>
             <source className={styles.video} src='/video/LabVideo.mp4' type='video/mp4' />
          </video>
       </div>
       <h2 className={`${styles.innovation__title} ${isZoomed ? styles.innovation__title__white : ''}
-      ${scrollRate > 31 ? styles.innovation__title__unactive : ''}`}>Инновации и технологии</h2>
+      ${scrollRate !== null && scrollRate > 31 ? styles.innovation__title__unactive : ''}`}>Инновации и технологии</h2>
       <Titles1 isZoomed={isZoomed} setZoom={setZoom} />
       <Titles2 isZoomed={isZoomed} setZoom={setZoom} />
    </section>
