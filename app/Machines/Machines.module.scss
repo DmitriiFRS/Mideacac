@@ -45,6 +45,9 @@
    @media(max-width: 350px) {
       margin: 1100vw 0 0 0;
    }
+   @media(max-height: 900px) {
+      margin: 230vw 0 0 0;
+   }
    &__shadow {
       position: absolute;
       left: 0;
