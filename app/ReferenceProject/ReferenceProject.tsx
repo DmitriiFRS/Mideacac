@@ -17,4 +17,3 @@ function ReferenceProject() {
    )
 }
 export default ReferenceProject;
-// first block width: active '28.3%' hide '30.5%'

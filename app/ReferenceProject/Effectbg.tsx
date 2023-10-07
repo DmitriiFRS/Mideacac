@@ -22,10 +22,14 @@ function Effectbg() {
    }, [inView])
    return (
       <>
-         <div ref={ref} style={{height: even ? '0%' : '100%', width: even ? '30.5%' : '28.3%'}} className={`${styles.reference__img__effects} ${styles.reference__img__effect1}`}></div>
-         <div style={{height: odd ? '0%' : '100%', left: odd ? '27.4%' : '25.1%' }} className={`${styles.reference__img__effects} ${styles.reference__img__effect2}`}></div>
-         <div style={{height: even ? '0%' : '100%', left: even ? '52.1%' : '49.9%'}} className={`${styles.reference__img__effects} ${styles.reference__img__effect3}`}></div>
-         <div style={{height: odd ? '0%' : '100%', left: odd ? '76.7%' : '74.5%'}} className={`${styles.reference__img__effects} ${styles.reference__img__effect4}`}></div>
+         <div ref={ref}
+         className={`${styles.reference__img__effects} ${styles.reference__img__effect1} ${even ? styles.reference__img__active1 : ''}`}></div>
+         <div
+         className={`${styles.reference__img__effects} ${styles.reference__img__effect2} ${odd ? styles.reference__img__active2 : ''}`}></div>
+         <div
+         className={`${styles.reference__img__effects} ${styles.reference__img__effect3} ${even ? styles.reference__img__active3 : ''}`}></div>
+         <div
+         className={`${styles.reference__img__effects} ${styles.reference__img__effect4} ${odd ? styles.reference__img__active4 : ''}`}></div>
       </>
    )
 }
