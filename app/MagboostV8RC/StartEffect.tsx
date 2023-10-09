@@ -15,6 +15,9 @@ function StartEffect({modelStartText}: StartEffectPropsType) {
    const dispatch = useDispatch();
    const scrollRate = useSelector((state: RootState) => state.innovationsReducer.scrollRate);
    useEffect(() => {
+      console.log(scrollRate)
+   }, [scrollRate])
+   useEffect(() => {
       function handleScroll() {
          const scrollPercentage = (window.pageYOffset / (document.body.scrollHeight - window.innerHeight) * 100)
          if (scrollPercentage < 1) dispatch(scrollPosition(1));

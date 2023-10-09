@@ -1,5 +1,5 @@
 
-import styles  from '../V8/V8.module.scss';
+import styles  from './Magboost.module.scss';
 import V8Video from '../MagboostV8RC/V8Video';
 import V8Main from '../MagboostV8RC/V8Main';
 import bg1 from '../../public/img/v8magboost/cubesbg1.png'
@@ -11,6 +11,8 @@ import supersence from '../../public/icons/MagboostV8/supersence.svg'
 import shieldBox from '../../public/icons/MagboostV8/supersence.svg'
 import hyperlink from '../../public/icons/MagboostV8/supersence.svg'
 import temp from '../../public/img/v8magboost/temp.png'
+import MagboostMain from './Main/MagboostMain';
+import MagboostVideo from './MagboostVideo';
 
 const magboost = {
    video: '/video/Magboost-Main-Video.mp4',
@@ -90,9 +92,9 @@ const magboost = {
 
 function VRFv8Page() {
 return (
-   <section className={`${styles.vrf}`}>
-      <V8Video video={magboost.video} modelStartText={magboost.modelStartText} />
-      <V8Main previewTitle={magboost.previewTitle} previewTitleMobile={magboost.previewTitleMobile} titleBlock={magboost.titleBlock} titleBlock2={magboost.titleBlock2} />
+   <section className={styles.magboost}>
+      <MagboostVideo video={magboost.video} modelStartText={magboost.modelStartText} />
+      <MagboostMain />
    </section>
 )
 }
