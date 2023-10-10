@@ -6,6 +6,8 @@ function Frame3() {
 return (
    <div className={styles.frame3}>
       <div className={styles.frame3__imgBlock}>
+         <div className={styles.circle}></div>
+         <div className={styles.circle}></div>
          <h2 className={styles.frame3__imgBlock__title}>МАГНИТНЫЙ ПОДШИПНИК C ПРОСТРАНСТВЕННО-ВЕКТОРНЫМ УПРАВЛЕНИЕМ</h2>
          <div className={styles.frame3__imgBlock__img}>
             <Image fill={true} src={bearing} alt='bearing'/>

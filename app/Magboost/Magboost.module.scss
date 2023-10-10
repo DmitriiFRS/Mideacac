@@ -180,7 +180,7 @@
 .frame1 {
    position: relative;
    z-index: 2;
-   margin: 74px 0 0 0;
+   padding: 74px 0 0 0;
    &__title {
       color: #fff;
       text-align: center;
@@ -225,10 +225,10 @@
       padding: 22px;
       position: relative;
       &:hover .circle:nth-child(1) {
-         left: 120px;
+         left: 80px;
       }
       &:hover .circle:nth-child(2) {
-         right: 120px;
+         right: 80px;
       }
    }
    &__inner {
@@ -278,6 +278,14 @@
       box-shadow: 11px 11px 30px 4px rgba(164, 255, 255, 0.76);
       max-width: 921px;
       width: 100%;
+      position: relative;
+      z-index: 2;
+      &:hover .circle:nth-child(1) {
+         left: 80px;
+      }
+      &:hover .circle:nth-child(2) {
+         right: 80px;
+      }
       &__img {
          width: 100%;
          height: 500px;
@@ -304,7 +312,6 @@
       left: 0;
       top: 0;
       z-index: -1;
-      border: 1px solid #ffffff;
    }
    &__titleBlock {
       border-radius: 10px;
@@ -314,7 +321,7 @@
       max-width: 389px;
       width: 100%;
       max-height: 300px;
-      margin: 350px 0 0 0;
+      transform: translateY(450px);
    }
    &__item {
       font-size: 30px;
@@ -329,16 +336,17 @@
    height: 80px;
    background: radial-gradient(#b0e633, #53ef7d);
    position: absolute;
+   z-index: -1;
    animation: move-up6 2s ease-in infinite alternate-reverse;
    &:nth-child(1) {
    top: -25px;
    left: -25px;
-   transition: 0.3s ease-in-out;
+   transition: 0.2s ease-in-out;
    }
    &:nth-child(2) {
    bottom: -25px;
    right: -25px;
    animation-name: move-down1;
-   transition: 0.3s ease-in-out;
+   transition: 0.2s ease-in-out;
    }
  }

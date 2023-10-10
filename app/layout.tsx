@@ -1,6 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Montserrat, STIX_Two_Text, M_PLUS_1 } from 'next/font/google'
+import { Montserrat, STIX_Two_Text, M_PLUS_1, Didact_Gothic } from 'next/font/google'
 import localFont from 'next/font/local'
 import Header from './Header/Header';
 import SideMenu from './Aside/SideMenu';
@@ -11,6 +11,13 @@ const avantGarde = localFont({
   src: '../public/fonts/avantgardebkbtrusbyme_demi.otf',
   variable: '--font-avant_garde'
 });
+const didactGothic = Didact_Gothic({
+  subsets: ['latin', 'cyrillic'],
+  style: 'normal',
+  display: 'swap',
+  weight: ['400'],
+  variable: '--font-Didact_Gothic'
+})
 const mplusone = M_PLUS_1({
   subsets: ['latin'],
   style: 'normal',
