@@ -1,0 +1,13 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="50" height="50" rx="5" fill="#4DC1FD"/>
+<path d="M11.0077 30.4269H8V40.2346H11.0077V30.4269Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+<path d="M17.4154 29.9692H13.4923V41.8039H17.4154V29.9692Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+<path d="M38.9923 30.4269H42V40.2346H38.9923V30.4269Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+<path d="M32.5846 29.9692H36.5077V41.8039H32.5846V29.9692Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+<rect x="19.377" y="29.9692" width="11.2462" height="3.26923" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+<rect x="19.377" y="34.2847" width="11.2462" height="3.26923" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+<rect x="19.377" y="38.6001" width="11.2462" height="3.26923" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+<rect x="17.8076" y="16.5" width="14.1231" height="11.7692" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+<path d="M22.5808 10.6808V16.5H27.2231V12.5769H38.077V8H26.5039C24.3593 8 22.9949 9.78718 22.5808 10.6808Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="24.7385" cy="22.5153" r="3.26923" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+</svg>
