@@ -1,4 +1,10 @@
+"use client";
+
+import { useInView } from "react-intersection-observer";
 import styles from "../Magboost.module.scss";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/Redux/store";
 const cols = [
    {
       title: "Долговечность",
@@ -23,16 +29,42 @@ const cols = [
 ];
 
 function Titles() {
+   const scrollPosition = useSelector((state: RootState) => state.innovationsReducer.scrollRate);
+   const [ref, inView] = useInView({
+      threshold: 0.2,
+      triggerOnce: true,
+   });
+   const [isInView, setIsView] = useState(false);
+   useEffect(() => {
+      setIsView(inView);
+   }, [inView]);
+   console.log(scrollPosition);
    return (
       <div className={styles.titles}>
          <div className={styles.titles__mainBody}>
-            <h2 className={styles.titles__main}>
-               Midea MagBoost - это прорыв в системах охлаждения, который навсегда изменит ваши представления о
-               надежности и эффективности
-            </h2>
+            <div className={styles.titles__main}>
+               <div className={styles.titles__elem}>
+                  Midea MagBoost - это прорыв в системах охлаждения,
+                  <div style={{ opacity: scrollPosition > 20 ? 1 : 0 }} className={styles.titles__elemFiller}>
+                     Midea MagBoost - это прорыв в системах охлаждения,
+                  </div>
+               </div>
+               <div className={styles.titles__elem}>
+                  который навсегда изменит ваши представления о
+                  <div style={{ opacity: scrollPosition > 21 ? 1 : 0 }} className={styles.titles__elemFiller}>
+                     который навсегда изменит ваши представления о
+                  </div>
+               </div>
+               <div className={styles.titles__elem}>
+                  надежности и эффективности
+                  <div style={{ opacity: scrollPosition > 22 ? 1 : 0 }} className={styles.titles__elemFiller}>
+                     надежности и эффективности
+                  </div>
+               </div>
+            </div>
          </div>
 
-         <div className={styles.titles__cols}>
+         <div ref={ref} className={`${styles.titles__cols} ${isInView ? styles.titles__cols__active : ""}`}>
             {cols.map((el, index) => {
                return (
                   <li key={index} className={styles.titles__col}>

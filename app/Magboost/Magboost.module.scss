@@ -8,7 +8,7 @@
    &__videoContainer {
       position: fixed;
       left: 0;
-      top: 1000px;
+      top: 1200px;
       height: 115vh;
       width: 100%;
       object-fit: cover;
@@ -157,11 +157,8 @@
       }
    }
 }
-.magboostMain {
-   height: 4000px;
-}
 .titles {
-   margin: 2100px 0 0 0;
+   margin: 2300px 0 0 0;
    &__mainBody {
       width: 100%;
       display: flex;
@@ -175,6 +172,25 @@
       line-height: 140%;
       max-width: 900px;
    }
+   &__elem {
+      position: relative;
+      overflow: hidden;
+   }
+   &__elemFiller {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      color: #173a4d;
+      white-space: nowrap;
+      z-index: 3;
+      transition: 0.5s;
+      text-align: center;
+      &:nth-child(2) {
+         margin: 0 0 0 60px;
+      }
+   }
    &__cols {
       display: grid;
       gap: 90px 0;
@@ -182,6 +198,13 @@
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
       justify-items: center;
+      opacity: 0;
+      transform: translateY(200px);
+      transition: 1s;
+      &__active {
+         opacity: 1;
+         transform: translateY(0px);
+      }
    }
    &__col {
       list-style: none;
@@ -209,6 +232,9 @@
          color: #4dc1fd;
          font-weight: 700;
          z-index: 1;
+         animation-name: glow;
+         animation-duration: 5s;
+         animation-iteration-count: infinite;
       }
    }
 }
@@ -250,5 +276,19 @@
    }
    &__imgBody {
       position: relative;
+   }
+}
+@keyframes glow {
+   0% {
+      color: #4dc1fd;
+   }
+   33% {
+      color: #7700ff;
+   }
+   66% {
+      color: #00ffae;
+   }
+   100% {
+      color: #4dc1fd;
    }
 }
