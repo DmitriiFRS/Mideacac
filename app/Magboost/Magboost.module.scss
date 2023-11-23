@@ -8,7 +8,7 @@
    &__videoContainer {
       position: fixed;
       left: 0;
-      top: 1200px;
+      top: 1600px;
       height: 115vh;
       width: 100%;
       object-fit: cover;
@@ -158,14 +158,14 @@
    }
 }
 .titles {
-   margin: 2300px 0 0 0;
+   margin: 2700px 0 0 0;
    &__mainBody {
       width: 100%;
       display: flex;
       justify-content: center;
    }
    &__main {
-      color: #4dc1fd;
+      color: #e6e6e6;
       text-align: center;
       font-size: 32px;
       font-weight: 700;
@@ -182,7 +182,7 @@
       top: 0;
       height: 100%;
       width: 100%;
-      color: #173a4d;
+      color: #4dc1fd;
       white-space: nowrap;
       z-index: 3;
       transition: 0.5s;
@@ -200,7 +200,7 @@
       justify-items: center;
       opacity: 0;
       transform: translateY(200px);
-      transition: 1s;
+      transition: 0.7s ease-in-out;
       &__active {
          opacity: 1;
          transform: translateY(0px);
@@ -252,6 +252,13 @@
       margin: 70px 0 0 0;
       align-items: center;
       justify-content: center;
+      opacity: 0;
+      transform: translateY(200px);
+      transition: 0.6s ease-in-out;
+      &__active {
+         opacity: 1;
+         transform: translateY(0px);
+      }
    }
    &__evenBody {
       flex-direction: row-reverse;
@@ -265,6 +272,12 @@
          margin: 0 0 20px 0;
       }
    }
+   &__imgBody {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      aspect-ratio: 3/3;
+   }
 }
 .efficiancy {
    margin: 120px 0 0 0;
@@ -276,6 +289,11 @@
    }
    &__imgBody {
       position: relative;
+      width: 100%;
+      aspect-ratio: 5.8 / 2;
+      margin: 50px 0 120px 0;
+      border-radius: 12px;
+      overflow: hidden;
    }
 }
 @keyframes glow {

@@ -1,8 +1,9 @@
 import styles from "../Magboost.module.scss";
 import ContentReusable from "./ContentReusable";
-import MagBearing from "./MagBearing";
 import Titles from "./Titles";
-import bearing from "../../../public/img/v8magboost/bearing.png";
+import image1 from "../../../public/img/v8magboost/magboost-1.png";
+import image2 from "../../../public/img/v8magboost/magboost-2.png";
+import image3 from "../../../public/img/v8magboost/magboost-3.png";
 import icon1 from "../../../public/icons/MagboostV8/icon1.svg";
 import icon2 from "../../../public/icons/MagboostV8/icon2.svg";
 import icon3 from "../../../public/icons/MagboostV8/icon3.svg";
@@ -37,7 +38,7 @@ type ContentType = Array<ContentInner>;
 const content: ContentType = [
    {
       title: "Магнитный подшипник",
-      image: bearing,
+      image: image1,
       icons: {
          icon1: icon1,
          icon2: icon2,
@@ -53,7 +54,7 @@ const content: ContentType = [
    },
    {
       title: "Компрессор Back-to-back",
-      image: bearing,
+      image: image2,
       icons: {
          icon1: icon1,
          icon2: icon5,
@@ -69,7 +70,7 @@ const content: ContentType = [
    },
    {
       title: "Новейший теплообменник",
-      image: bearing,
+      image: image3,
       icons: {
          icon1: icon7,
          icon2: icon8,
