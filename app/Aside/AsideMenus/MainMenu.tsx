@@ -29,7 +29,6 @@ function MainMenu() {
          if (index === idx) return { ...el, isActive: true };
          else return { ...el, isActive: false };
       });
-      console.log(index);
       setProgress(true);
       dispatch(animateSubmenu(true));
       setTimeout(() => {

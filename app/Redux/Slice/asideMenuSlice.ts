@@ -41,7 +41,7 @@ const initialState: initialStateType = {
       },
       {
          title: "Проектирование",
-         href: null,
+         href: "/engineering",
          isActive: false,
          id: 3,
       },
