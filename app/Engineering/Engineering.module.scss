@@ -1,0 +1,72 @@
+.engineering {
+   &__bg {
+      position: relative;
+      width: 100vw;
+      aspect-ratio: 3/2;
+      max-height: 100vh;
+      margin: -90px 0 0 0;
+   }
+   &__title {
+      font-size: 32px;
+      color: #4dc1fd;
+      font-weight: 700;
+      line-height: 130%;
+      letter-spacing: 0.4px;
+      text-align: center;
+      margin: 120px 0 0 0;
+   }
+   &__cols {
+      margin: 120px 0 0 0;
+   }
+   &__bottomBody {
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+   }
+   &__bottom {
+      margin: 120px 0;
+      font-size: 32px;
+      line-height: 120%;
+      color: #4dc1fd;
+      max-width: 1173px;
+      font-weight: 700;
+   }
+}
+.cols {
+   &__title {
+      text-align: center;
+      color: #333;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+   }
+   &__body {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-auto-rows: 1fr;
+      margin: 70px 0 0 0;
+      justify-content: center;
+      gap: 65px 100px;
+   }
+   &__item {
+      max-width: 300px;
+      text-align: center;
+      justify-self: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+   }
+   &__title {
+      color: #333;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 120%;
+   }
+   &__sub {
+      color: #828282;
+      font-size: 16px;
+      margin: 10px 0 0 0;
+   }
+}

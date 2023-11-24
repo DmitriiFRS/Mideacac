@@ -16,6 +16,7 @@ import icon9 from "../../../public/icons/MagboostV8/icon9.svg";
 import icon10 from "../../../public/icons/MagboostV8/icon10.svg";
 import { StaticImageData } from "next/image";
 import Efficiancy from "./Efficiancy";
+import MagboostTitle from "./MagboostTitle";
 
 export type ContentInner = {
    title: string;
@@ -111,7 +112,11 @@ function MagboostMain() {
    return (
       <section className={styles.magboostMain}>
          <div className={styles.container}>
-            <Titles cols={cols} />
+            <div className={styles.titles}>
+               <MagboostTitle />
+               <Titles cols={cols} />
+            </div>
+
             {content.map((el, index) => {
                return <ContentReusable key={index} content={el} idx={index} />;
             })}
