@@ -5,30 +5,14 @@ import styles from "../Magboost.module.scss";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/Redux/store";
-const cols = [
-   {
-      title: "Долговечность",
-      sub: "Инновационные технологии и отсутствие трения увеличивают срок службы оборудования и сокращают затраты на обслуживание и ремонт.",
-      num: 1,
-   },
-   {
-      title: "Эффективность",
-      sub: "Высокая энергоэффективность снижает потребление энергии, позволяя экономить средства.",
-      num: 2,
-   },
-   {
-      title: "Компактность",
-      sub: "Усовершенствованная конструкция чиллеров и теплообменника обеспечивает их удобное и компактное размещение.",
-      num: 3,
-   },
-   {
-      title: "Минимальный шум",
-      sub: "Благодаря электромагнитной технологии снижается уровень шума. Работу оборудования становится комфортной и приемлемой для окружающей среды.",
-      num: 4,
-   },
-];
+type ColsObj = {
+   title: string;
+   sub: string;
+   num: number;
+};
+type ColsProps = Array<ColsObj>;
 
-function Titles() {
+function Titles({ cols }: { cols: ColsProps }) {
    const scrollPosition = useSelector((state: RootState) => state.innovationsReducer.scrollRate);
    const [ref, inView] = useInView({
       threshold: 0.2,

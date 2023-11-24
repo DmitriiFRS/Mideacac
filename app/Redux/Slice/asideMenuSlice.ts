@@ -1,70 +1,69 @@
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import { goodsObjType, subMenuGoods } from '@/app/GoodsData/SubMenuGoods';
-
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import { goodsObjType, subMenuGoods } from "@/app/GoodsData/SubMenuGoods";
 
 type initialStateType = {
-   isSidebarOpen: boolean
-   translateWindow: null | string
-   isTransition: boolean
-   mainMenuList: Array<mainMenuListType> 
-   subMenuActive: Array<goodsObjType>
-   isToggleSubmenu: boolean
-}
+   isSidebarOpen: boolean;
+   translateWindow: null | string;
+   isTransition: boolean;
+   mainMenuList: Array<mainMenuListType>;
+   subMenuActive: Array<goodsObjType>;
+   isToggleSubmenu: boolean;
+};
 type mainMenuListType = {
-   title: string
-   href: null | string
-   isActive: boolean
-   id: number
-}
+   title: string;
+   href: null | string;
+   isActive: boolean;
+   id: number;
+};
 
 const initialState: initialStateType = {
    isSidebarOpen: false,
-   translateWindow: 'translateX(-110%)',
+   translateWindow: "translateX(-110%)",
    isTransition: false,
    mainMenuList: [
       {
-         title: 'Оборудование',
+         title: "Оборудование",
          href: null,
          isActive: true,
-         id: 0
+         id: 0,
       },
       {
-         title: 'Логистика',
+         title: "Логистика",
+         href: "/Logistic",
+         isActive: false,
+         id: 1,
+      },
+      {
+         title: "Монтаж и ПНР",
          href: null,
          isActive: false,
-         id: 1
+         id: 2,
       },
       {
-         title: 'Монтаж и ПНР',
+         title: "Проектирование",
          href: null,
          isActive: false,
-         id: 2
+         id: 3,
       },
       {
-         title: 'Проектирование',
+         title: "Сервис",
+         href: "/Service",
+         isActive: false,
+         id: 4,
+      },
+      {
+         title: "Возможно еще что-то?",
          href: null,
          isActive: false,
-         id: 3
-      },
-      {
-         title: 'Сервис',
-         href: '/Service',
-         isActive: false,
-         id: 4
-      },
-      {
-         title: 'Возможно еще что-то?',
-         href: null,
-         isActive: false,
-         id: 5
+         id: 5,
       },
    ],
    subMenuActive: subMenuGoods[0],
-   isToggleSubmenu: false
-}
+   isToggleSubmenu: false,
+};
 
 const sidebarSlice = createSlice({
-   name: 'sidebar',
+   name: "sidebar",
    initialState,
    reducers: {
       toggleSidebar: (state, action: PayloadAction<boolean>) => {
@@ -84,8 +83,15 @@ const sidebarSlice = createSlice({
       },
       animateSubmenu: (state, action: PayloadAction<boolean>) => {
          state.isToggleSubmenu = action.payload;
-      }
-   }
-})
-export const {toggleSidebar, transformWindow, setActiveMenuItem, isTransitionAside, setActiveSubMenu, animateSubmenu} = sidebarSlice.actions;
+      },
+   },
+});
+export const {
+   toggleSidebar,
+   transformWindow,
+   setActiveMenuItem,
+   isTransitionAside,
+   setActiveSubMenu,
+   animateSubmenu,
+} = sidebarSlice.actions;
 export default sidebarSlice.reducer;

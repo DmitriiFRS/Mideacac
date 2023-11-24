@@ -1,6 +1,6 @@
 import styles from "../Magboost.module.scss";
 import ContentReusable from "./ContentReusable";
-import Titles from "./Titles";
+import Titles from "../../ReusableComponents/NumTitles";
 import image1 from "../../../public/img/v8magboost/magboost-1.png";
 import image2 from "../../../public/img/v8magboost/magboost-2.png";
 import image3 from "../../../public/img/v8magboost/magboost-3.png";
@@ -85,11 +85,33 @@ const content: ContentType = [
       },
    },
 ];
+const cols = [
+   {
+      title: "Долговечность",
+      sub: "Инновационные технологии и отсутствие трения увеличивают срок службы оборудования и сокращают затраты на обслуживание и ремонт.",
+      num: 1,
+   },
+   {
+      title: "Эффективность",
+      sub: "Высокая энергоэффективность снижает потребление энергии, позволяя экономить средства.",
+      num: 2,
+   },
+   {
+      title: "Компактность",
+      sub: "Усовершенствованная конструкция чиллеров и теплообменника обеспечивает их удобное и компактное размещение.",
+      num: 3,
+   },
+   {
+      title: "Минимальный шум",
+      sub: "Благодаря электромагнитной технологии снижается уровень шума. Работу оборудования становится комфортной и приемлемой для окружающей среды.",
+      num: 4,
+   },
+];
 function MagboostMain() {
    return (
       <section className={styles.magboostMain}>
          <div className={styles.container}>
-            <Titles />
+            <Titles cols={cols} />
             {content.map((el, index) => {
                return <ContentReusable key={index} content={el} idx={index} />;
             })}

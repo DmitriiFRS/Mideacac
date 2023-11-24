@@ -1,0 +1,58 @@
+.logistic {
+   &__bg {
+      position: relative;
+      width: 100vw;
+      aspect-ratio: 3/2;
+      max-height: 100vh;
+      margin: -90px 0 0 0;
+   }
+   &__title {
+      font-size: 32px;
+      font-weight: 700;
+      text-align: center;
+      margin: 120px 0 0 0;
+      letter-spacing: 2px;
+      color: #333;
+   }
+   &__bottom {
+      margin: 120px 0 0 0;
+      &__title {
+         font-size: 32px;
+         font-weight: 700;
+         color: #333;
+         text-align: center;
+      }
+      &__subBody {
+         width: 100%;
+         display: flex;
+         justify-content: center;
+      }
+      &__sub {
+         margin: 50px 0 0 0;
+         color: #828282;
+         text-align: center;
+         font-size: 16px;
+         max-width: 863px;
+         line-height: 140%;
+      }
+   }
+   &__bottombg {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/1.8;
+      margin: 27px 0;
+   }
+   &__sub2 {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      color: #828282;
+      font-size: 16px;
+      margin: 0 0 120px 0;
+      line-height: 140%;
+      p {
+         text-align: center;
+         max-width: 863px;
+      }
+   }
+}
