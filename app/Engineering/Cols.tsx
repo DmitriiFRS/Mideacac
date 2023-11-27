@@ -28,7 +28,7 @@ const cols = [
 function Cols() {
    return (
       <div className={`${styles.engineering__cols} ${styles.cols}`}>
-         <h3 className={styles.cols__title}>Этапы разработки</h3>
+         <h3 className={styles.cols__mainTitle}>Этапы разработки</h3>
          <ul className={styles.cols__body}>
             {cols.map((el, index) => {
                return (
