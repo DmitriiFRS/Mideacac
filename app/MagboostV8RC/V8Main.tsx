@@ -87,7 +87,7 @@ function V8Main({
             );
          })}
          {titleBlock2.map((el, index) => {
-            return <Description2 key={index} el={el} />;
+            return <Description2 key={index} el={el} index={index} />;
          })}
       </section>
    );
