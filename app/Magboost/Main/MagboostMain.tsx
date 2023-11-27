@@ -1,5 +1,5 @@
 import styles from "../Magboost.module.scss";
-import ContentReusable from "./ContentReusable";
+import ContentBlock from "./ContentBlock";
 import Titles from "../../ReusableComponents/NumTitles";
 import image1 from "../../../public/img/v8magboost/magboost-1.png";
 import image2 from "../../../public/img/v8magboost/magboost-2.png";
@@ -21,12 +21,6 @@ import MagboostTitle from "./MagboostTitle";
 export type ContentInner = {
    title: string;
    image: StaticImageData;
-   icons: {
-      icon1: string;
-      icon2: string;
-      icon3: string;
-      icon4: string;
-   };
    titles: {
       title1: string;
       title2: string;
@@ -40,12 +34,6 @@ const content: ContentType = [
    {
       title: "Магнитный подшипник",
       image: image1,
-      icons: {
-         icon1: icon1,
-         icon2: icon2,
-         icon3: icon3,
-         icon4: icon4,
-      },
       titles: {
          title1: "Меньше трения",
          title2: "Меньше износа",
@@ -56,12 +44,6 @@ const content: ContentType = [
    {
       title: "Компрессор Back-to-back",
       image: image2,
-      icons: {
-         icon1: icon1,
-         icon2: icon5,
-         icon3: icon6,
-         icon4: icon2,
-      },
       titles: {
          title1: "Меньше трения",
          title2: "Отсутствие масла",
@@ -72,12 +54,6 @@ const content: ContentType = [
    {
       title: "Новейший теплообменник",
       image: image3,
-      icons: {
-         icon1: icon7,
-         icon2: icon8,
-         icon3: icon9,
-         icon4: icon10,
-      },
       titles: {
          title1: "Снижение потребления фреона на 40%",
          title2: "Увеличенная поверхность контакта на 30%",
@@ -118,7 +94,7 @@ function MagboostMain() {
             </div>
 
             {content.map((el, index) => {
-               return <ContentReusable key={index} content={el} idx={index} />;
+               return <ContentBlock key={index} content={el} idx={index} />;
             })}
             <Efficiancy />
          </div>
