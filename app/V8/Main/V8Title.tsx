@@ -11,19 +11,19 @@ function MagboostTitle() {
          <div className={styles.titles__main}>
             <div className={styles.titles__elem}>
                Мы не ограничиваемся просто созданием продукта. Мы стремимся к
-               <div style={{ opacity: scrollPosition > 21 ? 1 : 0 }} className={styles.titles__elemFiller}>
+               <div style={{ opacity: scrollPosition > 16 ? 1 : 0 }} className={styles.titles__elemFiller}>
                   Мы не ограничиваемся просто созданием продукта. Мы стремимся к
                </div>
             </div>
             <div className={styles.titles__elem}>
                совершенству, и наша
-               <div style={{ opacity: scrollPosition > 22 ? 1 : 0 }} className={styles.titles__elemFiller}>
+               <div style={{ opacity: scrollPosition > 17 ? 1 : 0 }} className={styles.titles__elemFiller}>
                   совершенству, и наша
                </div>
             </div>
             <div className={styles.titles__elem}>
                новейшая серия - Midea V8 VRF - это воплощение этой философии.
-               <div style={{ opacity: scrollPosition > 23 ? 1 : 0 }} className={styles.titles__elemFiller}>
+               <div style={{ opacity: scrollPosition > 18 ? 1 : 0 }} className={styles.titles__elemFiller}>
                   новейшая серия - Midea V8 VRF - это воплощение этой философии.
                </div>
             </div>
