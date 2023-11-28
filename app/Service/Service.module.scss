@@ -87,6 +87,8 @@
       justify-content: center;
       text-align: center;
       transition: 0.7s;
+      opacity: 0;
+      transform: translateY(200px);
       &__title {
          font-size: 24px;
          font-weight: 700;
@@ -96,6 +98,13 @@
          font-size: 16px;
          margin: 10px 0 0 0;
       }
+      &__active {
+         opacity: 1;
+         transform: translateY(0px);
+      }
+   }
+   &__item2 {
+      transition-delay: 0.4s;
    }
 }
 .card {
@@ -108,8 +117,15 @@
       gap: 80px;
       max-width: 1290px;
       margin: 0 auto;
+      transition: 0.7s;
+      opacity: 0;
+      transform: translateY(200px);
       &:not(:first-child) {
          margin: 60px auto 0 auto;
+      }
+      &__active {
+         opacity: 1;
+         transform: translateY(0px);
       }
    }
    &__imgBody {
