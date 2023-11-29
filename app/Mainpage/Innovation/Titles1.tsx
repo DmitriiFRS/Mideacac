@@ -33,7 +33,7 @@ function Titles1({ isZoomed, setZoom }: Titles1Props) {
                         index === 0 ? styles.innovation__item1 : styles.innovation__item2
                      }
                   ${
-                     scrollRate !== null && scrollRate > 7 && !isZoomed
+                     scrollRate !== null && scrollRate > 1 && !isZoomed
                         ? styles.innovation__item__active
                         : styles.innovation__item__unactive
                   }`}

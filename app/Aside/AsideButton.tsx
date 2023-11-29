@@ -48,7 +48,6 @@ const btnSections = [
 
 function AsideButton() {
    const dispatch = useDispatch();
-   const mainMenuList = useSelector((state: RootState) => state.asideReducer.mainMenuList);
    const isSidemenuVisible = useSelector((state: RootState) => state.mainPageReducer.isSidemenuVisible);
    const scrollWidth = useSelector((state: RootState) => state.mainPageReducer.scrollWidth);
    useEffect(() => {
@@ -63,16 +62,8 @@ function AsideButton() {
          dispatch(isTransitionAside(true));
       });
    }
-   function changeMenuItem(index: number) {
-      const newMenu = mainMenuList.map((el, idx) => {
-         if (index === idx) return { ...el, isActive: true };
-         else return { ...el, isActive: false };
-      });
-      dispatch(setActiveMenuItem(newMenu));
-      dispatch(setActiveSubMenu(index));
-   }
    return (
-      <button onClick={openSideMenu} className={styles.aside__openBtn}>
+      <button className={styles.aside__openBtn}>
          {btnSections.map((el, index) => {
             return (
                <li
@@ -81,7 +72,7 @@ function AsideButton() {
                      transform: isSidemenuVisible ? "translateX(-900%)" : "translateX(0%)",
                      transitionDelay: el.transitiodDelay,
                   }}
-                  onClick={() => changeMenuItem(index)}
+                  onClick={openSideMenu}
                   key={index}
                   className={styles.aside__btnBlock}
                >
