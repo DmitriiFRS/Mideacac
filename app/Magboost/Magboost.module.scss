@@ -246,7 +246,7 @@
    grid-template-rows: 1fr;
    justify-items: center;
    &__title {
-      font-size: 32px;
+      font-size: 24px;
       font-weight: 700;
    }
    &__body {
@@ -281,7 +281,7 @@
       display: flex;
       gap: 30px;
       align-items: center;
-      font-size: 24px;
+      font-size: 16px;
       position: relative;
       z-index: 3;
       color: #828282;
@@ -296,8 +296,8 @@
          width: 8px;
          border-radius: 50%;
          position: absolute;
-         left: -23px;
-         top: 9px;
+         left: -18px;
+         top: 5px;
          background: #828282;
          z-index: 2;
       }
