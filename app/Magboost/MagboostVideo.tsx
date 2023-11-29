@@ -15,6 +15,9 @@ function V8Video({ video, modelStartText }: VideoComponentType) {
    const scrollPosition = useSelector((state: RootState) => state.innovationsReducer.scrollRate);
    const videoRef = useRef<any>(undefined);
    useEffect(() => {
+      window.scrollTo(0, 0);
+   }, []);
+   useEffect(() => {
       videoRef.current.defaultMuted = true;
    });
    return (

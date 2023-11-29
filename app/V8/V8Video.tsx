@@ -17,6 +17,9 @@ function V8Video({ video, modelStartText }: VideoComponentType) {
    useEffect(() => {
       videoRef.current.defaultMuted = true;
    });
+   useEffect(() => {
+      window.scrollTo(0, 0);
+   }, []);
    return (
       <div className={styles.magboost__container}>
          <ZoomEffect modelStartText={modelStartText} />
