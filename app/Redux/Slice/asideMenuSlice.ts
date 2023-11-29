@@ -52,8 +52,8 @@ const initialState: initialStateType = {
          id: 4,
       },
       {
-         title: "Возможно еще что-то?",
-         href: null,
+         title: "Контакты",
+         href: "/Contacts",
          isActive: false,
          id: 5,
       },
