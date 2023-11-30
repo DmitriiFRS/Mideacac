@@ -11,6 +11,10 @@
       text-transform: uppercase;
       text-align: center;
       padding: 0 0 60px 0;
+      @media (max-width: 490px) {
+         font-size: 24px;
+         padding: 0 0 40px 0;
+      }
    }
    &__imgBody {
       transition: 5s;
@@ -19,7 +23,7 @@
    &__img {
       position: relative;
       width: 100%;
-      height: 65vh;
+      aspect-ratio: 5/2;
       &__effects {
          position: absolute;
          top: 0;
@@ -32,13 +36,13 @@
          transform: skew(-8.2deg);
          background: #ffffff;
          transition: 0.7s;
-         @media(max-width: 700px) {
+         @media (max-width: 700px) {
             transform: skew(-6.2deg);
          }
-         @media(max-width: 1500px) {
+         @media (max-width: 1500px) {
             left: -2.7%;
          }
-         @media(max-width: 1200px) {
+         @media (max-width: 1200px) {
             width: 34.5%;
             left: -3.2%;
          }
@@ -54,30 +58,28 @@
          transform: skew(-8.1deg);
          background: #ffffff;
          transition: 0.7s;
-         @media(max-width: 1300px) {
+         @media (max-width: 1300px) {
             width: 25%;
          }
-         @media(max-width: 1100px) {
+         @media (max-width: 1100px) {
             width: 25.4%;
             left: 24.8%;
          }
-         @media(max-width: 1000px) {
+         @media (max-width: 1000px) {
             transform: skew(-7.2deg);
             left: 25.3%;
          }
-         
       }
       &__active2 {
          height: 0%;
          left: 27.4%;
-         @media(max-width: 1200px) {
+         @media (max-width: 1200px) {
             transform: skew(-7.3deg);
          }
-         @media(max-width: 1100px) {
+         @media (max-width: 1100px) {
             transform: skew(-7deg);
          }
-         @media(max-width: 1000px) {
-
+         @media (max-width: 1000px) {
          }
       }
       &__effect3 {
@@ -91,7 +93,7 @@
       &__active3 {
          height: 0%;
          left: 52.1%;
-         @media(max-width: 1300px) {
+         @media (max-width: 1300px) {
             left: 52.8%;
             width: 25.2%;
          }
@@ -107,7 +109,7 @@
       &__active4 {
          height: 0%;
          left: 76.7%;
-         @media(max-width: 1100px) {
+         @media (max-width: 1100px) {
             width: 36%;
             left: 76.5%;
             transform: skew(-1.5deg);

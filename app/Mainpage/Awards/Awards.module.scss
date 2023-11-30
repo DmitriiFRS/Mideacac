@@ -1,38 +1,41 @@
 .awards {
    padding: 200px 40px 50px 40px;
-   background: rgb(254,255,250);
+   background: rgb(254, 255, 250);
    position: relative;
    z-index: 10;
-   @media(max-width: 1720px) {
+   @media (max-width: 1720px) {
       padding: 200px 80px 50px 80px;
    }
-   @media(max-width: 600px) {
+   @media (max-width: 600px) {
       padding: 200px 70px 50px 70px;
    }
-   @media(max-width: 500px) {
+   @media (max-width: 500px) {
       padding: 200px 10px 50px 10px;
    }
    &__title {
       text-align: center;
       font-size: 40px;
       font-weight: 600;
+      @media (max-width: 490px) {
+         font-size: 24px;
+      }
    }
    &__iconsBody {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin: 60px auto 0 auto;
-      @media(max-width: 950px) {
+      @media (max-width: 950px) {
          flex-wrap: wrap;
          gap: 20px;
       }
-      @media(max-width: 844px) {
+      @media (max-width: 844px) {
          display: grid;
          grid-template-columns: 1fr 1fr;
          grid-template-rows: 1fr 1fr;
          justify-items: center;
       }
-      @media(max-width: 600px) {
+      @media (max-width: 600px) {
          gap: 30px;
       }
    }

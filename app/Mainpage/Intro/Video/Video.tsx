@@ -6,10 +6,6 @@ import { useEffect } from "react";
 function Video() {
    const scrollRate = useSelector((state: RootState) => state.mainPageReducer.scrollRate);
 
-   useEffect(() => {
-      window.scrollTo(0, 0);
-   }, []);
-
    return (
       <video
          style={{ opacity: scrollRate !== null && scrollRate < 0.3 ? 1 : 0 }}
