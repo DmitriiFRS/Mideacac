@@ -9,7 +9,7 @@ import shadowbg from "../../../public/img/Innovation/shadow_bg.jpg";
 import TriggerFixEvent from "./TriggerFixEvent";
 import { useSelector } from "react-redux";
 import { RootState } from "../../Redux/store";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const newestData = [
    {
@@ -29,13 +29,23 @@ const newestData = [
 ];
 function Machines() {
    const [triggerOnce, setTrigger] = useState(false);
+   const [check, setCheck] = useState(false);
    const scrollRate = useSelector((state: RootState) => state.mainPageReducer.scrollRate);
-   if (scrollRate !== null && scrollRate > 33 && !triggerOnce) {
+   useEffect(() => {
+      if (scrollRate !== null && scrollRate > 33) {
+         setCheck(true);
+      }
+      if (scrollRate !== null && scrollRate < 33 && check) {
+         setCheck(false);
+      }
+   }, [scrollRate]);
+   if (scrollRate !== null && scrollRate > 33 && !triggerOnce && check) {
       setTrigger(true);
       document.body.style.overflow = "hidden";
       setTimeout(() => {
          window.scrollTo(0, 3930);
       }, 100);
+
       setTimeout(() => {
          document.body.style.overflow = "auto";
       }, 1100);
@@ -43,6 +53,7 @@ function Machines() {
    if (scrollRate !== null && scrollRate < 33 && triggerOnce) {
       setTrigger(false);
    }
+
    return (
       <section style={{ opacity: scrollRate !== null && scrollRate > 34 ? 1 : 0 }} className={`${styles.machines}`}>
          <div className={styles.machines__shadow}>
