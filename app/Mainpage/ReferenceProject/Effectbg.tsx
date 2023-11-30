@@ -13,6 +13,7 @@ function Effectbg() {
    const { ref, inView } = useInView({
       threshold: 0.6,
       rootMargin: "10% 0% 0% 0%",
+      triggerOnce: true,
    });
    useEffect(() => {
       dispatch(referenceEven(inView));
