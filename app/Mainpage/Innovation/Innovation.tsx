@@ -54,10 +54,10 @@ function Innovation() {
       if (scrollRate !== null && scrollRate < 15) {
          setZoom(false);
       }
-      if (scrollRate !== null && scrollRate > 7) {
+      if (scrollRate !== null && scrollRate > 1) {
          dispatch(setSidemenuVisible(false));
       }
-      if (scrollRate !== null && scrollRate < 7) {
+      if (scrollRate !== null && scrollRate < 1) {
          dispatch(setSidemenuVisible(true));
       }
    }, [scrollRate]);

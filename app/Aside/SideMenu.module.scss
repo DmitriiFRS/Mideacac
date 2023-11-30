@@ -20,7 +20,7 @@
          height: 200px;
          margin: 0 0 0 10px;
       }
-      @media (max-width: 500px) {
+      @media (max-width: 640px) {
          display: none;
       }
    }
@@ -224,8 +224,12 @@
       &__img {
          margin: 20px 0 0 0;
          position: relative;
-         width: 100%;
-         height: 70%;
+         width: 400px;
+         aspect-ratio: 5/2;
+      }
+      &__imgV8 {
+         width: 300px;
+         aspect-ratio: 2/2;
       }
    }
 }
@@ -240,9 +244,10 @@
    top: 0;
    background: transparent;
    z-index: 200;
-   width: 60px;
-   height: 60px;
-   @media (max-width: 500px) {
+   width: 58px;
+   height: 58px;
+   margin: 0 10px 0 0;
+   @media (max-width: 640px) {
       display: flex;
    }
    &__line {
