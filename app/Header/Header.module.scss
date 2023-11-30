@@ -5,6 +5,9 @@
    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.5) 100%);
    position: relative;
    z-index: 14;
+   @media (max-width: 640px) {
+      box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.3);
+   }
 
    &__logo {
       position: relative;

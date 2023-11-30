@@ -17,13 +17,22 @@
       color: #202020;
       text-shadow: 2px 2px 4px #ffffff;
       transition: 0.6s;
+      @media (max-width: 640px) {
+         top: 280px !important;
+         color: #fff;
+         text-shadow: 2px 2px 4px #000;
+      }
       &__white {
          color: #ffffff;
          text-shadow: 2px 2px 4px #202020;
+         @media (max-width: 640px) {
+            opacity: 0;
+         }
       }
       &__unactive {
          opacity: 0;
       }
+
       @media (max-width: 580px) {
          font-size: 40px;
       }
@@ -54,6 +63,9 @@
          transform: scale(4);
          opacity: 0;
          z-index: 6;
+      }
+      @media (max-width: 640px) {
+         filter: brightness(70%);
       }
    }
    &__img2 {
@@ -104,16 +116,13 @@
          padding: 0 70px;
          gap: 20px;
       }
-      @media (max-width: 500px) {
-         padding: 0 10px;
-      }
-      @media (max-width: 420px) {
-         gap: 15px;
-      }
-      @media (max-width: 380px) {
-         flex-direction: column;
+      @media (max-width: 640px) {
+         display: flex;
+         align-items: center;
          justify-content: center;
-         margin: 40px 0 0 0;
+         margin: 130px 0 0 0;
+         color: #fff;
+         text-shadow: 2px 2px 4px #000;
       }
    }
 
@@ -141,18 +150,6 @@
       @media (max-width: 1150px) {
          text-align: center;
          height: 250px;
-      }
-      @media (max-width: 1000px) {
-         background: rgba($color: #ffffff, $alpha: 0.2);
-      }
-      @media (max-width: 590px) {
-         height: 170px;
-      }
-      @media (max-width: 420px) {
-         height: 190px;
-      }
-      @media (max-width: 380px) {
-         width: 100%;
       }
       &__active {
          transform: translateX(0vw);
@@ -193,11 +190,8 @@
       @media (max-width: 750px) {
          left: 12%;
       }
-      @media (max-width: 600px) {
-         left: 14%;
-      }
-      @media (max-width: 500px) {
-         left: 3%;
+      @media (max-width: 640px) {
+         left: 10px;
       }
    }
    &__listTwo {
@@ -238,12 +232,6 @@
    }
    &__titleElemTwo {
       font-size: 45px;
-      @media (max-width: 580px) {
-         font-size: 40px;
-      }
-      @media (max-width: 450px) {
-         font-size: 35px;
-      }
       @media (max-width: 380px) {
          font-size: 10vw;
       }
@@ -254,9 +242,6 @@
          font-size: 26px;
       }
       @media (max-width: 450px) {
-         font-size: 22px;
-      }
-      @media (max-width: 380px) {
          font-size: 5.7vw;
       }
    }
