@@ -26,7 +26,7 @@ function ZoomEffect({ modelStartText }: StartEffectPropsType) {
       return () => {
          window.removeEventListener("scroll", handleScroll);
       };
-   });
+   }, []);
    useEffect(() => {
       if (scrollPosition !== null && scrollRate > 7) {
          dispatch(setSidemenuVisible(false));

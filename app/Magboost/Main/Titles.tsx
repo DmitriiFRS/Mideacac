@@ -22,7 +22,6 @@ function Titles({ cols }: { cols: ColsProps }) {
    useEffect(() => {
       setIsView(inView);
    }, [inView]);
-   console.log(scrollPosition);
    return (
       <div className={styles.titles}>
          <div className={styles.titles__mainBody}>

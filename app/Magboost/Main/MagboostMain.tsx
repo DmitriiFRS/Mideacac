@@ -1,12 +1,13 @@
 import styles from "../Magboost.module.scss";
 import ContentBlock from "./ContentBlock";
-import Titles from "../../ReusableComponents/NumTitles";
+import NumTitles from "../../ReusableComponents/NumTitles";
 import image1 from "../../../public/img/v8magboost/magboost-1.png";
 import image2 from "../../../public/img/v8magboost/magboost-2.png";
 import image3 from "../../../public/img/v8magboost/magboost-3.png";
 import { StaticImageData } from "next/image";
 import Efficiancy from "./Efficiancy";
 import MagboostTitle from "./MagboostTitle";
+import MagboostTitleContainer from "./MagboostTitleContainer";
 
 export type ContentInner = {
    title: string;
@@ -79,8 +80,8 @@ function MagboostMain() {
       <section className={styles.magboostMain}>
          <div className={styles.container}>
             <div className={styles.titles}>
-               <MagboostTitle />
-               <Titles cols={cols} />
+               <MagboostTitleContainer />
+               <NumTitles cols={cols} />
             </div>
 
             {content.map((el, index) => {

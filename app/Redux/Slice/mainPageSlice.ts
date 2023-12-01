@@ -1,29 +1,29 @@
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 type initialStateType = {
-   isFixedEventActive: boolean
-   linesVisibility: boolean
-   scrollRate: number | null
-   isNewestVisible: boolean
-   even: boolean
-   odd: boolean
-   isSidemenuVisible: boolean
-   scrollWidth: null | number
-}
+   isFixedEventActive: boolean;
+   linesVisibility: boolean;
+   scrollRate: number | null;
+   isNewestVisible: boolean;
+   even: boolean;
+   odd: boolean;
+   isSidemenuVisible: boolean;
+   scrollWidth: null | number;
+};
 
 const initialState: initialStateType = {
    isFixedEventActive: false,
    linesVisibility: false,
-   scrollRate: null,
+   scrollRate: 0,
    isNewestVisible: false,
    even: false,
    odd: false,
    isSidemenuVisible: true,
-   scrollWidth: null
-}
+   scrollWidth: null,
+};
 
 const mainPageSlice = createSlice({
-   name: 'mainPage',
+   name: "mainPage",
    initialState,
    reducers: {
       changeEventStatus: (state, action: PayloadAction<boolean>) => {
@@ -33,7 +33,7 @@ const mainPageSlice = createSlice({
          state.linesVisibility = action.payload;
       },
       scrollPosition: (state, action: PayloadAction<number>) => {
-         state.scrollRate = action.payload
+         state.scrollRate = action.payload;
       },
       newestVisible: (state, action: PayloadAction<boolean>) => {
          state.isNewestVisible = action.payload;
@@ -45,13 +45,22 @@ const mainPageSlice = createSlice({
          state.odd = action.payload;
       },
       setSidemenuVisible: (state, action: PayloadAction<boolean>) => {
-         state.isSidemenuVisible = action.payload
+         state.isSidemenuVisible = action.payload;
       },
       setScrollWidth: (state, action: PayloadAction<number>) => {
-         state.scrollWidth = action.payload
-      }
-   }
-})
+         state.scrollWidth = action.payload;
+      },
+   },
+});
 
-export const {changeEventStatus, setVisibleLines, scrollPosition, newestVisible, referenceEven, referenceOdd, setSidemenuVisible, setScrollWidth} = mainPageSlice.actions;
+export const {
+   changeEventStatus,
+   setVisibleLines,
+   scrollPosition,
+   newestVisible,
+   referenceEven,
+   referenceOdd,
+   setSidemenuVisible,
+   setScrollWidth,
+} = mainPageSlice.actions;
 export default mainPageSlice.reducer;

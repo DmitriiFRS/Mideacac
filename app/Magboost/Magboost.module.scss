@@ -7,7 +7,8 @@
    &__videoContainer {
       position: fixed;
       left: 0;
-      top: 1600px;
+      top: 1550px;
+      min-height: 500px;
       height: 115vh;
       width: 100%;
       object-fit: cover;
@@ -94,6 +95,7 @@
    position: fixed;
    left: 0;
    top: 0;
+   min-height: 600px;
    height: 100vh;
    width: 100%;
    background: #000;
@@ -157,9 +159,21 @@
    }
 }
 .titles {
-   margin: 2700px 0 0 0;
+   margin: 2650px 0 0 0;
    padding: 121px 0 135px 0;
    background: #fafafa;
+   @media (max-height: 900px) {
+      margin: 2500px 0 0 0;
+   }
+   @media (max-height: 700px) {
+      margin: 2300px 0 0 0;
+   }
+   @media (max-height: 600px) {
+      margin: 2200px 0 0 0;
+   }
+   @media (max-height: 500px) {
+      margin: 2100px 0 0 0;
+   }
    &__mainBody {
       width: 100%;
       display: flex;
@@ -172,6 +186,21 @@
       font-weight: 700;
       line-height: 140%;
       max-width: 1000px;
+      @media (max-width: 940px) {
+         font-size: 24px;
+      }
+      @media (max-width: 720px) {
+         font-size: 21px;
+      }
+      @media (max-width: 630px) {
+         font-size: 24px;
+      }
+      @media (max-width: 430px) {
+         font-size: 20px;
+      }
+      @media (max-width: 360px) {
+         font-size: 17.8px;
+      }
    }
    &__elem {
       position: relative;
@@ -188,10 +217,18 @@
       z-index: 3;
       transition: 0.5s;
       text-align: center;
+      opacity: 0;
       &:nth-child(2) {
          margin: 0 0 0 60px;
       }
    }
+   &__elemFillerActiveMedia {
+      opacity: 1;
+   }
+   &__elemFillerActive {
+      opacity: 1;
+   }
+
    &__cols {
       display: grid;
       gap: 90px 0;
