@@ -16,7 +16,7 @@ function MagboostTitle() {
                Midea MagBoost - это прорыв в
                <div
                   className={`${styles.titles__elemFiller} ${
-                     scrollPosition > 18.6 ? styles.titles__elemFillerActive : ""
+                     scrollPosition > 15.4 ? styles.titles__elemFillerActive : ""
                   }`}
                >
                   Midea MagBoost - это прорыв в
@@ -26,7 +26,7 @@ function MagboostTitle() {
                системах охлаждения, который
                <div
                   className={`${styles.titles__elemFiller} ${
-                     scrollPosition > 18.8 ? styles.titles__elemFillerActive : ""
+                     scrollPosition > 15.6 ? styles.titles__elemFillerActive : ""
                   }`}
                >
                   системах охлаждения, который
@@ -36,7 +36,7 @@ function MagboostTitle() {
                навсегда изменит ваши
                <div
                   className={`${styles.titles__elemFiller} ${
-                     scrollPosition > 19 ? styles.titles__elemFillerActive : ""
+                     scrollPosition > 15.8 ? styles.titles__elemFillerActive : ""
                   }`}
                >
                   навсегда изменит ваши
@@ -46,7 +46,7 @@ function MagboostTitle() {
                представления о надежности и
                <div
                   className={`${styles.titles__elemFiller} ${
-                     scrollPosition > 19.2 ? styles.titles__elemFillerActive : ""
+                     scrollPosition > 16 ? styles.titles__elemFillerActive : ""
                   }`}
                >
                   представления о надежности и
@@ -56,7 +56,7 @@ function MagboostTitle() {
                эффективности
                <div
                   className={`${styles.titles__elemFiller} ${
-                     scrollPosition > 19.4 ? styles.titles__elemFillerActive : ""
+                     scrollPosition > 16.2 ? styles.titles__elemFillerActive : ""
                   }`}
                >
                   эффективности

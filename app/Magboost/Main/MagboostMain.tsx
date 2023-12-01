@@ -4,14 +4,13 @@ import NumTitles from "../../ReusableComponents/NumTitles";
 import image1 from "../../../public/img/v8magboost/magboost-1.png";
 import image2 from "../../../public/img/v8magboost/magboost-2.png";
 import image3 from "../../../public/img/v8magboost/magboost-3.png";
-import { StaticImageData } from "next/image";
 import Efficiancy from "./Efficiancy";
 import MagboostTitle from "./MagboostTitle";
 import MagboostTitleContainer from "./MagboostTitleContainer";
 
 export type ContentInner = {
    title: string;
-   image: StaticImageData;
+   video: string;
    titles: {
       title1: string;
       title2: string;
@@ -24,7 +23,7 @@ type ContentType = Array<ContentInner>;
 const content: ContentType = [
    {
       title: "Магнитный подшипник",
-      image: image1,
+      video: "/video/magboost-1.mp4",
       titles: {
          title1: "Меньше трения",
          title2: "Меньше износа",
@@ -34,7 +33,7 @@ const content: ContentType = [
    },
    {
       title: "Компрессор Back-to-back",
-      image: image2,
+      video: "/video/magboost-1.mp4",
       titles: {
          title1: "Меньше трения",
          title2: "Отсутствие масла",
@@ -44,7 +43,7 @@ const content: ContentType = [
    },
    {
       title: "Новейший теплообменник",
-      image: image3,
+      video: "/video/magboost-3.mp4",
       titles: {
          title1: "Снижение потребления фреона на 40%",
          title2: "Увеличенная поверхность контакта на 30%",

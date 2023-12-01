@@ -13,6 +13,15 @@
          opacity: 1;
          transform: translateY(0px);
       }
+      @media (max-width: 870px) {
+         gap: 90px 20px;
+         padding: 0 10px;
+      }
+      @media (max-width: 490px) {
+         grid-template-columns: 1fr;
+         grid-template-rows: repeat(1fr, 4);
+         gap: 50px;
+      }
    }
    &__col {
       list-style: none;
@@ -23,6 +32,9 @@
          font-weight: 700;
          position: relative;
          z-index: 2;
+         @media (max-width: 870px) {
+            font-size: 24px;
+         }
       }
       &__sub {
          font-size: 18px;
@@ -31,6 +43,9 @@
          position: relative;
          z-index: 2;
          color: #828282;
+         @media (max-width: 870px) {
+            font-size: 15px;
+         }
       }
       &__num {
          position: absolute;
@@ -43,6 +58,9 @@
          animation-name: glow;
          animation-duration: 5s;
          animation-iteration-count: infinite;
+         @media (max-width: 870px) {
+            font-size: 70px;
+         }
       }
    }
 }

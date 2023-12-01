@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 function MagboostTitleContainer() {
    const [matches, setMatches] = useState(false);
    useEffect(() => {
-      const mediaQuery = window.matchMedia("(max-width: 630px)");
+      const mediaQuery = window.matchMedia("(max-width: 640px)");
       setMatches(mediaQuery.matches);
 
       const handler = (event: { matches: boolean | ((prevState: boolean) => boolean) }) => setMatches(event.matches);

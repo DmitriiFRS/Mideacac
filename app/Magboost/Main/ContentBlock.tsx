@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ContentInner } from "./MagboostMain";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
+import ContentVideo from "./ContentVideo";
 function ContentBlock({ content, idx }: { content: ContentInner; idx: number }) {
    const [isInView, setIsView] = useState<boolean>(false);
    const { ref, inView } = useInView({
@@ -22,9 +23,7 @@ function ContentBlock({ content, idx }: { content: ContentInner; idx: number }) 
                isInView ? styles.bearing__body__active : ""
             }`}
          >
-            <div className={styles.bearing__imgBody}>
-               <Image src={content.image.src} alt="bearing" fill />
-            </div>
+            <ContentVideo video={content.video} />
             <div className={styles.bearing__titlesBody}>
                <h2 className={styles.bearing__title}>{content.title}</h2>
                <ul className={styles.bearing__list}>
