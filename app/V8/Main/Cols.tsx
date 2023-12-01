@@ -24,12 +24,7 @@ function Cols({ cols }: { cols: Array<ColsProps> }) {
          <ul ref={ref} className={styles.cols__list}>
             {cols.map((el, index) => {
                return (
-                  <li
-                     key={index}
-                     className={`${styles.cols__item} ${index > 2 ? styles.cols__item2 : ""} ${
-                        isView ? styles.cols__item__active : ""
-                     }`}
-                  >
+                  <li key={index} className={`${styles.cols__item} ${isView ? styles.cols__item__active : ""}`}>
                      <p className={styles.cols__item__title}>{el.title}</p>
                      <p className={styles.cols__item__sub}>{el.sub}</p>
                   </li>

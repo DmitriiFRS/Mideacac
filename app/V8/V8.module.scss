@@ -404,6 +404,10 @@
          opacity: 1;
          transform: translateY(0px);
       }
+      @media (max-height: 450px) {
+         opacity: 1;
+         transform: translateY(0px);
+      }
       &__title {
          font-size: 24px;
          font-weight: 700;
@@ -417,9 +421,21 @@
          opacity: 1;
          transform: translateY(0px);
       }
-   }
-   &__item2 {
-      transition-delay: 0.4s;
+      &:nth-child(2) {
+         transition-delay: 0.1s;
+      }
+      &:nth-child(3) {
+         transition-delay: 0.2s;
+      }
+      &:nth-child(4) {
+         transition-delay: 0.3s;
+      }
+      &:nth-child(5) {
+         transition-delay: 0.4s;
+      }
+      &:last-child {
+         transition-delay: 0.5s;
+      }
    }
 }
 .temperature {
