@@ -1,15 +1,16 @@
 import styles from "../V8.module.scss";
 import ContentBlock from "./ContentBlock";
-import image1 from "../../../public/img/v8magboost/v8 1.png";
-import image2 from "../../../public/img/v8magboost/v8 1.png";
-import image3 from "../../../public/img/v8magboost/v8 1.png";
+import image1 from "../../../public/img/v8magboost/V8-1.jpg";
+import image2 from "../../../public/img/v8magboost/V8-2.jpg";
+import image3 from "../../../public/img/v8magboost/V8-3.jpg";
 import { StaticImageData } from "next/image";
-import MagboostTitle from "./V8Title";
+import V8Title from "./V8Title";
 import superSence from "../../../public/icons/MagboostV8/supersence.svg";
 import shieldBox from "../../../public/icons/MagboostV8/shieldbox.svg";
 import hyperlink from "../../../public/icons/MagboostV8/hyperlink.svg";
 import Cols from "./Cols";
 import Temperature from "./Temperature";
+import V8TitleContainer from "./V8TitleContainer";
 
 export type ContentInner = {
    icon: string;
@@ -75,12 +76,12 @@ const cols = [
       sub: "Максимальный перепад по высоте между внутренними блоками",
    },
 ];
-function MagboostMain() {
+function V8Main() {
    return (
       <section className={styles.magboostMain}>
          <div className={styles.container}>
             <div className={styles.titles}>
-               <MagboostTitle />
+               <V8TitleContainer />
             </div>
 
             {content.map((el, index) => {
@@ -92,4 +93,4 @@ function MagboostMain() {
       </section>
    );
 }
-export default MagboostMain;
+export default V8Main;

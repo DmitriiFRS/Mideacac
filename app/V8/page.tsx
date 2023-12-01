@@ -1,6 +1,6 @@
 import styles from "./V8.module.scss";
-import MagboostMain from "./Main/V8Main";
-import MagboostVideo from "./V8Video";
+import V8Main from "./Main/V8Main";
+import V8Video from "./V8Video";
 
 const magboost = {
    video: "/video/Magboost-Main-Video.mp4",
@@ -10,8 +10,8 @@ const magboost = {
 function VRFv8Page() {
    return (
       <section className={styles.magboost}>
-         <MagboostVideo video={magboost.video} modelStartText={magboost.modelStartText} />
-         <MagboostMain />
+         <V8Video video={magboost.video} modelStartText={magboost.modelStartText} />
+         <V8Main />
       </section>
    );
 }
