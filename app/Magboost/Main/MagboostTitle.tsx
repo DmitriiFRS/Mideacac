@@ -15,8 +15,8 @@ function MagboostTitle() {
                Midea MagBoost - это прорыв в системах охлаждения,
                <div
                   className={`${styles.titles__elemFiller} ${
-                     !maxHeight && scrollPosition > 19 ? styles.titles__elemFillerActive : ""
-                  } ${maxHeight && scrollPosition > 18.5 ? styles.titles__elemFillerActiveMedia : ""}`}
+                     !maxHeight && scrollPosition > 15.5 ? styles.titles__elemFillerActive : ""
+                  } ${maxHeight && scrollPosition > 14.9 ? styles.titles__elemFillerActiveMedia : ""}`}
                >
                   Midea MagBoost - это прорыв в системах охлаждения,
                </div>
@@ -25,8 +25,8 @@ function MagboostTitle() {
                который навсегда изменит ваши представления о
                <div
                   className={`${styles.titles__elemFiller} ${
-                     !maxHeight && scrollPosition > 20 ? styles.titles__elemFillerActive : ""
-                  } ${maxHeight && scrollPosition > 19 ? styles.titles__elemFillerActiveMedia : ""}`}
+                     !maxHeight && scrollPosition > 16 ? styles.titles__elemFillerActive : ""
+                  } ${maxHeight && scrollPosition > 15 ? styles.titles__elemFillerActiveMedia : ""}`}
                >
                   который навсегда изменит ваши представления о
                </div>
@@ -35,8 +35,8 @@ function MagboostTitle() {
                надежности и эффективности
                <div
                   className={`${styles.titles__elemFiller} ${
-                     !maxHeight && scrollPosition > 21 ? styles.titles__elemFillerActive : ""
-                  } ${maxHeight && scrollPosition > 19.4 ? styles.titles__elemFillerActiveMedia : ""}`}
+                     !maxHeight && scrollPosition > 17 ? styles.titles__elemFillerActive : ""
+                  } ${maxHeight && scrollPosition > 15.4 ? styles.titles__elemFillerActiveMedia : ""}`}
                >
                   надежности и эффективности
                </div>
