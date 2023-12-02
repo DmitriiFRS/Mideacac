@@ -10,37 +10,9 @@
       background: transparent;
       padding: 10px;
       cursor: pointer;
-   }
-   &__btnBlock {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 60px;
-      width: 60px;
-      border: 1px solid #acacac;
-      opacity: 0.8;
-      cursor: pointer;
-      background: #ffffff;
-      transition: 1s ease-in;
-      & span {
-         width: 25px;
-         height: 3px;
-         background: #000;
+      @media (max-width: 640px) {
+         display: none;
       }
-      @media (max-width: 1000px) {
-         max-height: 50px;
-         max-width: 50px;
-      }
-      @media (max-width: 500px) {
-         max-height: 40px;
-         max-width: 40px;
-      }
-   }
-   &__iconBody {
-      position: relative;
-      width: 70%;
-      height: 70%;
    }
 }
 .sidebar {

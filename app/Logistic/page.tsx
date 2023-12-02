@@ -49,7 +49,6 @@ function Logistic() {
                   запасами.
                </p>
             </div>
-            <p></p>
          </div>
       </div>
    );

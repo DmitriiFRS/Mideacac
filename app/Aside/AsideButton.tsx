@@ -64,7 +64,14 @@ function AsideButton() {
       });
    }
    return (
-      <button onClick={openSideMenu} className={styles.aside__openBtn}>
+      <button
+         onClick={openSideMenu}
+         className={styles.aside__openBtn}
+         style={{
+            opacity: isSidemenuVisible ? 2 : 0.5,
+            transform: isSidemenuVisible ? "translateX(-900%)" : "translateX(0%)",
+         }}
+      >
          <Image src={sidemenu} alt="Menu" fill objectFit="cover" />
       </button>
    );

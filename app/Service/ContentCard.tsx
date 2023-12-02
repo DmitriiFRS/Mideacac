@@ -16,7 +16,7 @@ type ContentCardProps = {
 function ContentCard({ img, list, id }: ContentCardProps) {
    const [isInView, setIsView] = useState<boolean>(false);
    const { ref, inView } = useInView({
-      threshold: 0.8,
+      threshold: 0.3,
       triggerOnce: true,
    });
 

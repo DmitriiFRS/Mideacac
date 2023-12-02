@@ -40,8 +40,8 @@ const cols = [
 const cardItem1 = {
    id: 1,
    img: cardImg1,
-   title: "Услуги сервисного центра",
    list: [
+      "Услуги сервисного центра",
       "Монтаж бытовых сплит-систем",
       "Монтаж систем теплохолодоснабжения (раздел ОВиК под ключ)",
       "Монтаж систем вентиляций и вент. оборудования",
@@ -99,7 +99,7 @@ function Service() {
             <ServiceMap />
             <Cols cols={cols} />
             <div className={styles.card}>
-               <ContentCard img={cardItem1.img} title={cardItem1.title} list={cardItem1.list} id={cardItem1.id} />
+               <ContentCard img={cardItem1.img} list={cardItem1.list} id={cardItem1.id} />
                <h3 className={styles.card__specialTitle}>Польза услуги шеф монтаж</h3>
                {cardItem.map((el, index) => {
                   return <ContentCard key={el.id} img={el.img} list={el.list} id={el.id} />;

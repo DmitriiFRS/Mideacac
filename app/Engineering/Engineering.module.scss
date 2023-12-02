@@ -4,16 +4,19 @@
       width: 100vw;
       aspect-ratio: 3/2;
       max-height: 100vh;
-      margin: -90px 0 0 0;
+      margin: -100px 0 0 0;
    }
    &__title {
-      font-size: 32px;
-      color: #4dc1fd;
+      font-size: 24px;
+      color: #333;
       font-weight: 700;
       line-height: 130%;
       letter-spacing: 0.4px;
       text-align: center;
       margin: 120px 0 0 0;
+      @media (max-width: 620px) {
+         font-size: 18px;
+      }
    }
    &__cols {
       margin: 120px 0 0 0;
@@ -26,11 +29,14 @@
    }
    &__bottom {
       margin: 120px 0;
-      font-size: 32px;
+      font-size: 24px;
       line-height: 120%;
-      color: #4dc1fd;
+      color: #333;
       max-width: 1173px;
       font-weight: 700;
+      @media (max-width: 620px) {
+         font-size: 18px;
+      }
    }
 }
 .cols {
@@ -58,6 +64,20 @@
       margin: 70px 0 0 0;
       justify-content: center;
       gap: 65px 100px;
+      @media (max-width: 900px) {
+         grid-template-columns: repeat(2, 1fr);
+         grid-template-rows: repeat(3, 1fr);
+      }
+      @media (max-width: 620px) {
+         gap: 40px 40px;
+      }
+      @media (max-width: 620px) {
+         gap: 40px 40px;
+      }
+      @media (max-width: 440px) {
+         grid-template-columns: 1fr;
+         grid-template-rows: repeat(6, 1fr);
+      }
    }
    &__item {
       max-width: 300px;
@@ -66,16 +86,47 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: 0.7s;
+      @media (max-width: 440px) {
+         justify-content: center;
+      }
+      &__active {
+         opacity: 1;
+         transform: translateY(0px);
+      }
+      &:nth-child(2) {
+         transition-delay: 0.1s;
+      }
+      &:nth-child(3) {
+         transition-delay: 0.2s;
+      }
+      &:nth-child(4) {
+         transition-delay: 0.3s;
+      }
+      &:nth-child(5) {
+         transition-delay: 0.4s;
+      }
+      &:last-child {
+         transition-delay: 0.5s;
+      }
    }
    &__title {
       color: #333;
       font-size: 24px;
       font-weight: 700;
       line-height: 120%;
+      @media (max-width: 520px) {
+         font-size: 18px;
+      }
    }
    &__sub {
       color: #828282;
       font-size: 16px;
       margin: 10px 0 0 0;
+      @media (max-width: 520px) {
+         font-size: 14px;
+      }
    }
 }
