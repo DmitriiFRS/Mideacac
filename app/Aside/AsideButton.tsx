@@ -18,6 +18,7 @@ import icon5 from "../../public/icons/Sidemenu/sideIcon5.png";
 import icon6 from "../../public/icons/Sidemenu/sideIcon6.png";
 import { useEffect } from "react";
 import { setScrollWidth } from "../Redux/Slice/mainPageSlice";
+import sidemenu from "../../public/icons/Sidemenu/sidemenu.svg";
 const btnSections = [
    {
       id: 1,
@@ -63,25 +64,8 @@ function AsideButton() {
       });
    }
    return (
-      <button className={styles.aside__openBtn}>
-         {btnSections.map((el, index) => {
-            return (
-               <li
-                  style={{
-                     opacity: isSidemenuVisible ? 0 : 0.5,
-                     transform: isSidemenuVisible ? "translateX(-900%)" : "translateX(0%)",
-                     transitionDelay: el.transitiodDelay,
-                  }}
-                  onClick={openSideMenu}
-                  key={index}
-                  className={styles.aside__btnBlock}
-               >
-                  <div className={styles.aside__iconBody}>
-                     <Image src={el.icon} alt="icon" fill={true} />
-                  </div>
-               </li>
-            );
-         })}
+      <button onClick={openSideMenu} className={styles.aside__openBtn}>
+         <Image src={sidemenu} alt="Menu" fill objectFit="cover" />
       </button>
    );
 }

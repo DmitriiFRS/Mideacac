@@ -1,28 +1,15 @@
 .aside {
    &__openBtn {
-      margin: 0 0 0 20px;
       position: fixed;
       left: 0;
-      top: 30vh;
+      top: 50%;
+      transform: translateY(-50%);
       z-index: 20;
-      height: 300px;
-      max-width: 40%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      height: 130px;
+      width: 67px;
       background: transparent;
       padding: 10px;
-      cursor: auto;
-      & span:not(:last-child) {
-         margin: 0 0 10px 0;
-      }
-      @media (max-width: 1000px) {
-         height: 200px;
-         margin: 0 0 0 10px;
-      }
-      @media (max-width: 640px) {
-         display: none;
-      }
+      cursor: pointer;
    }
    &__btnBlock {
       display: flex;
