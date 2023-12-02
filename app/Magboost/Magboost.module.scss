@@ -391,10 +391,17 @@
    &__imgBody {
       position: relative;
       width: 100%;
-      aspect-ratio: 5.8 / 2;
+      aspect-ratio: 1.78 / 1;
       margin: 50px 0 120px 0;
       border-radius: 12px;
       overflow: hidden;
+      opacity: 0;
+      transform: translateY(100px);
+      transition: 0.7s;
+      &__active {
+         opacity: 1;
+         transform: translateY(0px);
+      }
    }
 }
 @keyframes glow {
