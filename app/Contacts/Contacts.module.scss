@@ -2,6 +2,7 @@
    margin: 120px 0 0 0;
    &__container {
       margin: 60px auto 0 auto;
+      padding: 0 10px;
       display: flex;
       flex-direction: column;
    }
@@ -17,6 +18,10 @@
       grid-template-columns: 1fr 1fr;
       gap: 30px;
       place-items: center;
+      @media (max-width: 640px) {
+         grid-template-columns: 1fr;
+         grid-template-rows: 1fr 1fr;
+      }
    }
    &__contentItem {
       &:not(:last-child) {
@@ -39,5 +44,62 @@
    &__YmapBody {
       width: 740px;
       height: 520px;
+      @media (max-width: 1160px) {
+         width: 370px;
+         height: 260px;
+      }
+      @media (max-width: 390px) {
+         width: 320px;
+         height: 220px;
+      }
+      @media (max-width: 336px) {
+         width: 300px;
+      }
+   }
+}
+.spinner {
+   transform: translateY(250px);
+   height: 64px;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   @media (max-width: 1160px) {
+      transform: translateY(150px);
+   }
+}
+.ldsRing {
+   display: inline-block;
+   position: relative;
+   width: 80px;
+   height: 80px;
+}
+.ldsRing div {
+   box-sizing: border-box;
+   display: block;
+   position: absolute;
+   width: 64px;
+   height: 64px;
+   margin: 8px;
+   border: 8px solid rgb(37, 133, 205);
+   border-radius: 50%;
+   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+   border-color: rgb(37, 133, 205) transparent transparent transparent;
+}
+.ldsRing div:nth-child(1) {
+   animation-delay: -0.45s;
+}
+.ldsRing div:nth-child(2) {
+   animation-delay: -0.3s;
+}
+.ldsRing div:nth-child(3) {
+   animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
    }
 }

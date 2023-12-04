@@ -8,7 +8,16 @@ function YandexMap() {
    const [isLoading, setLoading] = useState<boolean>(true);
    return (
       <div className={`${isLoading ? styles.contacts__map__loading : styles.contacts__Ymap}`}>
-         {isLoading && <div></div>}
+         {isLoading && (
+            <div className={styles.spinner}>
+               <div className={styles.ldsRing}>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+               </div>
+            </div>
+         )}
          <div className={styles.contacts__YmapBody}>
             <YMaps query={{ apikey: process.env.REACT_APP_YMAPS_KEY }}>
                <Map
@@ -30,4 +39,12 @@ function YandexMap() {
       </div>
    );
 }
+/*
+<div className="lds-ring">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+               </div>
+               */
 export default YandexMap;

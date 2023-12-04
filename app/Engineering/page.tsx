@@ -2,10 +2,12 @@ import styles from "./Engineering.module.scss";
 import bg from "../../public/img/OtherPages/logistic-bg.jpg";
 import Image from "next/image";
 import Cols from "./Cols";
+import SideMenuTrigger from "../ReusableComponents/SideMenuTrigger";
 
 function Engineering() {
    return (
       <div className={styles.engineering}>
+         <SideMenuTrigger />
          <div className={styles.engineering__bg}>
             <Image src={bg} alt="bg" fill />
          </div>

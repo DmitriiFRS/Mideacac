@@ -1,9 +1,11 @@
+import SideMenuTrigger from "../ReusableComponents/SideMenuTrigger";
 import styles from "./Contacts.module.scss";
 import Ymap from "./Ymap";
 
 function Contacts() {
    return (
       <section className={styles.contacts}>
+         <SideMenuTrigger />
          <div className={`container ${styles.contacts__container}`}>
             <h2 className={styles.contacts__title}>Контакты</h2>
             <div className={styles.contacts__content}>
