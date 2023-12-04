@@ -18,6 +18,7 @@ function Video() {
          muted
          loop
          playsInline
+         preload="auto"
       >
          <source className={styles.video} src="/video/Intro.mp4" type="video/mp4" />
       </video>
