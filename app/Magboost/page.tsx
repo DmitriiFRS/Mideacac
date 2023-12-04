@@ -10,6 +10,7 @@ import hyperlink from "../../public/icons/MagboostV8/supersence.svg";
 import temp from "../../public/img/v8magboost/temp.png";
 import MagboostMain from "./Main/MagboostMain";
 import MagboostVideo from "./MagboostVideo";
+import MoveToTopBody from "./MoveToTopBody";
 
 const magboost = {
    video: "/video/Magboost-Main-Video.mp4",
@@ -128,6 +129,7 @@ const magboost = {
 function VRFv8Page() {
    return (
       <section className={styles.magboost}>
+         <MoveToTopBody />
          <MagboostVideo video={magboost.video} modelStartText={magboost.modelStartText} />
          <MagboostMain />
       </section>

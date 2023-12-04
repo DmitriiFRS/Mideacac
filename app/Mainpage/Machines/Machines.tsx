@@ -31,6 +31,8 @@ function Machines() {
    const [triggerOnce, setTrigger] = useState(false);
    const [check, setCheck] = useState(false);
    const scrollRate = useSelector((state: RootState) => state.mainPageReducer.scrollRate);
+   const scrollWidth = useSelector((state: RootState) => state.mainPageReducer.scrollWidth);
+   const [isBlock, setIsBlock] = useState(false);
    useEffect(() => {
       if (scrollRate !== null && scrollRate > 33) {
          setCheck(true);
@@ -44,10 +46,12 @@ function Machines() {
       document.body.style.overflow = "hidden";
       setTimeout(() => {
          window.scrollTo(0, 3930);
+         setIsBlock(true);
       }, 100);
 
       setTimeout(() => {
          document.body.style.overflow = "auto";
+         setIsBlock(false);
       }, 1100);
    }
    if (scrollRate !== null && scrollRate < 33 && triggerOnce) {
@@ -55,8 +59,11 @@ function Machines() {
    }
 
    return (
-      <section style={{ opacity: scrollRate !== null && scrollRate > 34 ? 1 : 0 }} className={`${styles.machines}`}>
-         <div className={styles.machines__shadow}>
+      <section
+         style={{ opacity: scrollRate !== null && scrollRate > 34 ? 1 : 0 }}
+         className={`${styles.machines} ${isBlock ? styles.machines__isBlocked : ""}`}
+      >
+         <div className={`${styles.machines__shadow} ${isBlock ? styles.machines__isBlocked : ""} `}>
             <Image src={shadowbg} alt="" fill={true}></Image>
          </div>
          {newestData.map((el, idx) => {

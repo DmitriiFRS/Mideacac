@@ -13,6 +13,9 @@
       @media (max-width: 640px) {
          display: none;
       }
+      &:hover {
+         opacity: 1;
+      }
    }
 }
 .sidebar {

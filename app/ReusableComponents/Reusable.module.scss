@@ -64,6 +64,24 @@
       }
    }
 }
+.toTop {
+   position: fixed;
+   bottom: 30px;
+   right: 30px;
+   width: 60px;
+   height: 60px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   z-index: 20;
+   border-radius: 50%;
+   border: 1px solid #000;
+   opacity: 0;
+   transition: 0.7s;
+   &__active {
+      opacity: 1;
+   }
+}
 @keyframes glow {
    0% {
       color: #4dc1fd;

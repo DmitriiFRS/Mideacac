@@ -22,6 +22,9 @@
          color: #fff;
          text-shadow: 2px 2px 4px #000;
       }
+      @media (max-height: 530px) {
+         top: 20px;
+      }
       &__white {
          color: #ffffff;
          text-shadow: 2px 2px 4px #202020;
@@ -201,6 +204,11 @@
       color: #ffffff;
       text-shadow: 2px 2px 4px #000000;
       font-weight: 700;
+      @media (max-height: 380px) {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         grid-template-rows: 1fr 1fr;
+      }
    }
    &__titleBlockTwo {
       margin: 5vh 0 0 0;
@@ -234,6 +242,9 @@
       font-size: 45px;
       @media (max-width: 380px) {
          font-size: 10vw;
+      }
+      @media (max-height: 530px) {
+         font-size: 24px;
       }
    }
    &__subElemTwo {

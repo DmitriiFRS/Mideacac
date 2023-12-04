@@ -7,6 +7,8 @@ import Machines from "./Mainpage/Machines/Machines";
 import Awards from "./Mainpage/Awards/Awards";
 import ReferenceProject from "./Mainpage/ReferenceProject/ReferenceProject";
 import TriggerFixEvent from "./Mainpage/Machines/TriggerFixEvent";
+import MoveToTop from "./ReusableComponents/MoveToTop";
+import MoveToTopBody from "./Mainpage/MoveToTopBody";
 
 const params = [
    {
@@ -23,6 +25,7 @@ export default function Home() {
    return (
       <main className={styles.main}>
          <SideMenu />
+         <MoveToTopBody />
          <Intro />
          <Innovation />
          <Machines />

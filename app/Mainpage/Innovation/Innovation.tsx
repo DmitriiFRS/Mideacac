@@ -48,17 +48,19 @@ function Innovation() {
       };
    });
    useEffect(() => {
-      if (scrollRate !== null && scrollRate > 15) {
-         setZoom(true);
-      }
-      if (scrollRate !== null && scrollRate < 15) {
-         setZoom(false);
-      }
-      if (scrollRate !== null && scrollRate > 1) {
-         dispatch(setSidemenuVisible(false));
-      }
-      if (scrollRate !== null && scrollRate < 1) {
-         dispatch(setSidemenuVisible(true));
+      if (scrollRate !== null) {
+         if (scrollRate > 15) {
+            setZoom(true);
+         }
+         if (scrollRate < 15) {
+            setZoom(false);
+         }
+         if (scrollRate > 1) {
+            dispatch(setSidemenuVisible(false));
+         }
+         if (scrollRate < 1) {
+            dispatch(setSidemenuVisible(true));
+         }
       }
    }, [scrollRate]);
    return (
