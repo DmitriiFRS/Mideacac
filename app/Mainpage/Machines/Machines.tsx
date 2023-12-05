@@ -10,6 +10,7 @@ import TriggerFixEvent from "./TriggerFixEvent";
 import { useSelector } from "react-redux";
 import { RootState } from "../../Redux/store";
 import { useEffect, useState } from "react";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 const newestData = [
    {
@@ -33,6 +34,20 @@ function Machines() {
    const scrollRate = useSelector((state: RootState) => state.mainPageReducer.scrollRate);
    const scrollWidth = useSelector((state: RootState) => state.mainPageReducer.scrollWidth);
    const [isBlock, setIsBlock] = useState(false);
+   const [scrollToRatio, setScrollRatio] = useState<number>(
+      typeof window !== "undefined" && window.innerWidth > 4000 ? 11500 : 3930
+   );
+   useEffect(() => {
+      function handleResize() {
+         if (typeof window !== "undefined") {
+            setScrollRatio(window.innerWidth > 4000 ? 11500 : 3930);
+         }
+      }
+      window.addEventListener("resize", handleResize);
+      return () => {
+         window.removeEventListener("resize", handleResize);
+      };
+   }, []);
    useEffect(() => {
       if (scrollRate !== null && scrollRate > 33) {
          setCheck(true);
@@ -45,10 +60,10 @@ function Machines() {
       setTrigger(true);
       document.body.style.overflow = "hidden";
       setTimeout(() => {
-         window.scrollTo(0, 3930);
+         window.scrollTo(0, scrollToRatio);
          setIsBlock(true);
       }, 100);
-
+      //11930
       setTimeout(() => {
          document.body.style.overflow = "auto";
          setIsBlock(false);

@@ -15,6 +15,7 @@ import {
    transformWindow,
 } from "@/app/Redux/Slice/asideMenuSlice";
 import { useState } from "react";
+import hrefIcon from "../../../public/icons/Sidemenu/href-icon.svg";
 
 function MainMenu() {
    const [isProgress, setProgress] = useState<boolean>(false);
@@ -89,6 +90,7 @@ function MainMenu() {
                         href={el.href}
                      >
                         <button className={styles.sidebar__mainMenu__btn}>{el.title}</button>
+                        <Image src={hrefIcon} alt="href" />
                      </Link>
                   );
                }
