@@ -4,7 +4,7 @@ import V8Video from "./V8Video";
 import MoveToTopBody from "./MoveToTopBody";
 
 const magboost = {
-   video: "/video/Magboost-Main-Video.mp4",
+   video: "/video/V8-Main-Video.mp4",
    modelStartText: "/img/Innovation/v8Text2.png",
 };
 
