@@ -1,6 +1,8 @@
 "use client";
 
 import styles from "./Reusable.module.scss";
+import arrow from "../../public/icons/ArrowToTop.svg";
+import Image from "next/image";
 type MoveToTopProps = {
    scrollRate: number | null;
    scrollParams: {
@@ -18,7 +20,9 @@ function MoveToTop({ scrollRate, scrollParams, scrollTrigger }: MoveToTopProps) 
             onClick={toTop}
             className={`${styles.toTop} ${scrollRate > scrollTrigger ? styles.toTop__active : ""}`}
          >
-            <span className={styles.toTop__imgBody}>top</span>
+            <div className={styles.arrowImgBody}>
+               <Image src={arrow} alt="arrow" fill />
+            </div>
          </button>
       )
    );

@@ -16,6 +16,10 @@
       &:hover {
          opacity: 1;
       }
+      @media (min-width: 2500px) {
+         height: 10vh;
+         width: 2.55vw;
+      }
    }
 }
 .sidebar {
