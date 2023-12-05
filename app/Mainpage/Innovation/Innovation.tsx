@@ -86,7 +86,7 @@ function Innovation() {
                styles.innovation__img2
             }`}
          >
-            <video ref={videoRef} autoPlay muted loop playsInline>
+            <video className={styles.innovation__videoBody} ref={videoRef} autoPlay muted loop playsInline>
                <source className={styles.video} src="/video/LabVideo.mp4" type="video/mp4" />
             </video>
          </div>

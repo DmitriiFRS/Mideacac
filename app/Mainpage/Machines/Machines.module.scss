@@ -12,6 +12,10 @@
       flex-direction: column;
       align-items: center;
    }
+   @media (min-width: 3900px) {
+      margin: 12000px 0 0 0;
+      z-index: 20;
+   }
    &__shadow {
       position: absolute;
       left: 0;
@@ -148,5 +152,5 @@
    z-index: 20;
    height: 1vh;
    width: 100vw;
-   visibility: hidden;
+   border: 2px solid #000;
 }
