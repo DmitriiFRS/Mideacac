@@ -188,6 +188,21 @@
    @media (max-width: 500px) {
       margin: 2850px 0 0 0;
    }
+   @media (min-width: 2200px) {
+      margin: 2800px 0 0 0;
+   }
+   @media (min-width: 2500px) {
+      margin: 2900px 0 0 0;
+   }
+   @media (min-width: 2900px) {
+      margin: 3500px 0 0 0;
+   }
+   @media (min-width: 3900px) {
+      margin: 4600px 0 0 0;
+   }
+   @media (min-width: 5900px) {
+      margin: 5700px 0 0 0;
+   }
    &__mainBody {
       width: 100%;
       display: flex;

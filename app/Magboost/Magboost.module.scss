@@ -173,6 +173,27 @@
    @media (max-height: 500px) {
       margin: 2100px 0 0 0;
    }
+   @media (min-width: 2200px) {
+      margin: 2800px 0 0 0;
+   }
+   @media (min-width: 2500px) {
+      margin: 2900px 0 0 0;
+   }
+   @media (min-width: 2600px) {
+      margin: 3100px 0 0 0;
+   }
+   @media (min-width: 2700px) {
+      margin: 3200px 0 0 0;
+   }
+   @media (min-width: 3500px) {
+      margin: 3700px 0 0 0;
+   }
+   @media (min-width: 5000px) {
+      margin: 4800px 0 0 0;
+   }
+   @media (min-width: 5800px) {
+      margin: 5900px 0 0 0;
+   }
    &__mainBody {
       width: 100%;
       display: flex;
