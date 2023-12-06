@@ -49,10 +49,10 @@ function Innovation() {
    });
    useEffect(() => {
       if (scrollRate !== null) {
-         if (scrollRate > 15) {
+         if (scrollRate > 8) {
             setZoom(true);
          }
-         if (scrollRate < 15) {
+         if (scrollRate < 8) {
             setZoom(false);
          }
          if (scrollRate > 1) {
@@ -80,7 +80,7 @@ function Innovation() {
          </div>
          <div
             style={{
-               filter: scrollRate !== null && scrollRate > 22 ? `blur(${((scrollRate - 27) * 100) / 30}px)` : "none",
+               filter: scrollRate !== null && scrollRate > 15 ? `blur(${((scrollRate - 17) * 100) / 30}px)` : "none",
             }}
             className={`${styles.innovation__img} ${!isZoomed ? styles.innovation__img__active : ""} ${
                styles.innovation__img2
