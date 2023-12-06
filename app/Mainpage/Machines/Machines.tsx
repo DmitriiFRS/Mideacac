@@ -32,15 +32,14 @@ function Machines() {
    const [triggerOnce, setTrigger] = useState(false);
    const [check, setCheck] = useState(false);
    const scrollRate = useSelector((state: RootState) => state.mainPageReducer.scrollRate);
-   const scrollWidth = useSelector((state: RootState) => state.mainPageReducer.scrollWidth);
    const [isBlock, setIsBlock] = useState(false);
    const [scrollToRatio, setScrollRatio] = useState<number>(
-      typeof window !== "undefined" && window.innerWidth > 4000 ? 11500 : 3930
+      typeof window !== "undefined" && window.innerWidth > 4000 ? 11500 : 3130
    );
    useEffect(() => {
       function handleResize() {
          if (typeof window !== "undefined") {
-            setScrollRatio(window.innerWidth > 4000 ? 11500 : 3930);
+            setScrollRatio(window.innerWidth > 4000 ? 11500 : 3130);
          }
       }
       window.addEventListener("resize", handleResize);
@@ -49,14 +48,14 @@ function Machines() {
       };
    }, []);
    useEffect(() => {
-      if (scrollRate !== null && scrollRate > 33) {
+      if (scrollRate !== null && scrollRate > 21) {
          setCheck(true);
       }
-      if (scrollRate !== null && scrollRate < 33 && check) {
+      if (scrollRate !== null && scrollRate < 21 && check) {
          setCheck(false);
       }
    }, [scrollRate]);
-   if (scrollRate !== null && scrollRate > 33 && !triggerOnce && check) {
+   if (scrollRate !== null && scrollRate > 21 && !triggerOnce && check) {
       setTrigger(true);
       document.body.style.overflow = "hidden";
       setTimeout(() => {
@@ -69,13 +68,13 @@ function Machines() {
          setIsBlock(false);
       }, 1100);
    }
-   if (scrollRate !== null && scrollRate < 33 && triggerOnce) {
+   if (scrollRate !== null && scrollRate < 21 && triggerOnce) {
       setTrigger(false);
    }
 
    return (
       <section
-         style={{ opacity: scrollRate !== null && scrollRate > 34 ? 1 : 0 }}
+         style={{ opacity: scrollRate !== null && scrollRate > 22 ? 1 : 0 }}
          className={`${styles.machines} ${isBlock ? styles.machines__isBlocked : ""}`}
       >
          <div className={`${styles.machines__shadow} ${isBlock ? styles.machines__isBlocked : ""} `}>
