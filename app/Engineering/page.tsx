@@ -3,12 +3,14 @@ import bg from "../../public/img/OtherPages/engineering-bg.jpg";
 import Image from "next/image";
 import Cols from "./Cols";
 import SideMenuTrigger from "../ReusableComponents/SideMenuTrigger";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 function Engineering() {
    return (
       <div className={styles.engineering}>
+         <Header />
          <SideMenuTrigger />
-
          <div className="container">
             <div className={styles.engineering__titleBody}>
                <h2 className={styles.engineering__titleMain}>Проектирование</h2>
@@ -31,6 +33,7 @@ function Engineering() {
                </p>
             </div>
          </div>
+         <Footer />
       </div>
    );
 }

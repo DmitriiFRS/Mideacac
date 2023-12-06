@@ -1,5 +1,6 @@
 .contacts {
-   margin: 120px 0 0 0;
+   animation-name: fade-in;
+   animation-duration: 1.5s;
    min-height: 54.2vh;
    &__container {
       margin: 60px auto 0 auto;
@@ -103,5 +104,13 @@
    }
    100% {
       transform: rotate(360deg);
+   }
+}
+@keyframes fade-in {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
    }
 }

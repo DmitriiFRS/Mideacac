@@ -43,10 +43,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
          <body className={`${gotham.variable}`}>
             <div className="wrapper">
                <ReduxProvider>
-                  <Header />
                   <SideMenu />
                   <main>{children}</main>
-                  <Footer />
                </ReduxProvider>
             </div>
          </body>

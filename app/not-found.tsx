@@ -7,7 +7,7 @@ function ErrorPage() {
    return (
       <section className={styles.page404}>
          <div className={styles.page404__imgBody}>
-            <Image src={error} alt="404" fill />
+            <Image src={error} alt="404" fill objectFit="cover" />
          </div>
          <div className={styles.page404__desc}>
             <p className={styles.page404__main}>Упс</p>

@@ -1,28 +1,64 @@
 .main {
+   animation-name: fade-in;
+   animation-duration: 1.5s;
 }
 
 .page404 {
    position: relative;
    &__imgBody {
-      position: relative;
+      position: absolute;
+      z-index: 0;
+      left: 0;
+      top: 0;
       width: 100%;
-      aspect-ratio: 5/2;
+      height: 100vh;
    }
    &__desc {
-      position: absolute;
-      bottom: 50px;
+      z-index: 10;
+      position: relative;
+      bottom: 0px;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, 350%);
       text-align: center;
+      @media (max-height: 900px) {
+         transform: translate(-50%, 300%);
+      }
+      @media (max-height: 800px) {
+         transform: translate(-50%, 270%);
+      }
+      @media (max-height: 740px) {
+         transform: translate(-50%, 240%);
+      }
+      @media (max-height: 670px) {
+         transform: translate(-50%, 210%);
+      }
+      @media (max-height: 620px) {
+         transform: translate(-50%, 180%);
+      }
+      @media (max-height: 550px) {
+         transform: translate(-50%, 150%);
+      }
+      @media (max-height: 490px) {
+         transform: translate(-50%, 120%);
+      }
+      @media (max-height: 430px) {
+         transform: translate(-50%, 90%);
+      }
    }
    &__main {
       font-size: 66px;
       font-weight: 700;
       text-transform: uppercase;
+      @media (max-width: 400px) {
+         font-size: 36px;
+      }
    }
    &__sub {
       margin: 14px 0 0 0;
       font-size: 32px;
+      @media (max-width: 400px) {
+         font-size: 24px;
+      }
    }
    &__btn {
       margin: 30px 0 0 0;
@@ -35,5 +71,13 @@
       &:hover {
          background: #616161;
       }
+   }
+}
+@keyframes fade-in {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
    }
 }

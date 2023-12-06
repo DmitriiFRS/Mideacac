@@ -11,6 +11,8 @@ import temp from "../../public/img/v8magboost/temp.png";
 import MagboostMain from "./Main/MagboostMain";
 import MagboostVideo from "./MagboostVideo";
 import MoveToTopBody from "./MoveToTopBody";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const magboost = {
    video: "/video/Magboost-Main-Video.mp4",
@@ -129,9 +131,11 @@ const magboost = {
 function VRFv8Page() {
    return (
       <section className={styles.magboost}>
+         <Header />
          <MoveToTopBody />
          <MagboostVideo video={magboost.video} modelStartText={magboost.modelStartText} />
          <MagboostMain />
+         <Footer />
       </section>
    );
 }

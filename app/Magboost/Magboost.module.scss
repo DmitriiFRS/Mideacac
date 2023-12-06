@@ -4,6 +4,8 @@
    padding: 0 10px;
 }
 .magboost {
+   animation-name: fade-in;
+   animation-duration: 1.5s;
    &__videoContainer {
       position: fixed;
       left: 0;
@@ -438,5 +440,13 @@
    }
    100% {
       color: #4dc1fd;
+   }
+}
+@keyframes fade-in {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
    }
 }

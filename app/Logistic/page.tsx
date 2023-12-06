@@ -5,6 +5,8 @@ import NumTitles from "../ReusableComponents/NumTitles";
 import BottomTitles from "./BottomTitles";
 import bgBottom from "../../public/img/OtherPages/logistic-bg-bottom.jpg";
 import SideMenuTrigger from "../ReusableComponents/SideMenuTrigger";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 const cols = [
    {
       title: "FOB-Схема самовывоза",
@@ -31,6 +33,7 @@ const cols = [
 function Logistic() {
    return (
       <div className={styles.logistic}>
+         <Header />
          <SideMenuTrigger />
          <div className={styles.logistic__bg}>
             <Image src={bg} alt="bg" fill />
@@ -52,6 +55,7 @@ function Logistic() {
                </p>
             </div>
          </div>
+         <Footer />
       </div>
    );
 }

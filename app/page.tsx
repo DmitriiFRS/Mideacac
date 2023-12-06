@@ -9,6 +9,8 @@ import ReferenceProject from "./Mainpage/ReferenceProject/ReferenceProject";
 import TriggerFixEvent from "./Mainpage/Machines/TriggerFixEvent";
 import MoveToTop from "./ReusableComponents/MoveToTop";
 import MoveToTopBody from "./Mainpage/MoveToTopBody";
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
 
 const params = [
    {
@@ -24,6 +26,7 @@ const params = [
 export default function Home() {
    return (
       <main className={styles.main}>
+         <Header />
          <SideMenu />
          <MoveToTopBody />
          <Intro />
@@ -31,6 +34,7 @@ export default function Home() {
          <Machines />
          <Awards />
          <ReferenceProject />
+         <Footer />
       </main>
    );
 }

@@ -10,6 +10,8 @@ import cardImg2 from "../../public/img/OtherPages/serviceCard2.png";
 import cardImg3 from "../../public/img/OtherPages/serviceCard3.png";
 import cardImg4 from "../../public/img/OtherPages/serviceCard4.png";
 import SideMenuTrigger from "../ReusableComponents/SideMenuTrigger";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
 
 const cols = [
    {
@@ -88,6 +90,7 @@ const cardItem = [
 function Service() {
    return (
       <section className={styles.service}>
+         <Header />
          <SideMenuTrigger />
          <div className="container">
             <div className={styles.service__titleBody}>
@@ -108,6 +111,7 @@ function Service() {
                })}
             </div>
          </div>
+         <Footer />
       </section>
    );
 }
