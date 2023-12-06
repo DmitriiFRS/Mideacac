@@ -30,9 +30,9 @@
          z-index: 10;
       }
       &__effect1 {
-         left: -2.2%;
+         left: -2.8%;
          height: 100%;
-         width: 28.3%;
+         width: 28.5%;
          transform: skew(-8.2deg);
          background: #ffffff;
          transition: 0.7s;
@@ -52,10 +52,10 @@
          width: 30.5%;
       }
       &__effect2 {
-         left: 25.1%;
+         left: 24.5%;
          height: 100%;
-         width: 24.85%;
-         transform: skew(-8.1deg);
+         width: 25.65%;
+         transform: skew(-8deg);
          background: #ffffff;
          transition: 0.7s;
          @media (max-width: 1300px) {
@@ -99,7 +99,7 @@
          }
       }
       &__effect4 {
-         left: 74.5%;
+         left: 74.3%;
          height: 100%;
          width: 29.95%;
          transform: skew(-7.6deg);

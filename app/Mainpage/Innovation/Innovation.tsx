@@ -80,7 +80,7 @@ function Innovation() {
          </div>
          <div
             style={{
-               filter: scrollRate !== null && scrollRate > 15 ? `blur(${((scrollRate - 17) * 100) / 30}px)` : "none",
+               filter: scrollRate !== null && scrollRate > 13 ? `blur(${((scrollRate - 15) * 100) / 30}px)` : "none",
             }}
             className={`${styles.innovation__img} ${!isZoomed ? styles.innovation__img__active : ""} ${
                styles.innovation__img2
