@@ -14,8 +14,8 @@
       top: 100px;
       width: 100%;
       z-index: 200;
-      color: #202020;
-      text-shadow: 2px 2px 4px #ffffff;
+      color: #fff;
+      text-shadow: 2px 2px 4px #000;
       transition: 0.6s;
       @media (max-width: 640px) {
          top: 180px;
@@ -27,13 +27,6 @@
       }
       @media (max-height: 560px) and (max-width: 640px) {
          top: 60px;
-      }
-      &__white {
-         color: #ffffff;
-         text-shadow: 2px 2px 4px #202020;
-         @media (max-width: 640px) {
-            opacity: 0;
-         }
       }
       &__unactive {
          opacity: 0;
@@ -99,8 +92,8 @@
       height: 100%;
       width: 100%;
       align-items: center;
-      color: #202020;
-      text-shadow: 2px 2px 4px #ffffff;
+      color: #fff;
+      text-shadow: 2px 2px 4px #000;
       font-weight: 700;
       @media (max-width: 1150px) {
          justify-content: space-between;

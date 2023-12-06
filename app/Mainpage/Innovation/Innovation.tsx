@@ -91,14 +91,14 @@ function Innovation() {
             </video>
          </div>
          <h2
-            className={`${styles.innovation__title} ${isZoomed ? styles.innovation__title__white : ""}
+            className={`${styles.innovation__title}
       ${
-         (scrollRate !== null && scrollRate > 31) || typeof scrollRate !== "number"
+         (scrollRate !== null && scrollRate > 17) || typeof scrollRate !== "number"
             ? styles.innovation__title__unactive
             : ""
       }`}
          >
-            Инновации и технологии
+            {!isZoomed ? "Инновации и технологии" : "О компании"}
          </h2>
          <Titles1 isZoomed={isZoomed} setZoom={setZoom} />
          <Titles2 isZoomed={isZoomed} setZoom={setZoom} />
