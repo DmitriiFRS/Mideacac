@@ -18,12 +18,16 @@ function Efficiancy() {
    return (
       <div className={styles.efficiancy}>
          <h2 className={styles.efficiancy__title}>Энергоэффективность</h2>
-         <div
+         <video
             ref={ref}
             className={`${styles.efficiancy__imgBody} ${isInView ? styles.efficiancy__imgBody__active : ""}`}
+            playsInline
+            autoPlay
+            loop
+            muted
          >
-            <Image src={efficiancy} alt="efficiancy" fill />
-         </div>
+            <source src="/video/Efficiancy.mp4" type="video/mp4" />
+         </video>
       </div>
    );
 }

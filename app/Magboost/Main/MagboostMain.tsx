@@ -19,7 +19,7 @@ export type ContentInner = {
 type ContentType = Array<ContentInner>;
 const content: ContentType = [
    {
-      title: "Магнитный подшипник",
+      title: "Электромагнитный подшипник",
       video: "/video/magboost-1.mp4",
       titles: {
          title1: "Меньше трения",
