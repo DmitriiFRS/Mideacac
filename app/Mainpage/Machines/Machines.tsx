@@ -77,6 +77,9 @@ function Machines() {
          style={{ opacity: scrollRate !== null && scrollRate > 22 ? 1 : 0 }}
          className={`${styles.machines} ${isBlock ? styles.machines__isBlocked : ""}`}
       >
+         <h2 className={styles.machines__title} datatype="text">
+            Наши новейшие разработки
+         </h2>
          <div className={`${styles.machines__shadow} ${isBlock ? styles.machines__isBlocked : ""} `}>
             <Image src={shadowbg} alt="" fill={true}></Image>
          </div>

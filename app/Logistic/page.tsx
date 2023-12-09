@@ -1,6 +1,6 @@
 import styles from "./Logistic.module.scss";
 import Image from "next/image";
-import bg from "../../public/img/OtherPages/logistic-bg.jpg";
+import bg from "../../public/img/OtherPages/logisticbg.jpg";
 import NumTitles from "../ReusableComponents/NumTitles";
 import BottomTitles from "./BottomTitles";
 import bgBottom from "../../public/img/OtherPages/logistic-bg-bottom.jpg";
@@ -35,12 +35,18 @@ function Logistic() {
       <div className={styles.logistic}>
          <Header />
          <SideMenuTrigger />
-         <div className={styles.logistic__bg}>
-            <Image src={bg} alt="bg" fill />
-         </div>
          <div className="container">
-            <h2 className={styles.logistic__title}>Мы предлагаем гибкие опции доставки продукции Midea:</h2>
-            <NumTitles cols={cols} />
+            <div className={styles.logistic__titleBody}>
+               <h2 className={styles.logistic__titleMain}>Логистика</h2>
+               <p className={styles.logistic__sub}>Гарантируем быстрое и безопасное перемещение</p>
+            </div>
+            <div className={styles.logistic__bg}>
+               <Image src={bg} alt="bg" fill />
+            </div>
+            <div className={styles.logistic__titlesColsBody}>
+               <h3 className={styles.logistic__title}>Мы предлагаем гибкие опции доставки продукции Midea:</h3>
+               <NumTitles cols={cols} />
+            </div>
             <BottomTitles />
             <div className={styles.logistic__bottombg}>
                <Image src={bgBottom} alt="bg" fill />

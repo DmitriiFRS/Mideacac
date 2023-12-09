@@ -72,6 +72,17 @@
          background: #616161;
       }
    }
+   &__img {
+      @media (max-width: 700px) {
+         display: none;
+      }
+   }
+   &__imgM {
+      display: none;
+      @media (max-width: 700px) {
+         display: block;
+      }
+   }
 }
 @keyframes fade-in {
    0% {
