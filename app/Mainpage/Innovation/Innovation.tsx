@@ -29,9 +29,6 @@ function Innovation() {
    const scrollWidth = useSelector((state: RootState) => state.mainPageReducer.scrollWidth);
    const isSidebarOpen = useSelector((state: RootState) => state.asideReducer.isSidebarOpen);
    useEffect(() => {
-      console.log(scrollRate);
-   }, [scrollRate]);
-   useEffect(() => {
       if (videoRef.current) {
          videoRef.current.defaultMuted = true;
       }
@@ -93,7 +90,7 @@ function Innovation() {
          <h2
             className={`${styles.innovation__title}
       ${
-         (scrollRate !== null && scrollRate > 17) || typeof scrollRate !== "number"
+         (scrollRate !== null && scrollRate > 25) || typeof scrollRate !== "number"
             ? styles.innovation__title__unactive
             : ""
       }`}
