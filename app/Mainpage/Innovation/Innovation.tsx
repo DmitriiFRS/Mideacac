@@ -8,6 +8,7 @@ import { scrollPosition, setSidemenuVisible } from "../../Redux/Slice/mainPageSl
 import imagebg from "../../../public/img/Innovation/innovation_bg.png";
 import Titles2 from "./Titles2";
 import Titles1 from "./Titles1";
+import InnovationShadow from "./InnovationShadow";
 
 type styledStateType = {
    position: any;
@@ -97,6 +98,7 @@ function Innovation() {
          >
             {!isZoomed ? "Инновации и технологии" : "О компании"}
          </h2>
+         <InnovationShadow />
          <Titles1 isZoomed={isZoomed} setZoom={setZoom} />
          <Titles2 isZoomed={isZoomed} setZoom={setZoom} />
       </section>
