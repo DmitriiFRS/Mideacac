@@ -2,12 +2,14 @@ import styles from "../Magboost.module.scss";
 import ContentBlock from "./ContentBlock";
 import NumTitles from "../../ReusableComponents/NumTitles";
 import Efficiancy from "./Efficiancy";
-import MagboostTitle from "./MagboostTitle";
 import MagboostTitleContainer from "./MagboostTitleContainer";
+import compressor from "../../../public/img/OtherPages/compressor-b2b.png";
+import { StaticImageData } from "next/image";
 
 export type ContentInner = {
    title: string;
-   video: string;
+   video?: string;
+   image?: StaticImageData | undefined;
    titles: {
       title1: string;
       title2: string;
@@ -30,7 +32,7 @@ const content: ContentType = [
    },
    {
       title: "Компрессор Back-to-back",
-      video: "/video/magboost-1.mp4",
+      image: compressor,
       titles: {
          title1: "Меньше трения",
          title2: "Отсутствие масла",

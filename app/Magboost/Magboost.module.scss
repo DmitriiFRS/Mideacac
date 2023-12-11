@@ -373,6 +373,12 @@
    &__videoContainer {
       position: relative;
    }
+   &__imageContainer {
+      position: relative;
+      max-width: 520px;
+      width: 100%;
+      aspect-ratio: 520/350;
+   }
    &__videoBody {
       position: relative;
       width: 100%;
