@@ -29,7 +29,7 @@ function Preloader() {
       }, 3300);
       isLoading
          ? ((document.body.style.overflow = "hidden"), (document.body.style.paddingRight = `${scrollWidth}px`))
-         : ((document.body.style.overflow = "auto"), (document.body.style.paddingRight = "0px"));
+         : ((document.body.style.paddingRight = "0px"), (document.body.style.overflow = "auto"));
    }, [isLoading]);
 
    return (
