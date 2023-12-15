@@ -8,6 +8,11 @@
    z-index: 4;
    transition: 0.7s;
 }
+@-moz-document url-prefix() {
+   .video__container {
+      width: calc(100vw - 3px);
+   }
+}
 .shadow {
    position: absolute;
    left: 0;
