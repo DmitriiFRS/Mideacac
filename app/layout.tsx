@@ -5,6 +5,7 @@ import Header from "./Header/Header";
 import SideMenu from "./Aside/SideMenu";
 import ReduxProvider from "./Redux/Provider";
 import Footer from "./Footer/Footer";
+import Head from "next/head";
 
 const gotham = localFont({
    variable: "--gotham",
@@ -40,6 +41,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
    return (
       <html>
+         <Head>
+            <meta name="mailru-domain" content="gnXl5i1NnzQsZPYr"></meta>
+         </Head>
          <body className={`${gotham.variable}`}>
             <div className="wrapper">
                <ReduxProvider>
